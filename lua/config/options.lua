@@ -12,5 +12,8 @@ vim.opt.conceallevel = 1 -- enable for VimTex
 -- vim.opt.foldlevel = 1
 -- vim.opt.foldclose = "all"
 
+vim.opt.fillchars = {
+	eob = " ",
+}
 -- Ensure gx is working
 -- vim.cmd("packadd! netrw")
