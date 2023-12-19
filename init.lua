@@ -21,3 +21,6 @@ require("lazy").setup({
 		{ import = "ui" },
 	},
 })
+
+-- colorschemes in ./lua/ui/colorscheme.lua
+vim.cmd.colorscheme "catppuccin"
