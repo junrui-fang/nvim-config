@@ -5,7 +5,11 @@ return {
 		priority = 1000,
 
 		opts = {
-			-- https://github.com/catppuccin/nvim#integrations
+			transparent_background = true,
+
+			integrations = {
+				-- https://github.com/catppuccin/nvim#integrations
+			},
 		},
 	},
 }
