@@ -22,5 +22,7 @@ require("lazy").setup({
 	},
 })
 
+require("config.keymaps")
+
 -- colorschemes in ./lua/ui/colorscheme.lua
 vim.cmd.colorscheme "catppuccin"
