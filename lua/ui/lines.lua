@@ -43,5 +43,35 @@ return {
 	},
 
 	-- Buffer line
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+
+		event = "VeryLazy",
+
+		opts = {
+			options = {
+				mode = "buffers", -- buffers | tabs
+
+				show_buffer_close_icons = false,
+				show_close_icon = false,
+
+				indicator = { style = "none" },
+				separator_style = "thick", -- "slant" | "slope" | "thick" | "thin" | { "any", "any" },
+				offsets = {
+					{
+						filetype = "neo-tree",
+						text = "File Explorer",
+						highlight = "Directory",
+						text_align = "center",
+					},
+				},
+
+				diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
+			},
+		},
+	},
+
 	-- Indent line
 }
