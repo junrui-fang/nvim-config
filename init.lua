@@ -20,6 +20,7 @@ require("lazy").setup({
 	spec = {
 		{ import = "core" },
 		{ import = "ui" },
+		{ import = "git" },
 		{ import = "project" },
 		{ import = "editor" },
 	},
