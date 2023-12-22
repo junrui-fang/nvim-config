@@ -10,15 +10,25 @@ return {
 		configs.setup({
 			ensure_installed = {
 				"python",
+				"java",
 				"c",
 				"lua",
+
+				"javascript",
+				"html",
+				"markdown",
+				"markdown_inline",
+
+				"bash",
+
+				"regex",
+
 				"vim",
 				"vimdoc",
+
 				"query",
 				"elixir",
 				"heex",
-				"javascript",
-				"html",
 			},
 			sync_install = false,
 			highlight = { enable = true },
