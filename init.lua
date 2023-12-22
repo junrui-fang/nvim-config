@@ -21,6 +21,7 @@ require("lazy").setup({
 		{ import = "core" },
 		{ import = "ui" },
 		{ import = "project" },
+		{ import = "editor" },
 	},
 })
 
