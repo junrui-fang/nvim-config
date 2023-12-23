@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup plugins
 require("lazy").setup({
 	ui = { border = "single" },
+
 	spec = {
 		{ import = "core" },
 		{ import = "ui" },
@@ -24,6 +25,8 @@ require("lazy").setup({
 		{ import = "project" },
 		{ import = "editor" },
 	},
+
+	checker = { enabled = true }, -- automatically check for plugin updates
 })
 
 require("config.keymaps.plugin-maps")
