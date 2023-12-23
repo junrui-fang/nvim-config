@@ -1,38 +1,40 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
 
-	event = { "VeryLazy" },
+		event = { "VeryLazy" },
 
-	config = function()
-		local configs = require("nvim-treesitter.configs")
+		config = function()
+			local configs = require("nvim-treesitter.configs")
 
-		configs.setup({
-			ensure_installed = {
-				"python",
-				"java",
-				"c",
-				"lua",
+			configs.setup({
+				ensure_installed = {
+					"python",
+					"java",
+					"c",
+					"lua",
 
-				"javascript",
-				"html",
-				"markdown",
-				"markdown_inline",
+					"javascript",
+					"html",
+					"markdown",
+					"markdown_inline",
 
-				"bash",
+					"bash",
 
-				"regex",
+					"regex",
 
-				"vim",
-				"vimdoc",
+					"vim",
+					"vimdoc",
 
-				"query",
-				"elixir",
-				"heex",
-			},
-			sync_install = false,
-			highlight = { enable = true },
-			indent = { enable = true },
-		})
-	end,
+					"query",
+					"elixir",
+					"heex",
+				},
+				sync_install = false,
+				highlight = { enable = true },
+				indent = { enable = true },
+			})
+		end,
+	},
 }
