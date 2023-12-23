@@ -9,4 +9,8 @@ return {
 	},
 
 	cmd = "Neotree",
+
+	keys = {
+		{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
+	},
 }
