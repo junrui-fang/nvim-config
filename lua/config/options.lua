@@ -16,6 +16,7 @@ vim.opt.scrolloff = 0
 vim.opt.cmdheight = 0 -- 0 for noice.nvim
 vim.opt.conceallevel = 1 -- enable for VimTex
 vim.opt.wrap = true
+vim.opt.list = true -- Show some invisible characters
 vim.opt.guicursor = "i:block"
 vim.opt.fillchars = {
 	eob = " ",
