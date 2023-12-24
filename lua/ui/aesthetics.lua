@@ -46,6 +46,14 @@ return {
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
 		},
+
+		keys = {
+			{ "<leader>nn", "<cmd>NoiceLast<cr>", desc = "Last" },
+			{ "<leader>nh", "<cmd>NoiceHistory<cr>", desc = "History" },
+			{ "<leader>ne", "<cmd>NoiceErrors<cr>", desc = "Errors" },
+			{ "<leader>nd", "<cmd>NoiceDismiss<cr>", desc = "Dismiss" },
+			{ "<leader>nf", "<cmd>NoiceTelescope<cr>", desc = "Find" },
+		},
 	},
 
 	{
