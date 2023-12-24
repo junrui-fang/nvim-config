@@ -1,6 +1,10 @@
 local wk = require("which-key")
 
--- Buffer
+wk.register({
+	-- Buffer
+	["<leader>b"] = { name = "Buffers" },
+})
+
 -- Terminal
 -- Search
 -- Notification
