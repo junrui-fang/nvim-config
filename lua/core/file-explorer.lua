@@ -11,6 +11,11 @@ return {
 
 		cmd = "Neotree",
 
+		opts = {
+			buffers = { follow_current_file = { enabled = true } },
+			filesystem = { follow_current_file = { enabled = true } },
+		},
+
 		keys = {
 			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
 		},
