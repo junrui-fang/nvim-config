@@ -6,6 +6,8 @@ wk.register({
 
 	-- Buffer
 	["<leader>b"] = { name = "Buffers" },
+	-- Tab
+	["<leader><tab>"] = { name = "Tabs" },
 
 	-- Find
 	["<leader>f"] = { name = "Find" },
