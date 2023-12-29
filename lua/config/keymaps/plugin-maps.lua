@@ -1,6 +1,9 @@
 local wk = require("which-key")
 
 wk.register({
+	-- Plugin
+	["<leader>p"] = { "<cmd>Lazy<cr>", "Plugins" },
+
 	-- Buffer
 	["<leader>b"] = { name = "Buffers" },
 
