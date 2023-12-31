@@ -1,29 +1,28 @@
 local wk = require("which-key")
 
 wk.register({
-	-- Plugin
-	["<leader>p"] = { "<cmd>Lazy<cr>", "Plugins" },
+	["<leader>"] = {
+		-- Plugin
+		p = { "<cmd>Lazy<cr>", "Plugins" },
 
-	-- Buffer
-	["<leader>b"] = { name = "Buffers" },
+		-- Buffer
+		b = { name = "Buffers" },
+
+		-- Find
+		f = { name = "Find" },
+		-- Search & Replace
+		r = { name = "Replace", mode = { "n", "v" } },
+
+		-- Git
+		g = { name = "Git" },
+
+		-- LSP
+		l = { name = "LSP" },
+
+		-- Notification
+		n = { name = "Notification" },
+	},
+
 	-- Tab
 	["<leader><tab>"] = { name = "Tabs" },
-
-	-- Find
-	["<leader>f"] = { name = "Find" },
-	-- Search & Replace
-	["<leader>r"] = { name = "Replace", mode = { "n", "v" } },
-
-	-- Git
-	["<leader>g"] = { name = "Git" },
-
-	-- LSP
-	["<leader>l"] = { name = "LSP" },
-
-	-- Notification
-	["<leader>n"] = { name = "Notification" },
 })
-
--- Terminal
--- Package Management
--- Git
