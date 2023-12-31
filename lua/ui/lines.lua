@@ -11,6 +11,9 @@ return {
 		opts = {
 			options = {
 				theme = "auto",
+				section_separators = "",
+				-- component_separators = "",
+
 				globalstatus = true,
 				disabled_filetypes = {
 					statusline = { "alpha" },
