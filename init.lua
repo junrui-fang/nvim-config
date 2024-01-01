@@ -24,6 +24,7 @@ require("lazy").setup({
 		{ import = "git" },
 		{ import = "project" },
 		{ import = "editor" },
+		{ import = "lsp" },
 	},
 
 	checker = { enabled = true }, -- automatically check for plugin updates
