@@ -3,7 +3,11 @@ return {
 		"williamboman/mason.nvim",
 		cmd = { "Mason", "MasonInstall", "MasonUninstall" },
 
-		opts = {},
+		opts = {
+			ui = {
+				border = "single",
+			},
+		},
 
 		keys = {
 			{ "<leader>ll", "<cmd>Mason<cr>", desc = "Language Servers" },
