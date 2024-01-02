@@ -18,6 +18,8 @@ wk.register({
 
 		-- LSP
 		l = { name = "LSP" },
+		-- Code Action
+		a = { name = "Actions" },
 
 		-- Notification
 		n = { name = "Notification" },
