@@ -2,22 +2,22 @@ return {
 	-- Enhance UI elements
 	{
 		"stevearc/dressing.nvim",
-		enabled = false,
-		-- lazy = true,
+		lazy = true,
 		opts = {},
 
-		-- init = function()
-		-- 	---@diagnostic disable-next-line: duplicate-set-field
-		-- 	vim.ui.select = function(...)
-		-- 		require("lazy").load({ plugins = { "dressing.nvim" } })
-		-- 		return vim.ui.select(...)
-		-- 	end
-		-- 	---@diagnostic disable-next-line: duplicate-set-field
-		-- 	vim.ui.input = function(...)
-		-- 		require("lazy").load({ plugins = { "dressing.nvim" } })
-		-- 		return vim.ui.input(...)
-		-- 	end
-		-- end,
+		-- https://github.com/LazyVim/LazyVim/blob/879e29504d43e9f178d967ecc34d482f902e5a91/lua/lazyvim/plugins/ui.lua#L42C7-L42C7
+		init = function()
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.select = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.select(...)
+			end
+			---@diagnostic disable-next-line: duplicate-set-field
+			vim.ui.input = function(...)
+				require("lazy").load({ plugins = { "dressing.nvim" } })
+				return vim.ui.input(...)
+			end
+		end,
 	},
 
 	-- Replace UI for messages, cmdline and popupmenu
