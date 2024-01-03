@@ -31,6 +31,7 @@ return {
 				"html",
 				"ltex", -- LaTeX
 			},
+			auto_install = true,
 		},
 	},
 }
