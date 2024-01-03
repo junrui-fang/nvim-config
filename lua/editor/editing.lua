@@ -8,6 +8,13 @@ return {
 		opts = {},
 	},
 
+	-- Auto-pairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+
 	-- Auto-saving
 	{
 		"0x00-ketsu/autosave.nvim",
