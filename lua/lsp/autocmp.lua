@@ -13,6 +13,7 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+			local cmp_mapping = require("cmp.config.mapping")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
@@ -35,6 +36,8 @@ return {
 				},
 
 				mapping = cmp.mapping.preset.insert({
+					["<C-j>"] = cmp_mapping(cmp_mapping.select_next_item(), { "i", "c" }),
+					["<C-k>"] = cmp_mapping(cmp_mapping.select_prev_item(), { "i", "c" }),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
