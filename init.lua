@@ -1,5 +1,3 @@
-require("config")
-
 -- Install lazy.nvim as the plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -30,6 +28,8 @@ require("lazy").setup({
 	checker = { enabled = true }, -- automatically check for plugin updates
 })
 
+-- Load configurations
+require("config")
 require("config.keymaps.plugin-maps")
 
 -- colorschemes in ./lua/ui/colorscheme.lua
