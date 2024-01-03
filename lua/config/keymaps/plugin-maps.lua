@@ -14,12 +14,12 @@ wk.register({
 		r = { name = "Replace", mode = { "n", "v" } },
 
 		-- Git
-		g = { name = "Git" },
+		g = { name = "Git", mode = { "n", "v" } },
 
 		-- LSP
 		l = { name = "LSP" },
 		-- Code Action
-		a = { name = "Actions" },
+		a = { name = "Actions", mode = { "n", "v" } },
 
 		-- Notification
 		n = { name = "Notification" },
