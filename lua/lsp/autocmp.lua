@@ -12,6 +12,7 @@ return {
 
 		config = function()
 			local cmp = require("cmp")
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 
@@ -75,6 +76,9 @@ return {
 					{ name = "cmdline" },
 				}),
 			})
+
+			-- Insert `(` after select function or method item
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 		end,
 	},
 }
