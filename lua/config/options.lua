@@ -22,6 +22,8 @@ vim.opt.fillchars = {
 	eob = " ",
 }
 
+-- TODO: folding options
+
 -- options to consider in the future
 -- vim.opt.wrapmargin = 100
 -- vim.opt.foldlevel = 1
