@@ -6,6 +6,19 @@ return {
 
 		cmd = "Telescope",
 
+		opts = {
+			defaults = {
+				mappings = {
+					i = {
+						["<C-j>"] = "move_selection_next",
+						["<C-k>"] = "move_selection_previous",
+						["<C-n>"] = "cycle_history_next",
+						["<C-p>"] = "cycle_history_prev",
+					},
+				},
+			},
+		},
+
 		keys = {
 			-- Grep & Command History
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
