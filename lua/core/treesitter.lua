@@ -129,6 +129,8 @@ return {
 							["<A"] = { query = "@parameter.inner", desc = "Swap previous argument" },
 						},
 					},
+
+					-- TODO: https://github.com/nvim-treesitter/nvim-treesitter-textobjects#textobjects-lsp-interop
 				},
 			})
 
