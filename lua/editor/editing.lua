@@ -8,6 +8,12 @@ return {
 		opts = {},
 	},
 
+	-- Comment
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+	},
+
 	-- Auto-pairs
 	{
 		"windwp/nvim-autopairs",
