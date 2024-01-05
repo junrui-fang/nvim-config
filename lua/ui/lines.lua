@@ -39,7 +39,18 @@ return {
 			},
 
 			tabline = {},
-			winbar = {},
+			winbar = {
+				lualine_c = {
+					{
+						function()
+							return require("nvim-navic").get_location()
+						end,
+						cond = function()
+							return require("nvim-navic").is_available()
+						end,
+					},
+				},
+			},
 			inactive_winbar = {},
 			extensions = { "lazy", "neo-tree" },
 		},
