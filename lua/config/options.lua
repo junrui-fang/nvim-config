@@ -27,7 +27,6 @@ vim.opt.termguicolors = true -- True color support
 vim.opt.cursorline = true -- Enable highlighting of the current line
 vim.opt.wrap = true
 vim.opt.list = true -- Show some invisible characters
-vim.opt.showmode = false
 vim.opt.guicursor = "i:block"
 vim.opt.fillchars = {
 	eob = " ",
