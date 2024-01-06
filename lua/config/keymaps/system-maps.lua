@@ -58,3 +58,4 @@ vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" }
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation" })
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Goto References" })
 vim.keymap.set({ "n", "v" }, "<leader>aa", vim.lsp.buf.code_action, { desc = "Code Actions" })
+vim.keymap.set("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
