@@ -7,6 +7,7 @@ return {
 			"hrsh7th/cmp-path",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
+			"onsails/lspkind.nvim",
 		},
 
 		event = { "InsertEnter", "CmdlineEnter" },
@@ -17,6 +18,7 @@ return {
 			local cmp_mapping = require("cmp.config.mapping")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
+			local lspkind = require("lspkind")
 
 			-- Use LSP servers
 			lspconfig.lua_ls.setup({
@@ -29,6 +31,15 @@ return {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
 					end,
+				},
+
+				-- Pretty symbols
+				formatting = {
+					format = lspkind.cmp_format({
+						mode = "symbol_text", -- show only symbol annotations
+						maxwidth = 50,
+						ellipsis_char = "...",
+					}),
 				},
 
 				window = {
