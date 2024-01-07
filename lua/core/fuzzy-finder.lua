@@ -19,6 +19,11 @@ return {
 			},
 		},
 
+		config = function(_, opts)
+			require("telescope").setup(opts)
+			require("telescope").load_extension("projects")
+		end,
+
 		keys = {
 			-- Grep & Command History
 			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
@@ -47,6 +52,9 @@ return {
 
 			-- Buffers
 			{ "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+
+			-- Projects
+			{ "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Projects" },
 		},
 	},
 
