@@ -1,6 +1,6 @@
 -- leader key
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = "\\"
 
 -- coding options
 vim.opt.shiftwidth = 2
