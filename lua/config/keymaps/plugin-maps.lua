@@ -7,7 +7,7 @@ wk.register({
 		-- Project
 		p = {
 			name = "Projects",
-			s = { name = "Session" }
+			s = { name = "Session" },
 		},
 
 		-- Buffer
@@ -28,6 +28,9 @@ wk.register({
 
 		-- Notification
 		n = { name = "Notification" },
+
+		-- Toggle
+		t = { name = "Toggle" },
 	},
 
 	-- Tab

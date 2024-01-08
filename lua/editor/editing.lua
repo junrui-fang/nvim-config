@@ -23,19 +23,16 @@ return {
 
 	-- Auto-saving
 	{
-		"0x00-ketsu/autosave.nvim",
+		"okuuva/auto-save.nvim",
+		cmd = "ASToggle",
 		event = { "InsertLeave", "TextChanged" },
-
 		opts = {
-			prompt_message = "",
-
-			conditions = {
-				exists = true,
-				modifiable = true,
-				filename_is_not = {},
-				filetype_is_not = {},
+			execution_message = {
+				enabled = false,
 			},
+			debounce_delay = 0,
 		},
+		keys = { { "<leader>ts", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
 	},
 
 	-- Search & Replace
