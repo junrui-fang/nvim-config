@@ -7,6 +7,10 @@ return {
 		event = { "BufRead" },
 
 		opts = {},
+
+		keys = {
+			{ "<leader>pt", "<cmd>TodoTrouble<cr>", desc = "Todos" },
+		},
 	},
 
 	-- TODO: What next?
