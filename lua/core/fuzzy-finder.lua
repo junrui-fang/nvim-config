@@ -61,9 +61,6 @@ return {
 
 			-- Buffers
 			{ "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
-
-			-- Projects
-			{ "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Projects" },
 		},
 	},
 

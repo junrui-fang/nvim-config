@@ -3,7 +3,9 @@ local wk = require("which-key")
 wk.register({
 	["<leader>"] = {
 		-- Plugin
-		p = { "<cmd>Lazy<cr>", "Plugins" },
+		P = { "<cmd>Lazy<cr>", "Plugins" },
+		-- Project
+		p = { name = "Projects" },
 
 		-- Buffer
 		b = { name = "Buffers" },
