@@ -5,7 +5,10 @@ wk.register({
 		-- Plugin
 		P = { "<cmd>Lazy<cr>", "Plugins" },
 		-- Project
-		p = { name = "Projects" },
+		p = {
+			name = "Projects",
+			s = { name = "Session" }
+		},
 
 		-- Buffer
 		b = { name = "Buffers" },
