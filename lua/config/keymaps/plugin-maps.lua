@@ -23,9 +23,10 @@ wk.register({
 
 		-- LSP
 		l = { name = "LSP" },
-		-- Code Action
+		-- Code
 		a = { name = "Actions", mode = { "n", "v" } },
 		r = { name = "Refactor", mode = { "n", "x" } },
+		d = { name = "Doc" },
 
 		-- Notification
 		n = { name = "Notification" },
