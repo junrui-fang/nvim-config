@@ -20,11 +20,15 @@ require("lazy").setup({
 
 	spec = {
 		{ import = "core" },
+
+		{ import = "code" },
+		{ import = "code.lsp" },
+		{ import = "code.cmp" },
+
 		{ import = "ui" },
 		{ import = "git" },
 		{ import = "project" },
 		{ import = "editor" },
-		{ import = "lsp" },
 	},
 
 	checker = { enabled = true }, -- automatically check for plugin updates
