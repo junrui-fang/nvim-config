@@ -24,6 +24,7 @@ require("lazy").setup({
 		{ import = "code" },
 		{ import = "code.lsp" },
 		{ import = "code.cmp" },
+		{ import = "lang" },
 
 		{ import = "ui" },
 		{ import = "git" },
