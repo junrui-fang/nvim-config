@@ -20,6 +20,12 @@ return {
 							},
 						},
 					},
+
+					["core.presenter"] = {
+						config = {
+							zen_mode = "zen-mode",
+						},
+					},
 				},
 			})
 			vim.wo.foldlevel = 99
