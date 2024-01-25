@@ -28,8 +28,9 @@ require("lazy").setup({
 
 		{ import = "ui" },
 		{ import = "git" },
-		{ import = "project" },
+		{ import = "tools" },
 		{ import = "editor" },
+		{ import = "project" },
 	},
 
 	checker = { enabled = true }, -- automatically check for plugin updates
