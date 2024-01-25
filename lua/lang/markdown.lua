@@ -17,4 +17,14 @@ return {
 			{ "<leader>m", "<cmd>MarkdownPreview<cr>", ft = "markdown", desc = "Markdown Preview" },
 		},
 	},
+
+	-- UI
+	{
+		"lukas-reineke/headlines.nvim",
+		enabled = false,
+		dependencies = "nvim-treesitter/nvim-treesitter",
+		ft = { "markdown", "norg" },
+
+		opts = {},
+	},
 }
