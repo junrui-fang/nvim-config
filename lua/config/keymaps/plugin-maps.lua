@@ -31,8 +31,11 @@ wk.register({
 		-- Notification
 		n = { name = "Notification" },
 
+		-- Tools
+		t = { name = "Tools" },
+
 		-- Toggle
-		t = { name = "Toggle" },
+		T = { name = "Toggle" },
 	},
 
 	-- Tab
