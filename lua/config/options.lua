@@ -15,6 +15,11 @@ vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.inccommand = "nosplit" -- preview incremental substitute
 
+-- Opening options
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+vim.opt.splitkeep = "cursor"
+
 -- Search options
 vim.opt.smartcase = true -- Don't ignore case with capitals
 
