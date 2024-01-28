@@ -116,12 +116,24 @@ return {
 		opts = {
 			indent = { char = "│", tab_char = "│" },
 			scope = { enabled = true },
-
-			-- exclude = {
-			-- 	filetypes = {
-			-- 		"neo-tree",
-			-- 	},
-			-- },
+			exclude = {
+				buftypes = {
+					"nofile",
+					"terminal",
+				},
+				filetypes = {
+					"help",
+					"startify",
+					"aerial",
+					"alpha",
+					"dashboard",
+					"lazy",
+					"neogitstatus",
+					"NvimTree",
+					"neo-tree",
+					"Trouble",
+				},
+			},
 		},
 	},
 }
