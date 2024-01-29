@@ -6,7 +6,7 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			{ "folke/neodev.nvim", opts = {} },
+			{ "folke/neodev.nvim",  opts = {} },
 			{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
 		},
 
@@ -42,7 +42,8 @@ return {
 			lspconfig.lua_ls.setup({
 				on_attach = on_attach,
 			})
-			lspconfig.ruff_lsp.setup({})
+			lspconfig.ruff_lsp.setup({ on_attach = on_attach })
+			lspconfig.marksman.setup({ on_attach = on_attach })
 		end,
 
 		keys = {
