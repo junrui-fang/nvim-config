@@ -24,6 +24,12 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.ruff_lsp.setup({
+				capabilities = capabilities,
+			})
+			-- lspconfig.marksman.setup({
+			-- 	capabilities = capabilities,
+			-- })
 
 			cmp.setup({
 				snippet = {
