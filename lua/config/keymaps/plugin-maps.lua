@@ -16,7 +16,7 @@ wk.register({
 		-- Find
 		f = { name = "Find" },
 		-- Search & Replace
-		R = { name = "Replace", mode = { "n", "x" } },
+		S = { name = "Search & Replace", mode = { "n", "x" } },
 
 		-- Git
 		g = { name = "Git", mode = { "n", "x" } },
@@ -25,8 +25,9 @@ wk.register({
 		l = { name = "LSP" },
 		-- Code
 		a = { name = "Actions", mode = { "n", "x" } },
-		r = { name = "Refactor", mode = { "n", "x" } },
 		d = { name = "Doc" },
+		r = { name = "Refactor", mode = { "n", "x" } },
+		-- R = { name = "Run Code", mode = { "x" } },
 
 		-- Notification
 		n = { name = "Notification" },
