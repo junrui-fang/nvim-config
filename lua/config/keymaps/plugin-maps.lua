@@ -16,7 +16,7 @@ wk.register({
 		-- Find
 		f = { name = "Find" },
 		-- Search & Replace
-		S = { name = "Search & Replace", mode = { "n", "x" } },
+		R = { name = "Replace", mode = { "n", "x" } },
 
 		-- Git
 		g = { name = "Git", mode = { "n", "x" } },
