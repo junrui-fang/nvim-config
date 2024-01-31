@@ -27,7 +27,6 @@ wk.register({
 		a = { name = "Actions", mode = { "n", "x" } },
 		d = { name = "Doc" },
 		r = { name = "Refactor", mode = { "n", "x" } },
-		-- R = { name = "Run Code", mode = { "x" } },
 
 		-- Notification
 		n = { name = "Notification" },
@@ -41,4 +40,7 @@ wk.register({
 
 	-- Tab
 	["<leader><tab>"] = { name = "Tabs" },
+
+	-- Code Runner
+	["<leader>."] = { name = "Code Runner", mode = "n" },
 })
