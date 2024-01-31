@@ -5,7 +5,16 @@ return {
 		build = "sh install.sh 1",
 
 		config = function()
-			require("sniprun").setup({})
+			-- https://michaelb.github.io/sniprun/sources/README.html#configuration
+			require("sniprun").setup({
+				display = {
+					"VirtualTextOk", --# display ok results as virtual text (multiline is shortened)
+					"LongTempFloatingWindow", --  only for long results. To use with VirtualText[Ok/Err]
+					-- "Terminal",                --# display results in a vertical split
+					-- "TerminalWithCode",        --# display results and code history in a vertical split
+					-- "Api"                      --# return output to a programming interface
+				},
+			})
 		end,
 
 		keys = {
