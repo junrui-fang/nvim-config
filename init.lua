@@ -31,6 +31,8 @@ require("lazy").setup({
 		{ import = "tools" },
 		{ import = "editor" },
 		{ import = "project" },
+
+		{ import = "miscellaneous" },
 	},
 
 	checker = { enabled = true }, -- automatically check for plugin updates
