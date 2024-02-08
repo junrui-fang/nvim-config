@@ -14,10 +14,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Setup plugins
 require("lazy").setup({
+	-- Setup behaviors of lazy.nvim
+	defaults = { lazy = false },
+	checker = { enabled = true }, -- automatically check for plugin updates
+	install = { missing = true, colorscheme = { "tokyonight" } },
 	ui = { border = "single" },
 
+	-- Load plugins
 	spec = {
 		{ import = "core" },
 
@@ -35,7 +39,19 @@ require("lazy").setup({
 		{ import = "miscellaneous" },
 	},
 
-	checker = { enabled = true }, -- automatically check for plugin updates
+	-- disable some built-in Neovim plugins, for better performance
+	rtp = {
+		disabled_plugins = {
+			"gzip",
+			"matchit",
+			"matchparen",
+			"netrwPlugin",
+			"tarPlugin",
+			"tohtml",
+			"tutor",
+			"zipPlugin",
+		},
+	},
 })
 
 require("config.keymaps.plugin-maps")
