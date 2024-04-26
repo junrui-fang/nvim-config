@@ -35,6 +35,17 @@ return {
 				mode = { "i", "s" },
 			},
 		},
+
+		config = function()
+			require("luasnip").setup({
+				-- Enable autotriggered snippets
+				enable_autosnippets = true,
+				-- Use Tab (or some other key if you prefer) to trigger visual selection
+				store_selection_keys = "<Tab>",
+				-- Make the repeated node to update as typing
+				update_events = "TextChanged,TextChangedI",
+			})
+		end,
 	},
 
 	{
