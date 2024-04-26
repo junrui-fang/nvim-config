@@ -5,14 +5,16 @@
 ##### Code Runners
 - [lab.nvim](https://github.com/0x100101/lab.nvim?tab=readme-ov-file#code-runner)
 - [magma-nvim](https://github.com/dccsillag/magma-nvim)
+##### Template
+- [esqueleto.nvim](https://github.com/cvigilv/esqueleto.nvim)
 
 ---
 
 #### References
 ##### Distros
 - [LazyVim](https://github.com/LazyVim/LazyVim)
-- [LunarVim](https://github.com/lunarvim/lunarvim)
 - [AstroVim](https://github.com/AstroNvim/AstroNvim)
+- [LunarVim](https://github.com/lunarvim/lunarvim)
 
 ##### Articles
 ###### Python
