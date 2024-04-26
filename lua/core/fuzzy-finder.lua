@@ -24,6 +24,10 @@ return {
 						["<C-n>"] = "cycle_history_next",
 						["<C-p>"] = "cycle_history_prev",
 					},
+					n = {
+						["<C-j>"] = "move_selection_next",
+						["<C-k>"] = "move_selection_previous",
+					},
 				},
 			},
 		},
