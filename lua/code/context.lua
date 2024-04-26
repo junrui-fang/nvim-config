@@ -10,4 +10,15 @@ return {
 		"RRethy/vim-illuminate",
 		event = "BufReadPost",
 	},
+
+	-- Preview definition, implementation, etc.
+	{
+		"rmagatti/goto-preview",
+		keys = "gp",
+		config = function()
+			require("goto-preview").setup({
+				default_mappings = true,
+			})
+		end,
+	},
 }
