@@ -31,7 +31,7 @@ return {
 			dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
 			dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <cr>"),
 			dashboard.button("g", " " .. " Find text", "<cmd> Telescope live_grep <cr>"),
-			-- dashboard.button("s", " " .. " Restore Session", [[<cmd> lua require("persistence").load() <cr>]]),
+			dashboard.button("s", " " .. " Session Restore ", [[<cmd> lua require("persistence").load() <cr>]]),
 			dashboard.button("p", " " .. " Plugins", "<cmd> Lazy <cr>"),
 			dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
 		}
