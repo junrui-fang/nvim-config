@@ -17,5 +17,7 @@
 - [LunarVim](https://github.com/lunarvim/lunarvim)
 
 ##### Articles
+###### Collections
+- [Ultimate Neovim Resource Repo](https://levelup.gitconnected.com/ultimate-neovim-resource-repo-7b5a32ba315f)
 ###### Python
 - [LunarVim as a Python IDE](https://medium.com/better-programming/lunarvim-as-a-python-ide-ca8f57ca9f3a)
