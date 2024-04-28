@@ -11,14 +11,19 @@ return {
 						annotation_convention = "ldoc",
 					},
 				},
+				python = {
+					template = {
+						annotation_convention = "google_docstrings",
+					},
+				},
 			},
 		},
 
 		keys = {
-			{"<leader>dd", "<cmd>Neogen func<cr>", desc = "Function"},
-			{"<leader>dc", "<cmd>Neogen class<cr>", desc = "Class"},
-			{"<leader>dt", "<cmd>Neogen type<cr>", desc = "Type"},
-			{"<leader>df", "<cmd>Neogen file<cr>", desc = "File"},
+			{ "<leader>dd", "<cmd>Neogen func<cr>", desc = "Function" },
+			{ "<leader>dc", "<cmd>Neogen class<cr>", desc = "Class" },
+			{ "<leader>dt", "<cmd>Neogen type<cr>", desc = "Type" },
+			{ "<leader>df", "<cmd>Neogen file<cr>", desc = "File" },
 		},
 	},
 }
