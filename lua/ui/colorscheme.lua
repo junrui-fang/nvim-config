@@ -1,5 +1,18 @@
 return {
 	{
+		"nvim-telescope/telescope.nvim",
+		keys = {
+			{
+				"<leader>fc",
+				function()
+					require("telescope.builtin").colorscheme({ enable_preview = true })
+				end,
+				desc = "Colorscheme",
+			},
+		},
+	},
+
+	{
 		"folke/tokyonight.nvim",
 		lazy = true,
 		opts = {
