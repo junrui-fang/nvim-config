@@ -32,6 +32,7 @@ return {
 			dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <cr>"),
 			dashboard.button("g", "󱄽 " .. " Grep text", "<cmd> Telescope live_grep <cr>"),
 			dashboard.button("s", " " .. " Session Restore ", [[<cmd> lua require("persistence").load() <cr>]]),
+			dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
 			dashboard.button("p", " " .. " Plugins", "<cmd> Lazy <cr>"),
 			dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
 		}
