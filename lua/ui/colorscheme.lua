@@ -3,7 +3,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		keys = {
 			{
-				"<leader>fc",
+				"<leader>sC",
 				function()
 					require("telescope.builtin").colorscheme({ enable_preview = true })
 				end,

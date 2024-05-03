@@ -2,11 +2,22 @@ local wk = require("which-key")
 
 wk.register({
 	["<leader>"] = {
-		-- Plugin
-		P = { "<cmd>Lazy<cr>", "Plugins" },
+		-- System
+		s = {
+			name = "System",
+			c = { ":e ~/.config/nvim/init.lua <CR>", "Config" },
+			k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+			n = { name = "Notification" },
+			p = { "<cmd>Lazy<cr>", "Plugins" },
+			t = { name = "Toggle" },
+
+			R = { ":!open https://github.com/junrui-fang/nvim-config<cr>", "Repo" },
+		},
+
 		-- Project
 		p = {
 			name = "Projects",
+			n = { "<cmd> ene <BAR> startinsert <cr>", "New file" },
 			s = { name = "Session" },
 		},
 
@@ -27,9 +38,6 @@ wk.register({
 		a = { name = "Actions", mode = { "n", "x" } },
 		d = { name = "Doc" },
 		r = { name = "Refactor", mode = { "n", "x" } },
-
-		-- Notification
-		n = { name = "Notification" },
 
 		-- Tools
 		t = { name = "Tools", mode = { "n", "x" } },

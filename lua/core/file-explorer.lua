@@ -17,7 +17,7 @@ return {
 		},
 
 		keys = {
-			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "File Explorer" },
+			{ "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer" },
 		},
 	},
 }

@@ -51,4 +51,8 @@ return {
 
 		require("alpha").setup(dashboard.opts)
 	end,
+
+	keys = {
+		{ "<leader>sd", "<cmd>Alpha<cr>", desc = "Dashboard" },
+	},
 }

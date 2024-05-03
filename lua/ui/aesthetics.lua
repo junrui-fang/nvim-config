@@ -48,11 +48,11 @@ return {
 		},
 
 		keys = {
-			{ "<leader>nn", "<cmd>NoiceLast<cr>", desc = "Last" },
-			{ "<leader>nh", "<cmd>NoiceHistory<cr>", desc = "History" },
-			{ "<leader>ne", "<cmd>NoiceErrors<cr>", desc = "Errors" },
-			{ "<leader>nd", "<cmd>NoiceDismiss<cr>", desc = "Dismiss" },
-			{ "<leader>nf", "<cmd>NoiceTelescope<cr>", desc = "Find" },
+			{ "<leader>snn", "<cmd>NoiceLast<cr>", desc = "Last" },
+			{ "<leader>snh", "<cmd>NoiceHistory<cr>", desc = "History" },
+			{ "<leader>sne", "<cmd>NoiceErrors<cr>", desc = "Errors" },
+			{ "<leader>snd", "<cmd>NoiceDismiss<cr>", desc = "Dismiss" },
+			{ "<leader>snf", "<cmd>NoiceTelescope<cr>", desc = "Find" },
 		},
 	},
 

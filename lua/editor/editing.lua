@@ -32,7 +32,7 @@ return {
 			},
 			debounce_delay = 0,
 		},
-		keys = { { "<leader>Ts", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
+		keys = { { "<leader>sta", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
 	},
 
 	-- Search & Replace
