@@ -1,2 +1,11 @@
+- AI
+-- [codeium.vim]{https://github.com/Exafunction/codeium.vim}
+
+- Navigation
+-- ( ) [harpoon]{https://github.com/ThePrimeagen/harpoon/tree/harpoon2}
+
 - Git
 -- ( ) [Octo.nvim]{https://levelup.gitconnected.com/github-in-neovim-using-octo-nvim-c381d869e358}
+
+- Command Palette
+-- ( ) [legendary.nvim]{https://github.com/mrjones2014/legendary.nvim}
