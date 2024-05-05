@@ -5,13 +5,12 @@
 ##### Code Runners
 - [lab.nvim](https://github.com/0x100101/lab.nvim?tab=readme-ov-file#code-runner)
 - [magma-nvim](https://github.com/dccsillag/magma-nvim)
-##### Template
-- [esqueleto.nvim](https://github.com/cvigilv/esqueleto.nvim)
 
 ---
 
 #### References
-##### Distros
+##### Repos
+- [Kickstart](https://github.com/nvim-lua/kickstart.nvim/blob/6f6f38a6b5059787d8d92b313f6e1b2c722389b0/init.lua#L629)
 - [LazyVim](https://github.com/LazyVim/LazyVim)
 - [AstroVim](https://github.com/AstroNvim/AstroNvim)
 - [LunarVim](https://github.com/lunarvim/lunarvim)
