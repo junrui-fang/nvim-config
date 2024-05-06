@@ -2,7 +2,7 @@ require("config")
 
 -- Install lazy.nvim as the plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
 		"clone",
@@ -15,12 +15,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	-- Setup behaviors of lazy.nvim
-	defaults = { lazy = false },
-	checker = { enabled = true }, -- automatically check for plugin updates
-	install = { missing = true, colorscheme = { "tokyonight" } },
-	ui = { border = "single" },
-
 	-- Load plugins
 	spec = {
 		{ import = "core" },
@@ -39,17 +33,25 @@ require("lazy").setup({
 		{ import = "miscellaneous" },
 	},
 
+	-- Setup behaviors of lazy.nvim
+	defaults = { lazy = false },
+	checker = { enabled = true }, -- automatically check for plugin updates
+	install = { missing = true, colorscheme = { "tokyonight" } },
+	ui = { border = "single" },
+
 	-- disable some built-in Neovim plugins, for better performance
-	rtp = {
-		disabled_plugins = {
-			"gzip",
-			"matchit",
-			"matchparen",
-			"netrwPlugin",
-			"tarPlugin",
-			"tohtml",
-			"tutor",
-			"zipPlugin",
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				-- "matchit",
+				-- "matchparen",
+				-- "netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
 		},
 	},
 })
