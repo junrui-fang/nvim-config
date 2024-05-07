@@ -42,6 +42,7 @@ return {
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
+				completion = { completeopt = "menu,menuone,noinsert" },
 
 				-- Pretty symbols
 				formatting = {
