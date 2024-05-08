@@ -6,11 +6,29 @@ return {
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			{ "folke/neodev.nvim",  opts = {} },
-			{ "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			-- { "j-hui/fidget.nvim", opts = {} },
+			{ "folke/neodev.nvim", opts = {} },
 		},
 
 		config = function()
+			vim.api.nvim_create_autocmd("LspAttach", {
+				group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
+				callback = function(event)
+					-- keymaps
+					local map = function(keys, func, desc)
+						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc })
+					end
+
+					map("K", vim.lsp.buf.hover, "Hover Documentation")
+					map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
+					map("gD", vim.lsp.buf.declaration, "Goto Declaration")
+					map("gr", require("telescope.builtin").lsp_references, "Goto References")
+					map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
+					map("gy", require("telescope.builtin").lsp_type_definitions, "Type Definition")
+				end,
+			})
+
 			local lspconfig = require("lspconfig")
 			local navic = require("nvim-navic")
 			local on_attach = function(client, bufnr)
@@ -18,12 +36,6 @@ return {
 					navic.attach(client, bufnr)
 				end
 
-				-- LSP keymaps
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = bufnr, desc = "Hover" })
-				vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = bufnr, desc = "Goto Definition" })
-				vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = bufnr, desc = "Goto Declaration" })
-				vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { buffer = bufnr, desc = "Goto Implementation" })
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = bufnr, desc = "Goto References" })
 				vim.keymap.set(
 					{ "n", "v" },
 					"<leader>aa",
