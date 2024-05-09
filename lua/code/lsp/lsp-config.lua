@@ -32,8 +32,8 @@ return {
 					map("<leader>ar", vim.lsp.buf.rename, "Rename")
 					map("<leader>aa", vim.lsp.buf.code_action, "Code Action")
 
-					-- highlight references of the word under cursor
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
+					-- highlight references of the word under cursor
 					if client and client.server_capabilities.documentHighlightProvider then
 						local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
 						vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -66,6 +66,10 @@ return {
 					end
 				end,
 			})
+
+			-- create new capabilities with nvim cmp, then broadcast that to the servers.
+			local capabilities = vim.lsp.protocol.make_client_capabilities()
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local lspconfig = require("lspconfig")
 			local navic = require("nvim-navic")
