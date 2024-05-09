@@ -8,6 +8,7 @@ return {
 	-- Highlight uses of the word
 	{
 		"RRethy/vim-illuminate",
+		enabled = false,
 		event = "BufReadPost",
 	},
 
