@@ -26,6 +26,12 @@ return {
 					map("gr", require("telescope.builtin").lsp_references, "Goto References")
 					map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
 					map("gy", require("telescope.builtin").lsp_type_definitions, "Type Definition")
+
+					map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Buffer Symbols")
+					map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
+
+					map("<leader>ar", vim.lsp.buf.rename, "Rename")
+					map("<leader>aa", vim.lsp.buf.code_action, "Code Action")
 				end,
 			})
 
@@ -35,19 +41,6 @@ return {
 				if client.server_capabilities.documentSymbolProvider then
 					navic.attach(client, bufnr)
 				end
-
-				vim.keymap.set(
-					{ "n", "v" },
-					"<leader>aa",
-					vim.lsp.buf.code_action,
-					{ buffer = bufnr, desc = "Code Actions" }
-				)
-				vim.keymap.set(
-					"n",
-					"<leader>ar",
-					"<cmd>lua vim.lsp.buf.rename()<cr>",
-					{ buffer = bufnr, desc = "Rename" }
-				)
 			end
 
 			-- Setup language servers

@@ -70,8 +70,6 @@ return {
 			{ "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Files" },
 
 			-- LSP
-			{ "<leader>ls", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Buffer Symbols" },
-			{ "<leader>lS", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace Symbols" },
 			{ "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
 			{ "<leader>lD", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
 

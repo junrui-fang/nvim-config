@@ -53,12 +53,3 @@ keymap("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 keymap("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 keymap("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 keymap("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
--- LSP
--- keymap("n", "K", vim.lsp.buf.hover, { desc = "Hover" })
--- keymap("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
--- keymap("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
--- keymap("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation" })
--- keymap("n", "gr", vim.lsp.buf.references, { desc = "Goto References" })
--- keymap({ "n", "v" }, "<leader>aa", vim.lsp.buf.code_action, { desc = "Code Actions" })
--- keymap("n", "<leader>ar", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
