@@ -1,13 +1,25 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		lazy = true,
+		-- lazy = true,
 
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{ "folke/neodev.nvim", opts = {} },
+		},
+
+		opts = {
+			lua_ls = {
+				settings = {
+					Lua = {
+						completion = {
+							callSnippet = "Replace",
+						},
+						-- diagnostics = { disable = { 'missing-fields' } },
+					},
+				},
+			},
 		},
 
 		config = function()

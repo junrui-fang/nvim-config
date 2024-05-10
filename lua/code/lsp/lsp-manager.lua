@@ -16,20 +16,10 @@ return {
 
 	{
 		"williamboman/mason-lspconfig.nvim",
-		-- event = { "BufReadPre" },
-
 		opts = {
 			ensure_installed = {
-				-- Programming
 				"lua_ls",
-				"ruff_lsp", -- Python
-				"jdtls", -- Java
-				"clangd", -- C & C++
-
-				-- Markup
-				"marksman", -- md
-				"html",
-				"ltex", -- LaTeX
+				"stylua",
 			},
 			auto_install = true,
 		},
