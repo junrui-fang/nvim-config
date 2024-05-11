@@ -1,8 +1,6 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		-- lazy = true,
-
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
@@ -10,19 +8,21 @@ return {
 		},
 
 		opts = {
-			lua_ls = {
-				settings = {
-					Lua = {
-						completion = {
-							callSnippet = "Replace",
+			servers = {
+				lua_ls = {
+					settings = {
+						Lua = {
+							completion = {
+								callSnippet = "Replace",
+							},
+							-- diagnostics = { disable = { "missing-fields" } },
 						},
-						-- diagnostics = { disable = { 'missing-fields' } },
 					},
 				},
 			},
 		},
 
-		config = function()
+		config = function(_, opts)
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
@@ -83,20 +83,28 @@ return {
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-			local lspconfig = require("lspconfig")
-			local navic = require("nvim-navic")
+			-- general on_attach
 			local on_attach = function(client, bufnr)
+				-- code context
 				if client.server_capabilities.documentSymbolProvider then
-					navic.attach(client, bufnr)
+					require("nvim-navic").attach(client, bufnr)
 				end
 			end
 
-			-- Setup language servers
-			lspconfig.lua_ls.setup({
-				on_attach = on_attach,
+			local servers = opts.servers
+			local ensure_installed = vim.tbl_keys(servers or {})
+
+			require("mason-lspconfig").setup({
+				ensure_installed = ensure_installed,
+				handlers = {
+					function(server_name)
+						local server = servers[server_name] or {}
+						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						server.on_attach = on_attach
+						require("lspconfig")[server_name].setup(server)
+					end,
+				},
 			})
-			lspconfig.ruff_lsp.setup({ on_attach = on_attach })
-			lspconfig.marksman.setup({ on_attach = on_attach })
 		end,
 
 		keys = {

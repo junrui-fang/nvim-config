@@ -1,5 +1,14 @@
 return {
 	{
+		"neovim/nvim-lspconfig",
+		opts = {
+			servers = {
+				marksman = {},
+			},
+		},
+	},
+
+	{
 		"iamcco/markdown-preview.nvim",
 		build = function()
 			vim.fn["mkdp#util#install"]()
