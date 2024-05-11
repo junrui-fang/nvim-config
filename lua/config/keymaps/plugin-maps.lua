@@ -46,6 +46,9 @@ wk.register({
 		T = { name = "Toggle" },
 	},
 
+	-- Edit
+	["<leader>;"] = { name = "Edit" },
+
 	-- Tab
 	["<leader><tab>"] = { name = "Tabs" },
 
