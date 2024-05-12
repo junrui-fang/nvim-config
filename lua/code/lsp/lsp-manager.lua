@@ -7,6 +7,9 @@ return {
 			ui = {
 				border = "single",
 			},
+			ensure_installed = {
+				"stylua",
+			},
 		},
 
 		keys = {
@@ -19,7 +22,6 @@ return {
 		opts = {
 			ensure_installed = {
 				"lua_ls",
-				"stylua",
 			},
 			auto_install = true,
 		},
