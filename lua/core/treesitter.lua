@@ -15,11 +15,13 @@ return {
 			---@diagnostic disable-next-line: missing-fields
 			configs.setup({
 				ensure_installed = {
+					"lua",
+					"luadoc",
+					"luap",
+
 					"python",
 					"java",
 					"c",
-					"lua",
-					"luadoc",
 
 					"javascript",
 					"html",
