@@ -17,7 +17,6 @@ wk.register({
 		-- Project
 		p = {
 			name = "Projects",
-			n = { "<cmd> ene <BAR> startinsert <cr>", "New file" },
 			s = { name = "Session" },
 		},
 
@@ -47,7 +46,10 @@ wk.register({
 	},
 
 	-- Edit
-	["<leader>;"] = { name = "Edit" },
+	["<leader>;"] = {
+		name = "Edit",
+		n = { "<cmd> ene <BAR> startinsert <cr>", "New file" },
+	},
 
 	-- Tab
 	["<leader><tab>"] = { name = "Tabs" },
