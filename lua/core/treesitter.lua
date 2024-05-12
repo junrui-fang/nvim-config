@@ -25,12 +25,15 @@ return {
 
 					"javascript",
 					"html",
+					"yaml",
 					"markdown",
 					"markdown_inline",
 
 					"bash",
+					"dockerfile",
 
 					"regex",
+					"latex",
 
 					"vim",
 					"vimdoc",
