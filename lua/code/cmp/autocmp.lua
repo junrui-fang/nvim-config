@@ -20,20 +20,7 @@ return {
 			local cmp = require("cmp")
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 			local cmp_mapping = require("cmp.config.mapping")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
 			local lspkind = require("lspkind")
-
-			-- Use LSP servers
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.ruff_lsp.setup({
-				capabilities = capabilities,
-			})
-			-- lspconfig.marksman.setup({
-			-- 	capabilities = capabilities,
-			-- })
 
 			cmp.setup({
 				snippet = {
