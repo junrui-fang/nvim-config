@@ -25,6 +25,7 @@ return {
 
 					"javascript",
 					"html",
+					"css",
 					"yaml",
 					"markdown",
 					"markdown_inline",
