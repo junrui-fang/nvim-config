@@ -44,7 +44,6 @@ return {
 					map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Buffer Symbols")
 					map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
 
-					map("<leader>ar", vim.lsp.buf.rename, "Rename")
 					map("<leader>aa", vim.lsp.buf.code_action, "Code Action")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
