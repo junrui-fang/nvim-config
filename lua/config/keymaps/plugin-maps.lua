@@ -29,7 +29,11 @@ wk.register({
 		R = { name = "Replace", mode = { "n", "x" } },
 
 		-- Git
-		g = { name = "Git", mode = { "n", "x" } },
+		g = {
+			name = "Git",
+			mode = { "n", "x" },
+			w = { name = "worktree" },
+		},
 
 		-- LSP
 		l = { name = "LSP" },
