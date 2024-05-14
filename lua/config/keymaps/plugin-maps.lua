@@ -64,4 +64,6 @@ wk.register({
 
 	-- Code Runner
 	["<leader>."] = { name = "Code Runner", mode = "n" },
+	-- Compiler
+	["<leader>-"] = { name = "Compiler", mode = "n" },
 })
