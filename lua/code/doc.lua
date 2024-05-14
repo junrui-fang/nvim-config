@@ -47,4 +47,11 @@ return {
 			{ "<leader>dS", "<cmd>DevdocsOpenFloat<cr>", desc = "Devdocs Search other langs" },
 		},
 	},
+
+	-- HTML code documentations
+	{
+		"Zeioth/dooku.nvim",
+		cmd = { "DookuGenerate", "DookuOpen", "DookuAutoSetup" },
+		opts = {},
+	},
 }
