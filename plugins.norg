@@ -1,5 +1,7 @@
 - AI
 -- [codeium.vim]{https://github.com/Exafunction/codeium.vim}
+-- [sg.nvim]{https://github.com/sourcegraph/sg.nvim}
+-- [wtf.nvim]{https://github.com/piersolenski/wtf.nvim}
 
 - Navigation
 -- ( ) [harpoon]{https://github.com/ThePrimeagen/harpoon/tree/harpoon2}
@@ -9,3 +11,10 @@
 
 - Command Palette
 -- ( ) [legendary.nvim]{https://github.com/mrjones2014/legendary.nvim}
+
+- UI
+-- [pigeon]{https://github.com/Pheon-Dev/pigeon}
+
+- Assembly
+-- [godbolt]{https://github.com/p00f/godbolt.nvim}
+-- [compiler-exploer]{https://github.com/krady21/compiler-explorer.nvim}
