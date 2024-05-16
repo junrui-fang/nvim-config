@@ -1,56 +1,52 @@
 return {
-	{
-		"nvim-telescope/telescope.nvim",
-		keys = {
-			{
-				"<leader>sC",
-				function()
-					require("telescope.builtin").colorscheme({ enable_preview = true })
-				end,
-				desc = "Colorscheme",
-			},
-		},
-	},
+  {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      {
+        "<leader>sC",
+        function() require("telescope.builtin").colorscheme({ enable_preview = true }) end,
+        desc = "Colorscheme",
+      },
+    },
+  },
 
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("tokyonight-moon")
-		end,
-		opts = {
-			style = "moon",
-			transparent = true,
-			styles = {
-				sidebars = "transparent",
-				floats = "transparent",
-			},
-		},
-	},
+  {
+    "folke/tokyonight.nvim",
+    priority = 1000,
+    init = function() vim.cmd.colorscheme("tokyonight-moon") end,
+    opts = {
+      style = "moon",
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
 
-	{
-		"catppuccin/nvim",
-		lazy = true,
+  {
+    "catppuccin/nvim",
+    lazy = true,
 
-		name = "catppuccin",
-		priority = 1000,
+    name = "catppuccin",
+    priority = 1000,
 
-		opts = {
-			transparent_background = true,
+    opts = {
+      transparent_background = true,
 
-			integrations = {
-				-- https://github.com/catppuccin/nvim#integrations
-				-- https://www.lazyvim.org/plugins/colorscheme#catppuccin
+      integrations = {
+        -- https://github.com/catppuccin/nvim#integrations
+        -- https://www.lazyvim.org/plugins/colorscheme#catppuccin
 
-				neotree = false,
+        neotree = false,
 
-				noice = false,
-				notify = false,
+        noice = false,
+        notify = false,
 
-				which_key = false,
+        which_key = false,
 
-				indent_blankline = { enabled = true },
-			},
-		},
-	},
+        indent_blankline = { enabled = true },
+      },
+    },
+  },
 }

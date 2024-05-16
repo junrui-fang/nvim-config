@@ -41,11 +41,9 @@ keymap("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
 keymap("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 local diagnostic_goto = function(next, severity)
-	local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-	severity = severity and vim.diagnostic.severity[severity] or nil
-	return function()
-		go({ severity = severity })
-	end
+  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
+  severity = severity and vim.diagnostic.severity[severity] or nil
+  return function() go({ severity = severity }) end
 end
 keymap("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 keymap("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })

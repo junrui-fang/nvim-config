@@ -1,11 +1,9 @@
 return {
-	"AckslD/swenv.nvim",
-	ft = "python",
-	config = function()
-		require("swenv").setup({
-			post_set_venv = function()
-				vim.cmd("LspRestart")
-			end,
-		})
-	end,
+  "AckslD/swenv.nvim",
+  ft = "python",
+  config = function()
+    require("swenv").setup({
+      post_set_venv = function() vim.cmd("LspRestart") end,
+    })
+  end,
 }

@@ -1,12 +1,12 @@
 return {
-	{
-		"folke/zen-mode.nvim",
-		cmd = "ZenMode",
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
 
-		opts = {},
+    opts = {},
 
-		keys = {
-			{ "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" },
-		},
-	},
+    keys = {
+      { "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" },
+    },
+  },
 }

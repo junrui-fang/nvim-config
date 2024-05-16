@@ -1,25 +1,25 @@
 return {
-	{
-		"SmiteshP/nvim-navic",
-		dependencies = { "neovim/nvim-lspconfig" },
-		lazy = true,
-	},
+  {
+    "SmiteshP/nvim-navic",
+    dependencies = { "neovim/nvim-lspconfig" },
+    lazy = true,
+  },
 
-	-- Highlight uses of the word
-	{
-		"RRethy/vim-illuminate",
-		enabled = false,
-		event = "BufReadPost",
-	},
+  -- Highlight uses of the word
+  {
+    "RRethy/vim-illuminate",
+    enabled = false,
+    event = "BufReadPost",
+  },
 
-	-- Preview definition, implementation, etc.
-	{
-		"rmagatti/goto-preview",
-		keys = "gp",
-		config = function()
-			require("goto-preview").setup({
-				default_mappings = true,
-			})
-		end,
-	},
+  -- Preview definition, implementation, etc.
+  {
+    "rmagatti/goto-preview",
+    keys = "gp",
+    config = function()
+      require("goto-preview").setup({
+        default_mappings = true,
+      })
+    end,
+  },
 }

@@ -1,31 +1,31 @@
 return {
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		init = function()
-			vim.o.timeout = true
-			vim.o.timeoutlen = 300
-		end,
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
 
-		opts = {
-			window = {
-				border = "single",
-			},
+    opts = {
+      window = {
+        border = "single",
+      },
 
-			triggers_nowait = {
-				-- marks
-				-- "`",
-				-- "'",
-				"g`",
-				"g'",
+      triggers_nowait = {
+        -- marks
+        -- "`",
+        -- "'",
+        "g`",
+        "g'",
 
-				-- registers
-				'"',
-				"<c-r>",
+        -- registers
+        '"',
+        "<c-r>",
 
-				-- spelling
-				"z=",
-			},
-		},
-	},
+        -- spelling
+        "z=",
+      },
+    },
+  },
 }

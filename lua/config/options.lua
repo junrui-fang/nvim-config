@@ -41,12 +41,12 @@ vim.opt.list = true -- Show some invisible characters
 vim.opt.guicursor = "i:block"
 vim.g.have_nerd_font = true
 vim.opt.fillchars = {
-	eob = " ",
-	foldopen = "",
-	foldclose = "",
-	-- fold = " ",
-	-- foldsep = " ",
-	-- diff = "╱",
+  eob = " ",
+  foldopen = "",
+  foldclose = "",
+  -- fold = " ",
+  -- foldsep = " ",
+  -- diff = "╱",
 }
 
 -- TODO: folding options

@@ -1,11 +1,11 @@
 return {
-	{
-		"ThePrimeagen/vim-be-good",
-		cmd = "VimBeGood",
-	},
+  {
+    "ThePrimeagen/vim-be-good",
+    cmd = "VimBeGood",
+  },
 
-	{
-		"tjdevries/train.nvim",
-		cmd = { "TrainUpDown", "TrainWord", "TrainTextObj" },
-	},
+  {
+    "tjdevries/train.nvim",
+    cmd = { "TrainUpDown", "TrainWord", "TrainTextObj" },
+  },
 }
