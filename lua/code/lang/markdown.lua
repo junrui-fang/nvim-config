@@ -27,11 +27,13 @@ return {
 
   -- UI
   {
-    "lukas-reineke/headlines.nvim",
-    enabled = false,
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    ft = { "markdown", "norg" },
-
-    opts = {},
+    "MeanderingProgrammer/markdown.nvim",
+    name = "render-markdown", -- if another plugin named markdown.nvim
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ft = "markdown",
+    config = function() require("render-markdown").setup({}) end,
+    keys = {
+      { "<leader>um", "<cmd>RenderMarkdownToggle<cr>", ft = "markdown", desc = "Markdown Render Toggle" },
+    },
   },
 }

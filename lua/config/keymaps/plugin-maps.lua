@@ -49,8 +49,8 @@ wk.register({
     -- Tools
     t = { name = "Tools", mode = { "n", "x" } },
 
-    -- Toggle
-    T = { name = "Toggle" },
+    -- UI
+    u = { name = "UI" },
   },
 
   -- Edit
