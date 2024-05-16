@@ -21,12 +21,14 @@ return {
 
           "python",
           "java",
+					"sql",
           "c",
 
           "javascript",
           "html",
           "css",
           "yaml",
+					"toml",
           "markdown",
           "markdown_inline",
 
