@@ -8,7 +8,7 @@ keymap("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" }
 
 -- Easier closing & quitting
 keymap("n", "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
-keymap("n", "<leader>c", "<cmd>bd<cr>", { desc = "Close" })
+keymap("n", "<leader>c", "<cmd>bd!<cr>", { desc = "Close" })
 
 -- Windows
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
