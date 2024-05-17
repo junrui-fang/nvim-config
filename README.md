@@ -7,6 +7,7 @@
 ### Repos
 
 - [Kickstart](https://github.com/nvim-lua/kickstart.nvim/blob/6f6f38a6b5059787d8d92b313f6e1b2c722389b0/init.lua#L629)
+  - [TJ](https://github.com/tjdevries/config.nvim)
 - [LazyVim](https://github.com/LazyVim/LazyVim)
 - [AstroVim](https://github.com/AstroNvim/AstroNvim)
   - [Astro Community](https://github.com/AstroNvim/AstroCommunity?tab=readme-ov-file)
