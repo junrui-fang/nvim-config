@@ -1,5 +1,7 @@
 # Ray's Neovim Config
 
+![screenshot](./media/screenshot.jpeg)
+
 ## References
 
 ### Repos
