@@ -8,6 +8,7 @@ return {
     },
   },
 
+  -- language specific tooling
   {
     "nanotee/sqls.nvim",
     lazy = true,

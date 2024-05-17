@@ -106,7 +106,11 @@ return {
 
           ["sqls"] = function()
             require("lspconfig").sqls.setup({
-              on_attach = function(client, bufnr) require("sqls").on_attach(client, bufnr) end,
+              capabilities = vim.tbl_deep_extend("force", {}, capabilities, capabilities or {}),
+              on_attach = function(client, bufnr)
+                on_attach(client, bufnr)
+                require("sqls").on_attach(client, bufnr)
+              end,
             })
           end,
         },
