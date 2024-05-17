@@ -24,7 +24,7 @@ return {
     },
 
     keys = {
-      "<C-'>",
+      { "<C-'>" },
       { "<M-1>", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "Horizional Terminal" },
       { "<M-2>", "<cmd>ToggleTerm direction=vertical<cr>", desc = "Vertical Terminal" },
       { "<M-3>", "<cmd>ToggleTerm direction=float<cr>", desc = "Float Terminal" },
