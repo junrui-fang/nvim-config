@@ -3,6 +3,15 @@
 -- [sg.nvim]{https://github.com/sourcegraph/sg.nvim}
 -- [wtf.nvim]{https://github.com/piersolenski/wtf.nvim}
 
+- Linter & Formatter
+-- [mason-bridge]{https://github.com/frostplexx/mason-bridge.nvim?tab=readme-ov-file#default-configuration}
+
+- Markdown
+-- [markdown.nvim]{https://github.com/tadmccorkle/markdown.nvim}
+
+- LaTeX
+-- [luasnip-latex-snippets.nvim]{https://github.com/evesdropper/luasnip-latex-snippets.nvim}
+
 - Navigation
 -- ( ) [harpoon]{https://github.com/ThePrimeagen/harpoon/tree/harpoon2}
 
