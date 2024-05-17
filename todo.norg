@@ -1,12 +1,21 @@
 - ( ) Debug & Test
+
+- ( ) Create submodes
+-- ( ) UI(or other toggles) Options
+-- ( ) Debug & Test
+-- ( ) Git
+
 - ( ) AI
+
 - ( ) Data Science
 - ( ) LaTeX
 -- [alpha2phi]{https://alpha2phi.medium.com/modern-neovim-configuration-recipes-d68b16537698#b68c}
+
 - ( ) Image preview
+
 - ( ) install script
 
-- Toggle
-- ( ) auto format
-- ( ) spelling
-- ( ) conceal
+- ( ) Toggle
+-- ( ) auto format
+-- ( ) spelling
+-- ( ) conceal

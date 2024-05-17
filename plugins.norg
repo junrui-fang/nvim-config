@@ -18,6 +18,8 @@
 - Git
 -- ( ) [Octo.nvim]{https://levelup.gitconnected.com/github-in-neovim-using-octo-nvim-c381d869e358}
 
+- Submode
+-- [hydra]{https://github.com/anuvyklack/hydra.nvim}
 - Command Palette
 -- ( ) [legendary.nvim]{https://github.com/mrjones2014/legendary.nvim}
 
