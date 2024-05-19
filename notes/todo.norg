@@ -19,3 +19,6 @@
 -- ( ) auto format
 -- ( ) spelling
 -- ( ) conceal
+
+- ( ) go language support
+-- ( ) [go.nvim]{https://github.com/ray-x/go.nvim}
