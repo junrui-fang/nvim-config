@@ -12,6 +12,7 @@
 - [AstroVim](https://github.com/AstroNvim/AstroNvim)
   - [Astro Community](https://github.com/AstroNvim/AstroCommunity?tab=readme-ov-file)
 - [LunarVim](https://github.com/lunarvim/lunarvim)
+  - [Christian](https://github.com/ChristianChiarulli/nvim?tab=readme-ov-file)
 
 ### Articles
 
