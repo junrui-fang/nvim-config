@@ -4,7 +4,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
 
     cmd = { "TodoTrouble", "TodoTelescope" },
-    event = { "BufRead" },
+    event = { "BufReadPost" },
 
     opts = {},
 
