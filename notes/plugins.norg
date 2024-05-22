@@ -23,8 +23,9 @@
 -- [lab.nvim]{https://github.com/0x100101/lab.nvim?tab=readme-ov-file#code-runner}
 -- [magma-nvim]{https://github.com/dccsillag/magma-nvim}
 
-- Git
+- Github
 -- ( ) [Octo.nvim]{https://levelup.gitconnected.com/github-in-neovim-using-octo-nvim-c381d869e358}
+-- ( ) [github-notifications.nvim]{https://github.com/rlch/github-notifications.nvim}
 
 - Submode
 -- [hydra]{https://github.com/anuvyklack/hydra.nvim}

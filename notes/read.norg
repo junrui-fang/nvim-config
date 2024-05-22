@@ -4,3 +4,8 @@
 
 - Refactoring
 -- [Neovim Refactoring]{https://medium.com/@alpha2phi/neovim-for-beginners-refactoring-4f517d12a43f}
+
+- Plugin Development
+-- [with plenary.nvim]{https://alpha2phi.medium.com/faster-neovim-plugin-development-with-plenary-nvim-e5ba8dcd12a3}
+-- [writing neovim plugins p1]{https://alpha2phi.medium.com/writing-neovim-plugins-a-beginner-guide-part-i-e169d5fd1a58}
+-- [writing neovim plugins p2]{https://alpha2phi.medium.com/writing-neovim-plugins-a-beginner-guide-part-2-c1afa4a7f1b4}
