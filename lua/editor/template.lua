@@ -5,6 +5,7 @@ return {
     ft = {
       "html",
       "py",
+      "lua",
       "markdown",
     },
 
@@ -15,6 +16,7 @@ return {
       patterns = {
         "LICENSE",
         "python",
+        "lua",
 
         "html",
         -- "index.html",
