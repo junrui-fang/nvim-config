@@ -30,6 +30,7 @@ vim.opt.smartcase = true -- Don't ignore case with capitals
 -- UI options
 vim.opt.scrolloff = 0
 vim.opt.cmdheight = 0 -- 0 for noice.nvim
+vim.opt.laststatus = 0
 vim.opt.conceallevel = 1 -- enable for VimTex
 vim.opt.number = true
 vim.opt.relativenumber = true
