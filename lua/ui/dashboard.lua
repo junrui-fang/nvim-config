@@ -54,5 +54,14 @@ return {
 
   keys = {
     { "<leader>sd", "<cmd>Alpha<cr>", desc = "Dashboard" },
+    {
+      "<leader>c",
+      function()
+        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+        require("utils.buffer").close(0)
+        if not bufs[2] then require("alpha").start() end
+      end,
+      desc = "Close",
+    },
   },
 }
