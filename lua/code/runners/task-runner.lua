@@ -18,7 +18,11 @@ return {
     },
 
     opts = {
-      task_list = { direction = "bottom" },
+      task_list = {
+        direction = "bottom",
+        max_height = { 50, 0.37 },
+        min_height = 8,
+      },
     },
 
     keys = {
