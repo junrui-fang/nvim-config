@@ -16,7 +16,10 @@ return {
       "OverseerTaskAction ",
       "OverseerClearCache",
     },
-    opts = {},
+
+    opts = {
+      task_list = { direction = "bottom" },
+    },
 
     keys = {
       { "<leader>>>", "<cmd>OverseerToggle<cr>", desc = "Toggle" },
