@@ -1,9 +1,8 @@
 return {
   {
     "Zeioth/compiler.nvim",
-    dependencies = {
-      { "stevearc/overseer.nvim", opts = {} },
-    },
+    dependencies = "stevearc/overseer.nvim",
+
     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
     opts = {},
 

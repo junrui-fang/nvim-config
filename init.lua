@@ -23,6 +23,7 @@ require("lazy").setup({
     { import = "code.lsp" },
     { import = "code.cmp" },
     { import = "code.lang" },
+    { import = "code.runners" },
     { import = "code.handlers" },
 
     { import = "ui" },
