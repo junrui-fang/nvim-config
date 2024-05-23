@@ -47,10 +47,10 @@ wk.register({
     r = { name = "Refactor", mode = { "n", "x" } },
 
     -- Tools
-    t = { name = "Tools", mode = { "n", "x" } },
+    u = { name = "Utils", mode = { "n", "x" } },
 
     -- UI
-    u = { name = "UI" },
+    U = { name = "UI" },
   },
 
   -- Edit
@@ -66,4 +66,6 @@ wk.register({
   ["<leader>."] = { name = "Code Runner", mode = "n" },
   -- Compiler
   ["<leader>-"] = { name = "Compiler", mode = "n" },
+	-- Task Runner
+  ["<leader>>"] = { name = "Task Runner", mode = "n" },
 })

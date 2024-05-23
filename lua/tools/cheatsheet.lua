@@ -4,7 +4,7 @@ return {
     keys = {
       -- Integrate navi as the cheatsheet
       {
-        "<leader>tc",
+        "<leader>uc",
 
         function()
           local Terminal = require("toggleterm.terminal").Terminal

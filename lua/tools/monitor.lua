@@ -4,7 +4,7 @@ return {
     keys = {
       -- Integrate Bottom as the system monitor
       {
-        "<leader>tm",
+        "<leader>um",
 
         function()
           local Terminal = require("toggleterm.terminal").Terminal

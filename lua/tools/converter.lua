@@ -5,7 +5,7 @@ return {
     enabled = false,
 
     keys = {
-      { "<leader>td", "<cmd>Pandoc<cr>", desc = "Doc Converter" },
+      { "<leader>ud", "<cmd>Pandoc<cr>", desc = "Doc Converter" },
     },
   },
 
