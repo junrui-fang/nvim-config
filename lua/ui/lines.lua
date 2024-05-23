@@ -23,7 +23,7 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { "diff", "diagnostics" },
+        lualine_c = { "diff", "diagnostics", "overseer" },
         lualine_x = { "filetype" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
