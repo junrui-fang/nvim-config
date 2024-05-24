@@ -20,15 +20,18 @@ return {
           "luap",
 
           "python",
+          "ninja",
+          "rst",
+          "toml",
+
           "java",
-					"sql",
+          "sql",
           "c",
 
           "javascript",
           "html",
           "css",
           "yaml",
-					"toml",
           "markdown",
           "markdown_inline",
 
