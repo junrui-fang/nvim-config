@@ -62,10 +62,12 @@ wk.register({
   -- Tab
   ["<leader><tab>"] = { name = "Tabs" },
 
+  -- Debugger
+  ["<leader>'"] = { name = "Debugger", mode = "n" },
   -- Code Runner
   ["<leader>."] = { name = "Code Runner", mode = "n" },
   -- Compiler
   ["<leader>-"] = { name = "Compiler", mode = "n" },
-	-- Task Runner
+  -- Task Runner
   ["<leader>>"] = { name = "Task Runner", mode = "n" },
 })
