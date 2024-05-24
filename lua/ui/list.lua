@@ -14,4 +14,7 @@ return {
       -- { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
     },
   },
+
+  -- Polish quickfix window
+  { "kevinhwang91/nvim-bqf", ft = "qf", opts = {} },
 }
