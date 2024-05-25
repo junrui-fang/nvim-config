@@ -3,7 +3,16 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                autoImportCompletions = true,
+                autoSearchPaths = true,
+              },
+            },
+          },
+        },
         ruff = {},
       },
     },
