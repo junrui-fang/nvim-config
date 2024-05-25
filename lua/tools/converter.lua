@@ -22,7 +22,7 @@ return {
     end,
 
     keys = {
-      { "<leader>ti", mode = "x", ":Silicon ", desc = "Image of code" },
+      { "<leader>ui", mode = "x", ":Silicon ", desc = "Image of code" },
     },
   },
 }

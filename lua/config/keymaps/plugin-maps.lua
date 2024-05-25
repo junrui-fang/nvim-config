@@ -56,18 +56,23 @@ wk.register({
   -- Edit
   ["<leader>;"] = {
     name = "Edit",
-    n = { "<cmd> ene <BAR> startinsert <cr>", "New file" },
+    mode = { "n", "x" },
+    n = { "<cmd> ene <BAR> startinsert <cr>", "New file", mode = "n" },
   },
 
   -- Tab
   ["<leader><tab>"] = { name = "Tabs" },
 
-  -- Debugger
-  ["<leader>'"] = { name = "Debugger", mode = "n" },
   -- Code Runner
   ["<leader>."] = { name = "Code Runner", mode = "n" },
   -- Compiler
   ["<leader>-"] = { name = "Compiler", mode = "n" },
   -- Task Runner
   ["<leader>>"] = { name = "Task Runner", mode = "n" },
+  -- Debugger
+  ["<leader>'"] = {
+    name = "Debugger",
+    mode = { "n", "x" },
+    s = { desc = "Debug Selection", mode = "x" },
+  },
 })
