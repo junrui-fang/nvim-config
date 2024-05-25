@@ -44,8 +44,26 @@ return {
     },
   },
 
+  -- Virtual Environment
+  {
+    "linux-cultist/venv-selector.nvim",
+    branch = "regexp", -- for new version
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mfussenegger/nvim-dap",
+      "mfussenegger/nvim-dap-python",
+      "nvim-telescope/telescope.nvim",
+    },
+    cmd = { "VenvSelect", "VenvSelectLog" },
+    config = function() require("venv-selector").setup() end,
+    keys = {
+      { "<leader>lv", "<cmd>:VenvSelect<cr>", desc = "Select VirtualEnv", ft = "python" },
+    },
+  },
+
   {
     "AckslD/swenv.nvim",
+    enabled = false,
     ft = "python",
     config = function()
       require("swenv").setup({

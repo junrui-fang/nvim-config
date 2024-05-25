@@ -36,7 +36,7 @@ wk.register({
     },
 
     -- LSP
-    l = { name = "LSP" },
+    l = { name = "Lang" }, -- LSP & language specific
     -- Code
     a = {
       name = "Actions",
