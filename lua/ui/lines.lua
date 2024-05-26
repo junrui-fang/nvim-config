@@ -24,7 +24,14 @@ return {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = { "diff", "diagnostics", "overseer" },
-        lualine_x = { "filetype" },
+        lualine_x = {
+          "filetype",
+          {
+            "swenv",
+            icon = "📦",
+            cond = function() return vim.bo.filetype == "python" end,
+          },
+        },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
