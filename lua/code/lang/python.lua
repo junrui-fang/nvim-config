@@ -47,6 +47,7 @@ return {
   -- Virtual Environment
   {
     "linux-cultist/venv-selector.nvim",
+    enabled = false,
     branch = "regexp", -- for new version
     dependencies = {
       "neovim/nvim-lspconfig",
@@ -63,12 +64,15 @@ return {
 
   {
     "AckslD/swenv.nvim",
-    enabled = false,
+    -- enabled = false,
     ft = "python",
     config = function()
       require("swenv").setup({
         post_set_venv = function() vim.cmd("LspRestart") end,
       })
     end,
+    keys = {
+      { "<leader>lv", "<cmd>lua require('swenv.api').pick_venv()<cr>", desc = "Select VirtualEnv", ft = "python" },
+    },
   },
 }
