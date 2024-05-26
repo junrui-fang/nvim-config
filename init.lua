@@ -27,6 +27,8 @@ require("lazy").setup({
     { import = "code.handlers" },
 
     { import = "ui" },
+    { import = "ui.lines" },
+
     { import = "git" },
     { import = "tools" },
     { import = "editor" },
