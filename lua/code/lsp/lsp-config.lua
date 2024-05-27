@@ -95,6 +95,12 @@ return {
               "Toggle Inlay Hints"
             )
           end
+
+          -- CodeLens
+          if client and client.server_capabilities.codeLensProvider then
+            map("<leader>lc", function() vim.lsp.codelens.refresh() end, "Codelens Refresh")
+            map("<leader>lC", function() vim.lsp.codelens.clear() end, "Codelens Off")
+          end
         end,
       })
 
