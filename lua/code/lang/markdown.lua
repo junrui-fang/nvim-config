@@ -33,7 +33,7 @@ return {
     ft = "markdown",
     config = function() require("render-markdown").setup({}) end,
     keys = {
-      { "<leader>um", "<cmd>RenderMarkdownToggle<cr>", ft = "markdown", desc = "Markdown Render Toggle" },
+      { "<leader>Um", "<cmd>RenderMarkdownToggle<cr>", ft = "markdown", desc = "Markdown Render Toggle" },
     },
   },
 }
