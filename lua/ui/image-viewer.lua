@@ -3,8 +3,7 @@ return {
   dependencies = { "luarocks.nvim" },
   config = function()
     require("image").setup({
-      -- ISSUE: Not working
-      backend = "ueberzug",
+      backend = "kitty",
       max_height_window_percentage = 50,
       hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.svg" },
     })
