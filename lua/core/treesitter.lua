@@ -5,6 +5,11 @@ return {
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "windwp/nvim-ts-autotag",
+      {
+        "LiadOz/nvim-dap-repl-highlights",
+        dependencies = { "mfussenegger/nvim-dap" },
+        opts = {},
+      },
     },
 
     -- event = { "VeryLazy" },
@@ -23,6 +28,7 @@ return {
           "ninja",
           "rst",
           "toml",
+          "dap_repl",
 
           "java",
           "sql",
