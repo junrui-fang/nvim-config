@@ -31,7 +31,11 @@ return {
     name = "render-markdown", -- if another plugin named markdown.nvim
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "markdown",
-    config = function() require("render-markdown").setup({}) end,
+    config = function()
+      require("render-markdown").setup({
+        start_enabled = false,
+      })
+    end,
     keys = {
       { "<leader>Um", "<cmd>RenderMarkdownToggle<cr>", ft = "markdown", desc = "Markdown Render Toggle" },
     },
