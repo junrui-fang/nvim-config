@@ -72,4 +72,31 @@ return {
       -- require("dap-go").setup()
     end,
   },
+
+  {
+    "Weissle/persistent-breakpoints.nvim",
+    event = "BufReadPost",
+    config = function()
+      require("persistent-breakpoints").setup({
+        load_breakpoints_event = { "BufReadPost" },
+      })
+    end,
+    keys = { -- Overwriting nvim-dap's keymaps
+      {
+        "<leader>''",
+        "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>",
+        desc = "Toggle Breakpoint",
+      },
+      {
+        "<leader>'\"",
+        "<cmd>lua require('persistent-breakpoints.api').set_conditional_breakpoint()<cr>",
+        desc = "Set Breakpoint",
+      },
+      {
+        "<leader>'C",
+        "<cmd>lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>",
+        desc = "Clear Breakpoints",
+      },
+    },
+  },
 }
