@@ -33,14 +33,34 @@ return {
 
   {
     "folke/tokyonight.nvim",
+    lazy = true,
     priority = 1000,
-    init = function() vim.cmd.colorscheme("tokyonight-moon") end,
+    -- init = function() vim.cmd.colorscheme("tokyonight-moon") end,
     opts = {
       style = "moon",
       transparent = true,
       styles = {
         sidebars = "transparent",
         floats = "transparent",
+      },
+    },
+  },
+
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000,
+    init = function() vim.cmd.colorscheme("onedark_dark") end,
+    opts = {
+      highlights = {
+        Visual = { fg = "${bg}", bg = "${red}" },
+        NeoTreeDirectoryIcon = { fg = "${red}" },
+        NeoTreeRootName = { fg = "${green}", bold = true },
+      },
+      options = {
+        cursorline = true,
+        terminal_colors = true,
+        transparency = true,
+        lualine_transparency = true,
       },
     },
   },
