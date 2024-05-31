@@ -55,6 +55,8 @@ return {
         Visual = { fg = "${bg}", bg = "${red}" },
         NeoTreeDirectoryIcon = { fg = "${red}" },
         NeoTreeRootName = { fg = "${green}", bold = true },
+        WhichKey = { fg = "${red}" },
+        WhichKeyFloat = { bg = "${bg}" },
       },
       options = {
         cursorline = true,
