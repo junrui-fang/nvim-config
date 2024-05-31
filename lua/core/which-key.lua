@@ -11,6 +11,9 @@ return {
       window = {
         border = "single",
       },
+      layout = {
+        align = "center",
+      },
 
       triggers_nowait = {
         -- marks
