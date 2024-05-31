@@ -9,6 +9,7 @@ return {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
+      "nvim-telescope/telescope-dap.nvim",
     },
 
     cmd = "Telescope",
@@ -45,6 +46,7 @@ return {
     config = function(_, opts)
       require("telescope").setup(opts)
       pcall(require("telescope").load_extension, "fzf")
+      pcall(require("telescope").load_extension("dap"))
       -- pcall(require("telescope").load_extension, "ui-select")
       -- require("telescope").load_extension("projects")
     end,
@@ -72,6 +74,12 @@ return {
       -- LSP
       { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
       { "<leader>lD", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
+      -- Debug
+      { "<leader>'fc", "<cmd>Telescope dap commands<cr>", desc = "Commands" },
+      { "<leader>'fC", "<cmd>Telescope dap configurations<cr>", desc = "Configurations" },
+      { "<leader>'fb", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints" },
+      { "<leader>'fv", "<cmd>Telescope dap variables<cr>", desc = "Variables" },
+      { "<leader>'ff", "<cmd>Telescope dap frames<cr>", desc = "Frames" },
 
       -- Buffers
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },

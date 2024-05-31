@@ -74,5 +74,6 @@ wk.register({
     name = "Debugger",
     mode = { "n", "x" },
     s = { desc = "Debug Selection", mode = "x" },
+    f = { name = "Find" },
   },
 })
