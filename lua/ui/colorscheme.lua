@@ -64,6 +64,8 @@ return {
         BufferCurrentMod = { fg = "${red}" },
         BufferAlternate = { fg = "${blue}" },
         BufferTabpages = { fg = "${green}" },
+        NavicText = { fg = "${red}" },
+				NavicSeparator = { fg = "${blue}" },
       },
       options = {
         cursorline = true,
