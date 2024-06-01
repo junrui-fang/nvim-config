@@ -47,6 +47,7 @@ return {
       require("telescope").setup(opts)
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension("dap"))
+      pcall(require("telescope").load_extension("scope"))
       -- pcall(require("telescope").load_extension, "ui-select")
       -- require("telescope").load_extension("projects")
     end,
@@ -83,6 +84,7 @@ return {
 
       -- Buffers
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
+      { "<leader>bF", "<cmd>Telescope scope buffers<cr>", desc = "Find Buffers in Tabs" },
     },
   },
 }
