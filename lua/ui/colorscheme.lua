@@ -58,6 +58,10 @@ return {
         WhichKey = { fg = "${red}" },
         WhichKeyFloat = { bg = "${bg}" },
         DashboardHeader = { fg = "${red}" },
+        BufferCurrent = { fg = "${red}" },
+        BufferCurrentMod = { fg = "${red}" },
+        BufferAlternate = { fg = "${blue}" },
+        BufferTabpages = { fg = "${green}" },
       },
       options = {
         cursorline = true,
