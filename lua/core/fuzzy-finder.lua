@@ -72,9 +72,6 @@ return {
       { "<leader>gS", "<cmd>Telescope git_stash<cr>", desc = "Stash" },
       { "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Files" },
 
-      -- LSP
-      { "<leader>ld", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Buffer Diagnostics" },
-      { "<leader>lD", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
       -- Debug
       { "<leader>'fc", "<cmd>Telescope dap commands<cr>", desc = "Commands" },
       { "<leader>'fC", "<cmd>Telescope dap configurations<cr>", desc = "Configurations" },
