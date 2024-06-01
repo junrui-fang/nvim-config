@@ -53,6 +53,7 @@ return {
     opts = {
       highlights = {
         Visual = { fg = "${bg}", bg = "${red}" },
+        TermCursor = { bg = "${red}" },
         NeoTreeDirectoryIcon = { fg = "${red}" },
         NeoTreeRootName = { fg = "${green}", bold = true },
         WhichKey = { fg = "${red}" },
