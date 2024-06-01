@@ -6,6 +6,7 @@ return {
     opts = {
       highlight = true,
       lazy_update_context = false,
+      icons = require("utils.icons").kinds,
     },
     config = function(_, opts)
       require("nvim-navic").setup(opts)
