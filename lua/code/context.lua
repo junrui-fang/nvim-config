@@ -3,6 +3,14 @@ return {
     "SmiteshP/nvim-navic",
     dependencies = { "neovim/nvim-lspconfig" },
     lazy = true,
+    opts = {
+      highlight = true,
+      lazy_update_context = false,
+    },
+    config = function(_, opts)
+      require("nvim-navic").setup(opts)
+      vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+    end,
   },
 
   -- Highlight uses of the word

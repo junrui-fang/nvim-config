@@ -44,15 +44,7 @@ return {
       },
 
       tabline = {},
-      winbar = {
-        lualine_c = {
-          {
-            "navic",
-            color_correction = nil,
-            navic_opts = nil,
-          },
-        },
-      },
+      winbar = {},
       inactive_winbar = {},
       extensions = { "lazy", "neo-tree" },
     },
