@@ -4,17 +4,14 @@ return {
     cmd = "Trouble",
     opts = {},
     keys = {
+      { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" },
+      { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
       { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
       {
         "<leader>xX",
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Buffer Diagnostics",
       },
-      { "<leader>lr", "<cmd>Trouble lsp_references<cr>", desc = "References" },
-      { "<leader>lt", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Document Diagnostics (Trouble)" },
-      { "<leader>lT", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
-      -- { "<leader>xL", "<cmd>TroubleToggle loclist<cr>", desc = "Location List (Trouble)" },
-      -- { "<leader>xQ", "<cmd>TroubleToggle quickfix<cr>", desc = "Quickfix List (Trouble)" },
     },
   },
 
