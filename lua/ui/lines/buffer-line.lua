@@ -1,51 +1,59 @@
 return {
-  {
-    "akinsho/bufferline.nvim",
-    -- version = "*",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    event = "BufReadPost",
+  "romgrk/barbar.nvim",
+  dependencies = { "lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons" },
+  init = function() vim.g.barbar_auto_setup = false end,
+  lazy = false,
 
-    opts = {
-      options = {
-        mode = "buffers", -- buffers | tabs
-
-        show_buffer_close_icons = false,
-        show_close_icon = false,
-
-        indicator = { style = "none" },
-        separator_style = "thick", -- "slant" | "slope" | "thick" | "thin" | { "any", "any" },
-        offsets = {
-          {
-            filetype = "neo-tree",
-            text = "File Explorer",
-            highlight = "Directory",
-            text_align = "center",
-          },
-        },
-
-        diagnostics = "nvim_lsp", -- false | "nvim_lsp" | "coc",
-      },
+  opts = {
+    animation = true,
+    auto_hide = false, -- any value >=0 or false
+    tabpages = true,
+    clickable = false,
+    focus_on_close = "previous",
+    highlight_alternate = true,
+    icons = {
+      button = "",
+      modified = { button = "●" },
+      pinned = { button = " ", filename = true },
     },
+    semantic_letters = true,
+    sidebar_filetypes = {
+      ["neo-tree"] = true,
+    },
+  },
 
-    keys = {
-      -- Navigate
-      { "<leader>bj", "<cmd>BufferLineCycleNext<cr>", desc = "Next buffer" },
-      { "<leader>bk", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev buffer" },
-      { "<leader>bb", "<cmd>BufferLinePick<cr>", desc = "Pick a buffer" },
-
-      -- Close buffers
-      { "<leader>bh", "<cmd>BufferLineCloseLeft<cr>", desc = "Close to the left" },
-      { "<leader>bl", "<cmd>BufferLineCloseRight<cr>", desc = "Close to the right" },
-      { "<leader>bo", "<cmd>BufferLineCloseOthers<cr>", desc = "Close other buffers" },
-      { "<leader>bc", "<cmd>BufferLinePickClose<cr>", desc = "Pick a buffer to close" },
-
-      -- Pin
-      { "<leader>bp", "<cmd>BufferLineTogglePin<cr>", desc = "Pin" },
-
-      -- Sort
-      { "<leader>bd", "<cmd>BufferLineSortByRelativeDirectory<cr>", desc = "Sort by relative dirs" },
-      { "<leader>be", "<cmd>BufferLineSortByExtension<cr>", desc = "Sort by extensions" },
-      { "<leader>bt", "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
+  keys = {
+    -- Navigate
+    { "<leader>bj", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
+    { "<leader>bk", "<cmd>BufferPrevious<cr>", desc = "Prev Buffer" },
+    { "<leader>bb", "<cmd>BufferPick<cr>", desc = "Pick a Buffer" },
+    -- Move
+    { "<leader>b<", "<cmd>BufferMovePrevious<cr>", desc = "Move Left" },
+    { "<leader>b>", "<Cmd>BufferMoveNext<CR>", desc = "Move Right" },
+    -- Pin
+    { "<leader>bp", "<cmd>BufferPin<cr>", desc = "Pin" },
+    { "<leader>bP", "<cmd>BufferCloseAllButPinned<cr>", desc = "Close All but Pinned" },
+    -- Sort
+    { "<leader>bd", "<cmd>BufferOrderByDirectory<cr>", desc = "Sort by Directory" },
+    { "<leader>be", "<cmd>BufferOrderByLanguage<cr>", desc = "Sort by Extension" },
+    { "<leader>bn", "<cmd>BufferOrderByName<cr>", desc = "Sort by Name" },
+    { "<leader>bw", "<cmd>BufferOrderByWindowNumber<cr>", desc = "Sort by Window" },
+    -- Close
+    { "<leader>bh", "<cmd>BufferCloseBuffersLeft<cr>", desc = "Close to the left" },
+    { "<leader>bl", "<cmd>BufferCloseBuffersRight<cr>", desc = "Close to the right" },
+    { "<leader>bo", "<cmd>BufferCloseAllButCurrent<cr>", desc = "Close other buffers" },
+    { "<leader>bc", "<cmd>BufferPickDelete<cr>", desc = "Pick a buffer to close" },
+    {
+      "<leader>c",
+      function() -- show dashboard if no buffer left
+        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+        vim.cmd("BufferClose")
+        if not bufs[2] then
+          vim.cmd("silent only")
+          vim.cmd("Dashboard")
+        end
+      end,
+      desc = "Close",
     },
   },
 }

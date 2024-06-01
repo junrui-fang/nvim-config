@@ -39,10 +39,7 @@ end
 
 return {
   "nvimdev/dashboard-nvim",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-    "akinsho/bufferline.nvim",
-  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   event = "VimEnter",
   opts = {
     theme = "doom",
@@ -53,16 +50,5 @@ return {
     },
   },
 
-  keys = {
-    { "<leader>sd", "<cmd>Dashboard<cr>", desc = "Dashboard" },
-    {
-      "<leader>c",
-      function() -- show dashboard if no buffer left
-        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
-        require("utils.buffer").close(0)
-        if not bufs[2] then vim.cmd("Dashboard") end
-      end,
-      desc = "Close",
-    },
-  },
+  keys = { { "<leader>sd", "<cmd>Dashboard<cr>", desc = "Dashboard" } },
 }
