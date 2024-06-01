@@ -48,6 +48,9 @@ return {
       center = buttons,
       footer = footer,
     },
+    hide = {
+      statusline = false, -- leave it to lualine
+    },
   },
 
   keys = { { "<leader>sd", "<cmd>Dashboard<cr>", desc = "Dashboard" } },
