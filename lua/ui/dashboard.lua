@@ -1,65 +1,68 @@
-local header = {
-  [[                                                                       ]],
-  [[                                                                       ]],
-  [[                                                                       ]],
-  [[                                                                       ]],
-  [[                                                                     ]],
-  [[       ████ ██████           █████      ██                     ]],
-  [[      ███████████             █████                             ]],
-  [[      █████████ ███████████████████ ███   ███████████   ]],
-  [[     █████████  ███    █████████████ █████ ██████████████   ]],
-  [[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
-  [[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
-  [[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
-  [[                                                                       ]],
-  [[                                                                       ]],
-  [[                                                                       ]],
+local logo = [[
+                                                                   
+      ████ ██████           █████      ██                    
+     ███████████             █████                            
+     █████████ ███████████████████ ███   ███████████  
+    █████████  ███    █████████████ █████ ██████████████  
+   █████████ ██████████ █████████ █████ █████ ████ █████  
+ ███████████ ███    ███ █████████ █████ █████ ████ █████ 
+██████  █████████████████████ ████ █████ █████ ████ ██████
+]]
+logo = string.rep("\n", 14) .. logo .. "\n" -- paddings
+
+local buttons = {
+  { icon = "  ", desc = "Find File", key = "f", action = "Telescope find_files" },
+  { icon = "󱄽  ", desc = "Grep", key = "/", action = "Telescope live_grep" },
+  { icon = "  ", desc = "Recent", key = "r", action = "Telescope oldfiles" },
+  { icon = "  ", desc = "Session", key = "s", action = [[lua require("persistence").load()]] },
+  { icon = "  ", desc = "New File", key = "n", action = "enew | startinsert" },
+  { icon = "  ", desc = "Config", key = "c", action = "e ~/.config/nvim/init.lua" },
+  { icon = "  ", desc = "Plugins", key = "p", action = "Lazy" },
+  { icon = "  ", desc = "Github", key = "g", action = "!open https://github.com/junrui-fang/nvim-config" },
+  { icon = "  ", desc = "Quit", key = "q", action = "qa" },
 }
+for _, button in ipairs(buttons) do
+  button.key_format = " %s" -- remove default surrounding `[]`
+  button.desc = button.desc .. string.rep(" ", 24) -- paddings
+end
+
+local footer = function()
+  local stats = require("lazy").stats()
+  local plugins = "  " .. stats.loaded .. "/" .. stats.count
+  local profile = "  " .. stats.startuptime .. "ms"
+  return {
+    "", -- padding
+    plugins,
+    profile,
+  }
+end
 
 return {
-  {
-    "goolord/alpha-nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" },
-    -- event = "VimEnter",
-    config = function()
-      local dashboard = require("alpha.themes.dashboard")
-      -- Logo
-      dashboard.section.header.val = header
-      -- Buttons
-      dashboard.section.buttons.val = {
-        dashboard.button("f", " " .. " Find file", "<cmd> Telescope find_files <cr>"),
-        dashboard.button("n", " " .. " New file", "<cmd> ene <BAR> startinsert <cr>"),
-        dashboard.button("r", " " .. " Recent files", "<cmd> Telescope oldfiles <cr>"),
-        dashboard.button("g", "󱄽 " .. " Grep text", "<cmd> Telescope live_grep <cr>"),
-        dashboard.button("s", " " .. " Session Restore ", [[<cmd> lua require("persistence").load() <cr>]]),
-        dashboard.button("c", " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-        dashboard.button("p", " " .. " Plugins", "<cmd> Lazy <cr>"),
-        dashboard.button("q", " " .. " Quit", "<cmd> qa <cr>"),
-      }
-      -- Highlight groups
-      for _, button in ipairs(dashboard.section.buttons.val) do
-        button.opts.hl = "AlphaButtons"
-        button.opts.hl_shortcut = "AlphaShortcut"
-      end
-      dashboard.section.header.opts.hl = "AlphaHeader"
-      dashboard.section.buttons.opts.hl = "AlphaButtons"
-      dashboard.section.footer.opts.hl = "AlphaFooter"
-      -- Layout
-      dashboard.opts.layout[1].val = 8
-      require("alpha").setup(dashboard.opts)
-    end,
+  "nvimdev/dashboard-nvim",
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    "akinsho/bufferline.nvim",
+  },
+  event = "VimEnter",
+  opts = {
+    theme = "doom",
+    config = {
+      header = vim.split(logo, "\n"),
+      center = buttons,
+      footer = footer,
+    },
+  },
 
-    keys = {
-      { "<leader>sd", "<cmd>Alpha<cr>", desc = "Dashboard" },
-      {
-        "<leader>c",
-        function()
-          local bufs = vim.fn.getbufinfo({ buflisted = 1 })
-          require("utils.buffer").close(0)
-          if not bufs[2] then require("alpha").start() end
-        end,
-        desc = "Close",
-      },
+  keys = {
+    { "<leader>sd", "<cmd>Dashboard<cr>", desc = "Dashboard" },
+    {
+      "<leader>c",
+      function() -- show dashboard if no buffer left
+        local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+        require("utils.buffer").close(0)
+        if not bufs[2] then vim.cmd("Dashboard") end
+      end,
+      desc = "Close",
     },
   },
 }

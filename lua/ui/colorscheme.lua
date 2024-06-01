@@ -57,6 +57,7 @@ return {
         NeoTreeRootName = { fg = "${green}", bold = true },
         WhichKey = { fg = "${red}" },
         WhichKeyFloat = { bg = "${bg}" },
+        DashboardHeader = { fg = "${red}" },
       },
       options = {
         cursorline = true,
