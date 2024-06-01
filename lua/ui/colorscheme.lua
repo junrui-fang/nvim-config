@@ -54,6 +54,7 @@ return {
       highlights = {
         Visual = { fg = "${bg}", bg = "${red}" },
         TermCursor = { bg = "${red}" },
+        CursorLineNr = { fg = "${blue}" },
         NeoTreeDirectoryIcon = { fg = "${red}" },
         NeoTreeRootName = { fg = "${green}", bold = true },
         WhichKey = { fg = "${red}" },
