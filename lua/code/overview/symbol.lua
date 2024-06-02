@@ -10,17 +10,6 @@ return {
       },
     },
 
-    keys = {
-      {
-        "<leader>lo",
-        "<cmd>Trouble symbols toggle<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>ll",
-        "<cmd>Trouble lsp toggle focus=true win.position=left<cr>",
-        desc = "LSP Info",
-      },
-    },
+    keys = { { "<leader>lo", "<cmd>Trouble symbols toggle<cr>", desc = "Symbols" } },
   },
 }
