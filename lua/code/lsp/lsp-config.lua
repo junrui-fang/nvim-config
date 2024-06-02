@@ -143,7 +143,7 @@ return {
     end,
 
     keys = {
-      { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
+      { "<leader>lI", "<cmd>LspInfo<cr>", desc = "Server Info" },
     },
   },
 }
