@@ -2,7 +2,16 @@ return {
   {
     "folke/trouble.nvim",
     cmd = "Trouble",
-    opts = {},
+    opts = {
+      open_no_results = true,
+      modes = {
+        diagnostics = {
+          win = { position = "bottom", size = 0.2 },
+          focus = true,
+        },
+      },
+    },
+
     keys = {
       { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" },
       { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
