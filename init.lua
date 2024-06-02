@@ -49,13 +49,13 @@ require("lazy").setup({
     rtp = {
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
-        -- "netrwPlugin",
+        "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        "tutor",
         "zipPlugin",
+        -- "tutor",
+        -- "matchit",
+        -- "matchparen",
       },
     },
   },
