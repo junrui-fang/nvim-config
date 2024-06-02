@@ -25,6 +25,7 @@ require("lazy").setup({
     { import = "code.lang" },
     { import = "code.runners" },
     { import = "code.handlers" },
+    { import = "code.overview" },
 
     { import = "ui" },
     { import = "ui.lines" },

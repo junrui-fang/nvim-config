@@ -2,7 +2,6 @@ return {
   {
     "folke/trouble.nvim",
     opts = {
-      icons = {},
       modes = {
         symbols = {
           win = { position = "left", size = 0.14 },
