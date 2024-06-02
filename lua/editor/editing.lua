@@ -20,6 +20,14 @@ return {
     event = "VeryLazy",
     enabled = vim.fn.has("nvim-0.10.0") == 1,
   },
+  {
+    "LudoPinelli/comment-box.nvim",
+    keys = {
+      { "<leader>;cb", "<cmd>CBccbox<cr>", desc = "Box", mode = { "n", "x" } },
+      { "<leader>;cl", "<cmd>CBllline<cr>", desc = "Line", mode = { "n", "x" } },
+      { "<leader>;cL", "<cmd>CBline<cr>", desc = "Line (Simple)", mode = { "n", "x" } },
+    },
+  },
 
   -- Auto-pairs
   {

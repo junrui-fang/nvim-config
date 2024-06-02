@@ -58,6 +58,7 @@ wk.register({
   ["<leader>;"] = {
     name = "Edit",
     mode = { "n", "x" },
+    c = { name = "Comment" },
     n = { "<cmd> ene <BAR> startinsert <cr>", "New file", mode = "n" },
   },
 
