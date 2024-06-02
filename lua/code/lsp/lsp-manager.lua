@@ -13,7 +13,7 @@ return {
     },
 
     keys = {
-      { "<leader>ll", "<cmd>Mason<cr>", desc = "Language Servers" },
+      { "<leader>lp", "<cmd>Mason<cr>", desc = "Packages" },
     },
   },
 
