@@ -24,10 +24,13 @@ return {
     "LudoPinelli/comment-box.nvim",
     keys = {
       { "<leader>;cb", "<cmd>CBccbox<cr>", desc = "Box", mode = { "n", "x" } },
-      { "<leader>;cl", "<cmd>CBllline<cr>", desc = "Line", mode = { "n", "x" } },
-      { "<leader>;cL", "<cmd>CBline<cr>", desc = "Line (Simple)", mode = { "n", "x" } },
+      { "<leader>;ct", "<cmd>CBllline<cr>", desc = "Title Line", mode = { "n", "x" } },
+      { "<leader>;cl", "<cmd>CBline<cr>", desc = "Simple Line", mode = { "n", "x" } },
+      { "<leader>;cm", "<cmd>CBllbox14<cr>", desc = "Marked", mode = { "n", "x" } },
     },
   },
+
+  -- Show case
 
   -- Auto-pairs
   {
