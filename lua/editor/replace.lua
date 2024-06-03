@@ -10,25 +10,25 @@ return {
 
   keys = {
     {
-      "<leader>;r",
+      "<leader>;rr",
       '<cmd>lua require("spectre").toggle()<cr>',
-      desc = "Replace",
+      desc = "Toggle",
     },
     {
-      "<leader>;w",
+      "<leader>;rw",
       '<cmd>lua require("spectre").open_visual({select_word=true})<cr>',
-      desc = "Replace current word",
+      desc = "Current word",
     },
     {
-      "<leader>;w",
+      "<leader>;rw",
       '<cmd>lua require("spectre").open_visual({select_word=true})<cr>',
       mode = "v",
-      desc = "Replace current word",
+      desc = "Current word",
     },
     {
-      "<leader>;p",
+      "<leader>;rf",
       '<cmd>lua require("spectre").open_file_search({select_word=true})<cr>',
-      desc = "Replace on current file",
+      desc = "On current file",
     },
   },
 }
