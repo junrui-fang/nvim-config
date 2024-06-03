@@ -1,7 +1,6 @@
 return {
   {
     "cvigilv/esqueleto.nvim",
-
     ft = {
       "html",
       "py",
@@ -12,7 +11,6 @@ return {
     opts = {
       directories = { vim.fn.stdpath("config") .. "/skeletons" },
       autouse = true,
-
       patterns = {
         "LICENSE",
         "python",
@@ -23,7 +21,6 @@ return {
 
         "markdown",
       },
-
       -- Advanced options
       advanced = {
         ignored = {}, -- List of glob patterns or function that determines if a file is ignored
