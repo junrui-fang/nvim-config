@@ -8,17 +8,21 @@ return {
     },
   },
 
+  -- Preview with a browser or a webview window
   {
-    "iamcco/markdown-preview.nvim",
-    build = function() vim.fn["mkdp#util#install"]() end,
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
+    "toppair/peek.nvim",
+    build = "deno task --quiet build:fast",
     config = function()
-      vim.g.mkdp_auto_close = 1
-      vim.g.mkdp_theme = "dark"
+      require("peek").setup({
+        app = "webview",
+        theme = "light",
+        syntax = true, -- code block syntax highlight
+      })
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
     end,
     keys = {
-      { "<leader>m", "<cmd>MarkdownPreview<cr>", ft = "markdown", desc = "Markdown Preview" },
+      { "<leader>m", "<cmd>PeekOpen<cr>", ft = "markdown", desc = "Markdown Preview" },
     },
   },
 
