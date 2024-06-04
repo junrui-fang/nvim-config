@@ -29,6 +29,13 @@ return {
     },
   },
 
+  -- Split and Join
+  {
+    "echasnovski/mini.splitjoin",
+    event = { "BufReadPost", "BufNew" },
+    opts = {},
+  },
+
   -- Auto-pairs
   {
     "windwp/nvim-autopairs",
