@@ -72,13 +72,6 @@ return {
       { "<leader>gS", "<cmd>Telescope git_stash<cr>", desc = "Stash" },
       { "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Files" },
 
-      -- Debug
-      { "<leader>'fc", "<cmd>Telescope dap commands<cr>", desc = "Commands" },
-      { "<leader>'fC", "<cmd>Telescope dap configurations<cr>", desc = "Configurations" },
-      { "<leader>'fb", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints" },
-      { "<leader>'fv", "<cmd>Telescope dap variables<cr>", desc = "Variables" },
-      { "<leader>'ff", "<cmd>Telescope dap frames<cr>", desc = "Frames" },
-
       -- Buffers
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
       { "<leader>bF", "<cmd>Telescope scope buffers<cr>", desc = "Find Buffers in Tabs" },

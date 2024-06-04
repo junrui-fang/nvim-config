@@ -73,7 +73,7 @@ wk.register({
   -- Task Runner
   ["<leader>>"] = { name = "Task Runner", mode = "n" },
   -- Debugger
-  ["<leader>'"] = {
+  ["<leader>,"] = {
     name = "Debugger",
     mode = { "n", "x" },
     s = { desc = "Debug Selection", mode = "x" },

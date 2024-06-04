@@ -28,21 +28,21 @@ return {
         },
       })
 
-      vim.keymap.set("n", "<leader>''", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
-      vim.keymap.set("n", "<leader>'c", dap.continue, { desc = "Continue" })
-      vim.keymap.set("n", "<leader>';", dap.run_to_cursor, { desc = "Run to Cursor" })
-      vim.keymap.set("n", "<leader>'l", dap.run_last, { desc = "Run Last" })
-      vim.keymap.set("n", "<leader>'i", dap.step_into, { desc = "Step Into" })
-      vim.keymap.set("n", "<leader>'o", dap.step_out, { desc = "Step Out" })
-      vim.keymap.set("n", "<leader>'O", dap.step_over, { desc = "Step Over" })
-      vim.keymap.set("n", "<leader>'b", dap.step_back, { desc = "Step Back" })
+      vim.keymap.set("n", "<leader>,,", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+      vim.keymap.set("n", "<leader>,c", dap.continue, { desc = "Continue" })
+      vim.keymap.set("n", "<leader>,;", dap.run_to_cursor, { desc = "Run to Cursor" })
+      vim.keymap.set("n", "<leader>,l", dap.run_last, { desc = "Run Last" })
+      vim.keymap.set("n", "<leader>,i", dap.step_into, { desc = "Step Into" })
+      vim.keymap.set("n", "<leader>,o", dap.step_out, { desc = "Step Out" })
+      vim.keymap.set("n", "<leader>,O", dap.step_over, { desc = "Step Over" })
+      vim.keymap.set("n", "<leader>,b", dap.step_back, { desc = "Step Back" })
       vim.keymap.set(
         "n",
-        "<leader>'\"",
+        "<leader>,<",
         function() dap.set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,
         { desc = "Set Breakpoint" }
       )
-      vim.keymap.set("n", "<leader>'u", dapui.toggle, { desc = "UI" })
+      vim.keymap.set("n", "<leader>,u", dapui.toggle, { desc = "UI" })
 
       -- Dap UI setup
       dapui.setup({
@@ -74,6 +74,17 @@ return {
   },
 
   {
+    "nvim-telescope/telescope.nvim",
+    keys = {
+      { "<leader>,fc", "<cmd>Telescope dap commands<cr>", desc = "Commands" },
+      { "<leader>,fC", "<cmd>Telescope dap configurations<cr>", desc = "Configurations" },
+      { "<leader>,fb", "<cmd>Telescope dap list_breakpoints<cr>", desc = "Breakpoints" },
+      { "<leader>,fv", "<cmd>Telescope dap variables<cr>", desc = "Variables" },
+      { "<leader>,ff", "<cmd>Telescope dap frames<cr>", desc = "Frames" },
+    },
+  },
+
+  {
     "Weissle/persistent-breakpoints.nvim",
     event = "BufReadPost",
     config = function()
@@ -83,17 +94,17 @@ return {
     end,
     keys = { -- Overwriting nvim-dap's keymaps
       {
-        "<leader>''",
+        "<leader>,,",
         "<cmd>lua require('persistent-breakpoints.api').toggle_breakpoint()<cr>",
         desc = "Toggle Breakpoint",
       },
       {
-        "<leader>'\"",
+        "<leader>,<",
         "<cmd>lua require('persistent-breakpoints.api').set_conditional_breakpoint()<cr>",
         desc = "Set Breakpoint",
       },
       {
-        "<leader>'C",
+        "<leader>,C",
         "<cmd>lua require('persistent-breakpoints.api').clear_all_breakpoints()<cr>",
         desc = "Clear Breakpoints",
       },
