@@ -1,21 +1,12 @@
 return {
   {
     "danymat/neogen",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-
+    cmd = "Neogen",
     opts = {
       snippet_engine = "luasnip",
       languages = {
-        lua = {
-          template = {
-            annotation_convention = "ldoc",
-          },
-        },
-        python = {
-          template = {
-            annotation_convention = "google_docstrings",
-          },
-        },
+        lua = { template = { annotation_convention = "ldoc" } },
+        python = { template = { annotation_convention = "google_docstrings" } },
       },
     },
 
