@@ -70,6 +70,8 @@ wk.register({
   ["<leader>."] = { name = "Code Runner", mode = "n" },
   -- Compiler
   ["<leader>-"] = { name = "Compiler", mode = "n" },
+  -- Test Runner
+  ["<leader>'"] = { name = "Test", mode = "n" },
   -- Task Runner
   ["<leader>>"] = { name = "Task Runner", mode = "n" },
   -- Debugger
