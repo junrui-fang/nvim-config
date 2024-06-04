@@ -1,10 +1,10 @@
-- ( ) Start
+- (-) Start
 -- ( ) barbar
 -- ( ) gitsigns
 -- ( ) hydra
 -- ( ) treesitter
--- ( ) indent-blankline
 -- ( ) lualine
 -- ( ) mason-lspconfig
 -- ( ) neotest
 -- ( ) nvim-dap
+-- (x) indent-blankline (LspAttach)
