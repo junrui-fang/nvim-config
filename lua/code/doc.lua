@@ -27,9 +27,12 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
     opts = {
+      previewer_cmd = vim.fn.executable("glow") == 1 and "glow" or nil,
+      cmd_args = { "-s", "dark", "-w", "80" },
+      picker_cmd = true,
+      picker_cmd_args = { "-s", "dark", "-w", "80" },
       after_open = function(bufnr) vim.api.nvim_buf_set_keymap(bufnr, "n", "q", ":close<CR>", {}) end,
     },
-
     keys = {
       { "<leader>dd", "<cmd>DevdocsToggle<cr>", desc = "Devdocs Toggle" },
       { "<leader>ds", "<cmd>DevdocsOpenCurrentFloat<cr>", desc = "Devdocs Search" },
