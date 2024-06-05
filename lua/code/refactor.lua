@@ -5,37 +5,47 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
     },
-
     config = function() require("refactoring").setup() end,
-
     keys = {
       {
         "<leader>re",
-        ":Refactor extract ",
+        function() require("refactoring").refactor("Extract Function") end,
         mode = "x",
         desc = "Extract Function",
       },
       {
         "<leader>rf",
-        ":Refactor extract_to_file ",
+        function() require("refactoring").refactor("Extract Function To File") end,
         mode = "x",
         desc = "Extract Function to File",
       },
       {
         "<leader>rv",
-        ":Refactor extract_var ",
+        function() require("refactoring").refactor("Extract Variable") end,
         mode = "x",
         desc = "Extract Variable",
       },
       {
         "<leader>ri",
-        ":Refactor inline_var",
+        function() require("refactoring").refactor("Inline Variable") end,
         mode = { "n", "x" },
         desc = "Inline Variable",
       },
-      { "<leader>rI", ":Refactor inline_func", desc = "Inline Function" },
-      { "<leader>rb", ":Refactor extract_block", desc = "Extract Block" },
-      { "<leader>rB", ":Refactor extract_block_to_file", desc = "Extract Block to File" },
+      {
+        "<leader>rI",
+        function() require("refactoring").refactor("Inline Function") end,
+        desc = "Inline Function",
+      },
+      {
+        "<leader>rb",
+        function() require("refactoring").refactor("Extract Block") end,
+        desc = "Extract Block",
+      },
+      {
+        "<leader>rB",
+        function() require("refactoring").refactor("Extract Block To File") end,
+        desc = "Extract Block to File",
+      },
 
       -- Debug
       {
