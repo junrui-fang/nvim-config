@@ -9,7 +9,6 @@ return {
         python = { template = { annotation_convention = "google_docstrings" } },
       },
     },
-
     keys = {
       { "<leader>df", "<cmd>Neogen func<cr>", desc = "Function" },
       { "<leader>dc", "<cmd>Neogen class<cr>", desc = "Class" },
@@ -25,6 +24,13 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
       "nvim-treesitter/nvim-treesitter",
+    },
+    cmd = {
+      "DevdocsFetch",
+      "DevdocsInstall",
+      "DevdocsUninstall",
+      "DevdocsUpdate",
+      "DevdocsUpdateAll",
     },
     opts = {
       previewer_cmd = vim.fn.executable("glow") == 1 and "glow" or nil,
