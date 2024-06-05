@@ -18,6 +18,7 @@ wk.register({
     p = {
       name = "Projects",
       s = { name = "Session" },
+      t = { name = "Todos" },
     },
 
     -- Buffer
