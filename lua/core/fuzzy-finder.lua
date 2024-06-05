@@ -37,6 +37,13 @@ return {
           case_mode = "smart_case", -- or "ignore_case" or "respect_case"
           -- the default case_mode is "smart_case"
         },
+        undo = {
+          side_by_side = true,
+          layout_strategy = "vertical",
+          layout_config = {
+            preview_height = 0.8,
+          },
+        },
         -- ["ui-select"] = {
         -- 	require("telescope.themes").get_dropdown(),
         -- },
@@ -48,6 +55,7 @@ return {
       pcall(require("telescope").load_extension, "fzf")
       pcall(require("telescope").load_extension("dap"))
       pcall(require("telescope").load_extension("scope"))
+      pcall(require("telescope").load_extension, "undo")
       -- pcall(require("telescope").load_extension, "ui-select")
       -- require("telescope").load_extension("projects")
     end,
