@@ -34,6 +34,7 @@ wk.register({
       name = "Git",
       mode = { "n", "x" },
       b = { name = "Blame" },
+      h = { name = "GitHub" },
       w = { name = "Worktree" },
     },
 

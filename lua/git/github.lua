@@ -3,12 +3,12 @@ return {
     "akinsho/toggleterm.nvim",
     keys = {
       {
-        "<leader>gh",
+        "<leader>ghh",
         function()
           local open_term = require("utils.terminal").open_term
           open_term("gh dash")
         end,
-        desc = "Github Dashboard",
+        desc = "GitHub Dashboard",
       },
     },
   },
