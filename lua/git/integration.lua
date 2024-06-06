@@ -56,7 +56,7 @@ return {
 
       map("n", "<leader>gp", gs.preview_hunk, { desc = "Preview Hunk" })
       map("n", "<leader>gl", function() gs.blame_line({ full = true }) end, { desc = "Blame" })
-      map("n", "<leader>gt", gs.toggle_current_line_blame, { desc = "Toggle Blame" })
+      map("n", "<leader>gbt", gs.toggle_current_line_blame, { desc = "Toggle Blame" })
 
       map("n", "<leader>gd", gs.diffthis, { desc = "diff against index" })
       map("n", "<leader>gD", function() gs.diffthis("~") end, { desc = "diff against last commit" })
