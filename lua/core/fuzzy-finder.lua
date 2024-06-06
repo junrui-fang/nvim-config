@@ -73,14 +73,14 @@ return {
       { "<leader>fl", "<cmd>Telescope resume<cr>", desc = "Last Search" },
 
       -- Git
-      { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Branches" },
+      { "<leader>gB", "<cmd>Telescope git_branches<cr>", desc = "Branches" },
       { "<leader>gc", "<cmd>Telescope git_bcommits<cr>", desc = "Buffer Commits" },
       { "<leader>gC", "<cmd>Telescope git_commits<cr>", desc = "Commits" },
       { "<leader>gs", "<cmd>Telescope git_status<cr>", desc = "Status" },
       { "<leader>gS", "<cmd>Telescope git_stash<cr>", desc = "Stash" },
       { "<leader>gf", "<cmd>Telescope git_files<cr>", desc = "Files" },
 
-      -- Buffers
+      -- Buffer
       { "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffers" },
       { "<leader>bF", "<cmd>Telescope scope buffers<cr>", desc = "Find Buffers in Tabs" },
     },

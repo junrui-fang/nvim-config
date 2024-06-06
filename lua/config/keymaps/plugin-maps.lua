@@ -33,7 +33,8 @@ wk.register({
     g = {
       name = "Git",
       mode = { "n", "x" },
-      w = { name = "worktree" },
+      b = { name = "Blame" },
+      w = { name = "Worktree" },
     },
 
     -- LSP
