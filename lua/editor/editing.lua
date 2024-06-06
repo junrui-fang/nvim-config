@@ -32,9 +32,8 @@ return {
   -- Auto-pairs
   {
     "windwp/nvim-autopairs",
-    dependencies = { "hrsh7th/nvim-cmp" },
     event = "InsertEnter",
-    config = function() require("nvim-autopairs").setup({}) end,
+    config = true,
   },
 
   -- Auto-saving
