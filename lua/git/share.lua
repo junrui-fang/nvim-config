@@ -15,4 +15,15 @@ return {
       { "<leader>ghI", "<cmd>GistsList<cr>", desc = "Gist List" },
     },
   },
+
+  -- Generate sharable file permalinks
+  {
+    "linrongbin16/gitlinker.nvim",
+    cmd = "GitLink",
+    opts = {},
+    keys = {
+      { "<leader>ghl", "<cmd>GitLink<cr>", mode = { "n", "v" }, desc = "Yank git link" },
+      { "<leader>ghL", "<cmd>GitLink!<cr>", mode = { "n", "v" }, desc = "Open git link" },
+    },
+  },
 }
