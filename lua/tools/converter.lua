@@ -10,19 +10,19 @@ return {
   },
 
   -- Code snippet to image
-  {
-    "krivahtoo/silicon.nvim",
-    build = "./install.sh",
-
-    config = function()
-      require("silicon").setup({
-        font = "FantasqueSansMono Nerd Font=16",
-        theme = "Monokai Extended",
-      })
-    end,
-
+  { -- ISSUE: Neovim freeze when using this plugin
+    "mistricky/codesnap.nvim",
+    build = "make build_generator",
+    cmd = { "CodeSnap", "CodeSnapSave", "CodeSnapHighlight", "CodeSnapSaveHighlight" },
+    opts = {
+      save_path = vim.fn.getcwd() .. "/media",
+      bg_theme = "default",
+      watermark = "watermark here",
+      mac_window_bar = false,
+    },
     keys = {
-      { "<leader>ui", mode = "x", ":Silicon ", desc = "Image of code" },
+      { "<leader>uc", ":'<,'>CodeSnap<cr>", mode = "x", desc = "Copy code snapshot" },
+      { "<leader>us", ":'<,'>CodeSnapSave<cr>", mode = "x", desc = "Save code snapshot" },
     },
   },
 }
