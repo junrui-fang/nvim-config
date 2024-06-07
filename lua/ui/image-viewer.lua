@@ -1,6 +1,6 @@
 return {
   "3rd/image.nvim",
-  dependencies = { "luarocks.nvim" },
+  dependencies = { "vhyrro/luarocks.nvim", opts = { rocks = { "magick" } } },
   ft = { "markdown", "norg" },
   config = function()
     require("image").setup({
