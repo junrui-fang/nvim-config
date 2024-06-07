@@ -95,13 +95,9 @@ return {
         sources = cmp.config.sources({
           { name = "path" },
         }, {
-          {
-            name = "cmdline",
-            option = {
-              ignore_cmds = { "Man", "!" },
-            },
-          },
+          { name = "cmdline" },
         }),
+        matching = { disallow_symbol_nonprefix_matching = false },
       })
 
       -- Insert `(` after select function or method item
