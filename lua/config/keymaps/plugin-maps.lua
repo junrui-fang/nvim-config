@@ -45,7 +45,7 @@ wk.register({
     a = {
       name = "Actions",
       mode = { "n", "x" },
-      r = { vim.lsp.buf.rename, "Rename" },
+      -- r = { vim.lsp.buf.rename, "Rename" },
     },
     d = { name = "Doc" },
     r = { name = "Refactor", mode = { "n", "x" } },
