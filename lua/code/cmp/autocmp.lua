@@ -28,7 +28,6 @@ return {
           -- Snippet engine to use
           expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
-        completion = { completeopt = "menu,menuone,noinsert" },
 
         -- Pretty symbols
         formatting = {
