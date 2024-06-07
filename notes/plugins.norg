@@ -12,8 +12,8 @@
 - LaTeX
 -- [luasnip-latex-snippets.nvim]{https://github.com/evesdropper/luasnip-latex-snippets.nvim}
 
-- Navigation
--- ( ) [harpoon]{https://github.com/ThePrimeagen/harpoon/tree/harpoon2}
+- (x) Navigation
+-- (x) [harpoon]{https://github.com/ThePrimeagen/harpoon/tree/harpoon2}
 
 - LSP
 -- [navigator]{https://github.com/ray-x/navigator.lua}

@@ -20,6 +20,7 @@ wk.register({
       s = { name = "Session" },
       t = { name = "Todos" },
     },
+    j = { name = "Jump" },
 
     -- Buffer
     b = { name = "Buffers" },
