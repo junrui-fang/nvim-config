@@ -16,7 +16,6 @@ return {
       filesystem = { follow_current_file = { enabled = true } },
       window = {
         mappings = {
-          -- ISSUE: Image support not working
           ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
         },
       },
