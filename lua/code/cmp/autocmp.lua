@@ -7,6 +7,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "petertriho/cmp-git",
 
       "L3MON4D3/LuaSnip",
       "saadparwaiz1/cmp_luasnip",
@@ -78,6 +79,7 @@ return {
           { name = "buffer" },
         }),
       })
+      require("cmp_git").setup()
 
       -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline({ "/", "?" }, {
