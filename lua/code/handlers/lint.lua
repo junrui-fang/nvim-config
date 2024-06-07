@@ -1,8 +1,7 @@
 return {
   {
     "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
-
+    event = "LspAttach",
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
