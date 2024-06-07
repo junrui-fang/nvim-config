@@ -1,5 +1,5 @@
-- ( ) [completion]{https://github.com/AstroNvim/astrocommunity/tree/a34848c1f7030288b5c37a8022e2cff79f0a574e/lua/astrocommunity/completion}
--- ( ) [cmp-git]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/completion/cmp-git}
+- (-) [completion]{https://github.com/AstroNvim/astrocommunity/tree/a34848c1f7030288b5c37a8022e2cff79f0a574e/lua/astrocommunity/completion}
+-- (x) [cmp-git]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/completion/cmp-git}
 -- ( ) [codeium]{https://github.com/AstroNvim/astrocommunity/tree/a34848c1f7030288b5c37a8022e2cff79f0a574e/lua/astrocommunity/completion/codeium-vim}
 -- ( ) [copilot]{https://github.com/AstroNvim/astrocommunity/tree/a34848c1f7030288b5c37a8022e2cff79f0a574e/lua/astrocommunity/completion/copilot-cmp}
 -- ( ) [Tabnine]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/completion/tabnine-nvim}
