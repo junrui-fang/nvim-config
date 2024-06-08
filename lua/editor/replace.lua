@@ -2,10 +2,7 @@ return {
   "nvim-pack/nvim-spectre",
   build = false,
   cmd = "Spectre",
-  opts = {
-    -- open_cmd = "noswapfile vnew",
-  },
-
+  opts = {},
   keys = {
     {
       "<leader>;rr",
@@ -18,10 +15,10 @@ return {
       desc = "Current word",
     },
     {
-      "<leader>;rw",
-      '<cmd>lua require("spectre").open_visual({select_word=true})<cr>',
+      "<leader>;rs",
+      '<esc><cmd>lua require("spectre").open_visual()<cr>',
       mode = "v",
-      desc = "Current word",
+      desc = "Selected",
     },
     {
       "<leader>;rf",
