@@ -11,8 +11,7 @@ return {
         opts = {},
       },
     },
-
-    -- event = { "VeryLazy" },
+    event = "VeryLazy",
 
     config = function()
       local configs = require("nvim-treesitter.configs")
