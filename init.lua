@@ -29,6 +29,7 @@ require("lazy").setup({
 
     { import = "ui" },
     { import = "ui.lines" },
+    { import = "ui.colorscheme" },
 
     { import = "git" },
     { import = "tools" },
