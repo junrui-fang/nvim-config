@@ -32,9 +32,19 @@ return {
   },
 
   {
+    "diegoulloao/neofusion.nvim",
+    priority = 1000,
+    init = function() vim.cmd.colorscheme("neofusion") end,
+    opts = {
+      transparent_mode = true,
+    },
+  },
+
+  {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
-    init = function() vim.cmd.colorscheme("onedark_dark") end,
+    enabled = false,
+    -- init = function() vim.cmd.colorscheme("onedark_dark") end,
     opts = {
       highlights = {
         Visual = { fg = "${bg}", bg = "${red}" },
