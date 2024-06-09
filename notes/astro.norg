@@ -7,3 +7,7 @@
 - (-) [Debug]{https://github.com/AstroNvim/astrocommunity/tree/a34848c1f7030288b5c37a8022e2cff79f0a574e/lua/astrocommunity/debugging}
 -- (x) [Better quickfix]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/debugging/nvim-bqf}
 -- ( ) [Log creation]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/debugging/nvim-chainsaw}
+
+- ( ) [Programming language support]{https://github.com/AstroNvim/astrocommunity/tree/main/lua/astrocommunity/programming-language-support}
+
+- ( ) [Remote development plugins]{https://github.com/AstroNvim/astrocommunity?tab=readme-ov-file}
