@@ -21,7 +21,7 @@ return {
         sections = {
           lualine_a = { "mode" },
           lualine_b = { "branch" },
-          lualine_c = { "diff", "diagnostics", "overseer" },
+          lualine_c = { "diff", "diagnostics" },
           lualine_x = {
             "filetype",
             {
