@@ -3,7 +3,7 @@ return {
     "folke/todo-comments.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
-    event = { "BufReadPost", "BufNew" },
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
     opts = {},
     keys = {
       { "<leader>ptt", "<cmd>Trouble todo filter = {tag = {TODO}} focus=true<cr>", desc = "TODO" },
