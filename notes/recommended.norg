@@ -1,2 +1,52 @@
+- File Explorer
+-- neo-tree.nvim
+
 - Navigation
 -- harpoon
+-- flash.nvim
+
+- Project Overview
+-- trouble.nvim
+
+- Runners
+-- code runner: sniprun
+-- compiler: compiler.nvim
+-- task runner: overseer
+
+- Code Context
+-- nvim-navic
+
+- Documentation
+-- neogen
+
+- Format
+-- fold: nvim-ufo
+
+- Refactor
+-- rename: inc-rename.nvim
+
+- Edit
+-- auto-save: auto-save.nvim
+-- replace: nvim-spectre
+-- split & join: treesj
+-- template: esqueleto.nvim
+-- undo: undotree
+
+- Git
+-- ignore: gitignore.nvim
+-- share: gist.nvim, gitlinker.nvim
+-- blame: blame.nvim
+
+- Project
+-- note: neorg
+
+- Tools
+-- code snap to picture: codesnap.nvim
+-- browser: firenvim
+
+- Color
+-- picker: ccc.nvim
+-- colorscheme: onedarkpro.nvim neofusion.nvim
+
+- UI
+-- image viewer: image.nvim

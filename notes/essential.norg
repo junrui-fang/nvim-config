@@ -1,6 +1,48 @@
 - Fuzzy Finder: telescope
 
+- Keymap: which-key.nvim
+
+- Treesitter: nvim-treesitter
+
 - LSP:
 -- lspconfig
 -- mason
 
+- Completion
+-- nvim-cmp
+-- luasnip
+
+- Format & Lint
+-- conform.nvim
+-- nvim-lint
+
+- Debug & Test
+-- nvim-dap
+-- neotest
+
+- Refactor
+-- refactoring.nvim
+
+- Terminal: toggleterm.nvim
+
+- Edit
+-- surround: nvim-surround
+-- comment: ts-comments.nvim
+-- auto-pair: nvim-autopairs
+
+- Git
+-- integration: gitsigns.nvim
+
+- Project
+-- manager: project.nvim
+-- session: persistence.nvim
+-- buffer group: scope.nvim
+-- todo: todo-comments.nvim
+
+- UI
+-- dashboard: dashboard.nvim
+-- buffer line: barbar.nvim
+-- status line: lualine.nvim
+-- indent line: indent-blankline.nvim
+-- pretty and modern UI: noice.nvim
+-- zen mode: zen-mode.nvim
