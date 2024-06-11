@@ -26,6 +26,8 @@ return {
         handlers = {},
         ensure_installed = {
           "python",
+          "javadbg",
+          "javatest",
           -- "delve",
         },
       })
