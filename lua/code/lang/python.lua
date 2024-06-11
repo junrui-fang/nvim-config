@@ -33,10 +33,10 @@ return {
     end,
 
     keys = {
-      { "<leader>'m", function() require("dap-python").test_method() end, desc = "Debug Method", ft = "python" },
-      { "<leader>'f", function() require("dap-python").test_class() end, desc = "Debug Class", ft = "python" },
+      { "<leader>,m", function() require("dap-python").test_method() end, desc = "Debug Method", ft = "python" },
+      { "<leader>,f", function() require("dap-python").test_class() end, desc = "Debug Class", ft = "python" },
       {
-        "<leader>'s",
+        "<leader>,s",
         function() require("dap-python").debug_selection() end,
         desc = "Debug Selection",
         ft = "python",
