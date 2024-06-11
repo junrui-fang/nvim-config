@@ -45,6 +45,20 @@ return {
     },
   },
 
+  -- Test
+  {
+    "nvim-neotest/neotest",
+    dependencies = "nvim-neotest/neotest-python",
+    opts = {
+      adapters = {
+        ["neotest-python"] = {
+          -- runner = "pytest",
+          -- python = ".venv/bin/python",
+        },
+      },
+    },
+  },
+
   -- Virtual Environment
   {
     "linux-cultist/venv-selector.nvim",
