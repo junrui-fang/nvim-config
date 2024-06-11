@@ -34,6 +34,7 @@ return {
       },
       { "<leader>'O", function() require("neotest").output_panel.toggle() end, desc = "Toggle Output Panel" },
       { "<leader>'S", function() require("neotest").run.stop() end, desc = "Stop" },
+      { "<leader>'w", function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Toggle Watch" },
     },
   },
 }
