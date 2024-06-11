@@ -6,6 +6,8 @@ return {
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
       "nvim-treesitter/nvim-treesitter",
+      -- adapters
+      "nvim-neotest/neotest-python",
     },
 
     opts = {
@@ -14,7 +16,10 @@ return {
       output = { open_on_run = true },
     },
 
-    config = function(_, opts) require("neotest").setup(opts) end,
+    config = function(_, opts)
+      table.insert(opts.adapters, require("neotest-python"))
+      require("neotest").setup(opts)
+    end,
 
     keys = {
       { "<leader>''", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run File" },
