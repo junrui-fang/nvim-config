@@ -67,7 +67,19 @@ return {
         settings = {
           java = {
             eclipse = { downloadSources = true },
-            configuration = { updateBuildConfiguration = "interactive" },
+            configuration = {
+              updateBuildConfiguration = "interactive",
+              runtimes = {
+                {
+                  name = "JavaSE-11",
+                  path = "~/.sdkman/candidates/java/11.0.23-zulu",
+                },
+                {
+                  name = "JavaSE-17",
+                  path = "~/.sdkman/candidates/java/17.0.11-zulu",
+                },
+              },
+            },
             maven = { downloadSources = true },
             implementationsCodeLens = { enabled = true },
             referencesCodeLens = { enabled = true },
