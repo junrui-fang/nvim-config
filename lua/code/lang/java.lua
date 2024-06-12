@@ -84,14 +84,14 @@ return {
             implementationsCodeLens = { enabled = true },
             referencesCodeLens = { enabled = true },
             references = { includeDecompiledSources = true },
-          },
-          signatureHelp = { enabled = true },
-          format = {
-            enabled = true,
-            -- settings = {
-            --   url = "https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml",
-            --   profile = "GoogleStyle",
-            -- },
+            signatureHelp = { enabled = true },
+            format = {
+              enabled = true,
+              -- settings = {
+              --   url = "https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml",
+              --   profile = "GoogleStyle",
+              -- },
+            },
           },
           completion = {
             favoriteStaticMembers = {
