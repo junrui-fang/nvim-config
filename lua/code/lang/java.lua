@@ -103,12 +103,12 @@ return {
               "java.util.Objects.requireNonNullElse",
               "org.mockito.Mockito.*",
             },
-          },
-          importOrder = {
-            "java",
-            "javax",
-            "com",
-            "org",
+            importOrder = {
+              "java",
+              "javax",
+              "com",
+              "org",
+            },
           },
           extendedClientCapabilities = require("jdtls").extendedClientCapabilities,
           sources = {
