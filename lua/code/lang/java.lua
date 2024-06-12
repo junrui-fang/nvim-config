@@ -1,16 +1,6 @@
 -- INFO:
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/java.lua
 -- https://github.com/bcampolo/nvim-starter-kit/blob/java/.config/nvim/ftplugin/java.lua
-
-local function extend_or_override(config, custom, ...)
-  if type(custom) == "function" then
-    config = custom(config, ...) or config
-  elseif custom then
-    config = vim.tbl_deep_extend("force", config, custom)
-  end
-  return config
-end
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -115,7 +105,7 @@ return {
       local function attach_jdtls()
         local fname = vim.api.nvim_buf_get_name(0)
         -- Configuration can be augmented and overridden by opts.jdtls
-        local config = extend_or_override({
+        local config = {
           cmd = opts.full_cmd(opts),
           root_dir = opts.root_dir(fname),
           init_options = {
@@ -124,7 +114,7 @@ return {
           settings = opts.settings,
           -- enable CMP capabilities
           capabilities = require("cmp_nvim_lsp").default_capabilities() or nil,
-        }, opts.jdtls)
+        }
 
         -- Existing server will be reused if the root_dir matches.
         require("jdtls").start_or_attach(config)
