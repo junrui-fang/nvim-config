@@ -123,6 +123,7 @@ return {
         ensure_installed = ensure_installed,
         handlers = {
           function(server_name)
+            if server_name == "jdtls" then return end -- skip jdtls
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             server.on_attach = on_attach
