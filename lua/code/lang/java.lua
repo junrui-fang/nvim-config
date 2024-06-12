@@ -64,6 +64,7 @@ return {
         dap = { hotcodereplace = "auto", config_overrides = {} },
         dap_main = {},
         test = true,
+
         settings = {
           java = {
             eclipse = { downloadSources = true },
@@ -124,6 +125,7 @@ return {
             useBlocks = true,
           },
         },
+        flags = { allow_incremental_sync = true },
       }
     end,
 
