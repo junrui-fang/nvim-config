@@ -1,4 +1,7 @@
--- INFO: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/java.lua
+-- INFO:
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/java.lua
+-- https://github.com/bcampolo/nvim-starter-kit/blob/java/.config/nvim/ftplugin/java.lua
+
 local java_filetypes = { "java" }
 local function extend_or_override(config, custom, ...)
   if type(custom) == "function" then
