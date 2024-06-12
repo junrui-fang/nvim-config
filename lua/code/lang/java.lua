@@ -2,7 +2,6 @@
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/java.lua
 -- https://github.com/bcampolo/nvim-starter-kit/blob/java/.config/nvim/ftplugin/java.lua
 
-local java_filetypes = { "java" }
 local function extend_or_override(config, custom, ...)
   if type(custom) == "function" then
     config = custom(config, ...) or config
@@ -134,7 +133,7 @@ return {
 
       -- Attach the jdtls for each java buffer.
       vim.api.nvim_create_autocmd("FileType", {
-        pattern = java_filetypes,
+        pattern = { "java" },
         callback = attach_jdtls,
       })
 
