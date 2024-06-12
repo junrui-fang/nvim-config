@@ -71,6 +71,7 @@ return {
             maven = { downloadSources = true },
             implementationsCodeLens = { enabled = true },
             referencesCodeLens = { enabled = true },
+            references = { includeDecompiledSources = true },
           },
           signatureHelp = { enabled = true },
           completion = {
@@ -84,11 +85,24 @@ return {
               "org.mockito.Mockito.*",
             },
           },
+          importOrder = {
+            "java",
+            "javax",
+            "com",
+            "org",
+          },
+          extendedClientCapabilities = require("jdtls").extendedClientCapabilities,
           sources = {
             organizeImports = {
               starThreshold = 9999,
               staticStarThreshold = 9999,
             },
+          },
+          codeGeneration = {
+            toString = {
+              template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}",
+            },
+            useBlocks = true,
           },
         },
       }
