@@ -74,6 +74,13 @@ return {
             references = { includeDecompiledSources = true },
           },
           signatureHelp = { enabled = true },
+          format = {
+            enabled = true,
+            -- settings = {
+            --   url = "https://github.com/google/styleguide/blob/gh-pages/intellij-java-google-style.xml",
+            --   profile = "GoogleStyle",
+            -- },
+          },
           completion = {
             favoriteStaticMembers = {
               "org.hamcrest.MatcherAssert.assertThat",
