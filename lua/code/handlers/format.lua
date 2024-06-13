@@ -15,11 +15,11 @@ return {
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
         yaml = { { "prettierd", "prettier" } },
+        markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+        ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
 
         -- prettier
         ["html"] = { "prettier" },
-        ["markdown"] = { "prettier" },
-        ["markdown.mdx"] = { "prettier" },
         ["javascriptreact"] = { "prettier" },
         ["typescript"] = { "prettier" },
         ["typescriptreact"] = { "prettier" },
