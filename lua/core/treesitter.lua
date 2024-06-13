@@ -36,6 +36,7 @@ return {
           "javascript",
           "html",
           "css",
+          "json5",
           "yaml",
           "markdown",
           "markdown_inline",
