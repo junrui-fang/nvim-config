@@ -11,6 +11,9 @@ return {
       linters_by_ft = {
         markdown = { "markdownlint" },
         html = { "htmlhint" },
+        sql = { "sqlfluff" },
+        mysql = { "sqlfluff" },
+        plsql = { "sqlfluff" },
       },
     },
 
