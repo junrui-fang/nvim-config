@@ -38,6 +38,7 @@ return {
           "css",
           "json5",
           "yaml",
+          "toml",
           "markdown",
           "markdown_inline",
 
