@@ -24,11 +24,7 @@ return {
 
   {
     "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      "tpope/vim-dadbod",
-      "kristijanhusak/vim-dadbod-completion",
-    },
-    -- event = "VeryLazy",
+    dependencies = "vim-dadbod",
     cmd = {
       "DBUI",
       "DBUIToggle",
@@ -37,9 +33,13 @@ return {
       "DBUIRenameBuffer",
       "DBUILastQueryInfo",
     },
+    keys = { { "<leader>D", "<cmd>DBUI<cr>", desc = "Database" } },
 
-    keys = {
-      { "<leader>D", "<cmd>DBUI<cr>", desc = "Database" },
-    },
+    init = function()
+      vim.g.db_ui_auto_execute_table_helpers = 1
+      vim.g.db_ui_show_database_icon = true
+      vim.g.db_ui_use_nerd_fonts = true
+      vim.g.db_ui_use_nvim_notify = true
+    end,
   },
 }
