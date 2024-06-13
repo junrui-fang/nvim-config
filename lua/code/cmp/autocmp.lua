@@ -62,14 +62,6 @@ return {
         }),
       })
 
-      -- Setup up vim-dadbod
-      cmp.setup.filetype({ "sql", "mysql", "plsql" }, {
-        sources = {
-          { name = "vim-dadbod-completion" },
-          { name = "buffer" },
-        },
-      })
-
       -- Set configuration for specific filetype.
       cmp.setup.filetype("gitcommit", {
         sources = cmp.config.sources({
