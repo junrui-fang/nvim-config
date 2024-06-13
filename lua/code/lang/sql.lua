@@ -2,7 +2,7 @@ return {
   { "neovim/nvim-lspconfig", opts = { servers = { sqls = {} } } },
   { "nanotee/sqls.nvim", lazy = true },
 
-  { "tpope/vim-dadbod", cmd = "DB" },
+  { "tpope/vim-dadbod" },
   {
     "kristijanhusak/vim-dadbod-completion",
     dependencies = "vim-dadbod",
