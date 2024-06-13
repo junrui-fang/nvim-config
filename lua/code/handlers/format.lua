@@ -20,8 +20,6 @@ return {
         ["html"] = { "prettier" },
         ["markdown"] = { "prettier" },
         ["markdown.mdx"] = { "prettier" },
-        ["json"] = { "prettier" },
-        ["jsonc"] = { "prettier" },
         ["javascriptreact"] = { "prettier" },
         ["typescript"] = { "prettier" },
         ["typescriptreact"] = { "prettier" },
