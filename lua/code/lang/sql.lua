@@ -1,16 +1,8 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = { servers = { sqls = {} } },
-  },
+  { "neovim/nvim-lspconfig", opts = { servers = { sqls = {} } } },
+  { "nanotee/sqls.nvim", lazy = true },
 
-  -- language specific tooling
-  {
-    "nanotee/sqls.nvim",
-    lazy = true,
-  },
-
-  -- Database management
+  { "tpope/vim-dadbod", cmd = "DB" },
   {
     "kristijanhusak/vim-dadbod-ui",
     dependencies = {
