@@ -14,6 +14,7 @@ return {
         lua = { "stylua" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
+        yaml = { { "prettierd", "prettier" } },
 
         -- prettier
         ["html"] = { "prettier" },
@@ -21,7 +22,6 @@ return {
         ["markdown.mdx"] = { "prettier" },
         ["json"] = { "prettier" },
         ["jsonc"] = { "prettier" },
-        ["yaml"] = { "prettier" },
         ["javascriptreact"] = { "prettier" },
         ["typescript"] = { "prettier" },
         ["typescriptreact"] = { "prettier" },
