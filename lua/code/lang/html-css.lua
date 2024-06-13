@@ -4,6 +4,7 @@ return {
     opts = {
       servers = {
         html = {
+          init_options = { provideFormatter = false },
           filetypes = {
             "html",
             "javascript",
@@ -14,7 +15,8 @@ return {
             "typescript.tsx",
           },
         },
-        cssls = {},
+        cssls = { init_options = { provideFormatter = false } },
+        emmet_ls = {},
       },
     },
   },
