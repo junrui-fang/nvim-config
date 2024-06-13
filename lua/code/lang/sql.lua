@@ -1,11 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        sqls = {},
-      },
-    },
+    opts = { servers = { sqls = {} } },
   },
 
   -- language specific tooling
