@@ -10,6 +10,7 @@ return {
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
+
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
