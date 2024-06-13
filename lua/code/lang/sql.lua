@@ -2,10 +2,9 @@ return {
   { "neovim/nvim-lspconfig", opts = { servers = { sqls = {} } } },
   { "nanotee/sqls.nvim", lazy = true },
 
-  { "tpope/vim-dadbod" },
   {
     "kristijanhusak/vim-dadbod-completion",
-    dependencies = "vim-dadbod",
+    dependencies = "tpope/vim-dadbod",
     ft = { "sql", "mysql", "plsql" },
     init = function()
       vim.api.nvim_create_autocmd("FileType", {
@@ -24,7 +23,7 @@ return {
 
   {
     "kristijanhusak/vim-dadbod-ui",
-    dependencies = "vim-dadbod",
+    dependencies = "tpope/vim-dadbod",
     cmd = {
       "DBUI",
       "DBUIToggle",
