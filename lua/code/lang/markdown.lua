@@ -1,11 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        marksman = {},
-      },
-    },
+    opts = { servers = { marksman = {} } },
   },
 
   -- Preview with a browser or a webview window
