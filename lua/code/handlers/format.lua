@@ -18,6 +18,9 @@ return {
         yaml = { { "prettierd", "prettier" } },
         markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
         ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+        sql = { "sqlfluff" },
+        mysql = { "sqlfluff" },
+        plsql = { "sqlfluff" },
 
         -- prettier
         ["html"] = { "prettier" },
@@ -30,6 +33,10 @@ return {
         ["less"] = { "prettier" },
         ["graphql"] = { "prettier" },
         ["handlebars"] = { "prettier" },
+      },
+
+      formatters = {
+        sqlfluff = { args = { "format", "--dialect=ansi", "-" } },
       },
     },
 
