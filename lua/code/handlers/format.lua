@@ -14,10 +14,13 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
+
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
         yaml = { { "prettierd", "prettier" } },
+
         markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
         ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+
         sql = { "sqlfluff" },
         mysql = { "sqlfluff" },
         plsql = { "sqlfluff" },
