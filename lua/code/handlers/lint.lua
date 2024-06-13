@@ -2,15 +2,18 @@ return {
   {
     "mfussenegger/nvim-lint",
     event = "LspAttach",
-    config = function()
-      local lint = require("lint")
-      lint.linters_by_ft = {
+
+    opts = {
+      events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+      linters_by_ft = {
         markdown = { "markdownlint" },
         html = { "htmlhint" },
-      }
-      -- disable the default linters
-      -- lint.linters_by_ft['markdown'] = nil
-      -- lint.linters_by_ft['text'] = nil
+      },
+    },
+
+    config = function(_, opts)
+      local lint = require("lint")
+      lint.linters_by_ft = opts.linters_by_ft
 
       -- start linter immediately
       lint.try_lint()
