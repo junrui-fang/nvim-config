@@ -4,7 +4,7 @@ return {
     event = "LspAttach",
 
     opts = {
-      events = { "BufWritePost", "BufReadPost", "InsertLeave" },
+      events = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
       linters_by_ft = {
         markdown = { "markdownlint" },
         html = { "htmlhint" },
@@ -18,9 +18,8 @@ return {
       -- start linter immediately
       lint.try_lint()
       -- then lint on the specified events.
-      local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-        group = lint_augroup,
+      vim.api.nvim_create_autocmd(opts.events, {
+        group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
         callback = function() require("lint").try_lint() end,
       })
     end,
