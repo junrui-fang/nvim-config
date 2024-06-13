@@ -17,6 +17,10 @@ return {
 
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
         yaml = { { "prettierd", "prettier" } },
+        html = { { "prettierd", "prettier" } },
+        css = { { "prettierd", "prettier" } },
+        scss = { { "prettierd", "prettier" } },
+        less = { { "prettierd", "prettier" } },
 
         markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
         ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
@@ -26,14 +30,10 @@ return {
         plsql = { "sqlfluff" },
 
         -- prettier
-        ["html"] = { "prettier" },
         ["javascriptreact"] = { "prettier" },
         ["typescript"] = { "prettier" },
         ["typescriptreact"] = { "prettier" },
         ["vue"] = { "prettier" },
-        ["css"] = { "prettier" },
-        ["scss"] = { "prettier" },
-        ["less"] = { "prettier" },
         ["graphql"] = { "prettier" },
         ["handlebars"] = { "prettier" },
       },
