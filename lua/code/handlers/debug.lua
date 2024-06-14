@@ -25,6 +25,7 @@ return {
         automatic_installation = true,
         handlers = {},
         ensure_installed = {
+          "bash",
           "python",
           "javadbg",
           "javatest",
