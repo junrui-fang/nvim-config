@@ -26,6 +26,7 @@ return {
         handlers = {},
         ensure_installed = {
           "bash",
+          "codelldb",
           "python",
           "javadbg",
           "javatest",
