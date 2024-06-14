@@ -9,6 +9,7 @@ return {
     opts = {
       events = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
       linters_by_ft = {
+        sh = { "shellcheck" },
         markdown = { "markdownlint" },
         html = { "htmlhint" },
         sql = { "sqlfluff" },
