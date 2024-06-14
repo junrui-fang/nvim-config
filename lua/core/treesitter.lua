@@ -34,6 +34,7 @@ return {
 
           "c",
           "cpp",
+          "cmake",
           "objc",
           "cuda",
           "proto",
