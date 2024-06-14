@@ -14,6 +14,7 @@ return {
       formatters_by_ft = {
         lua = { "stylua" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
+        sh = { "shfmt" },
 
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
         yaml = { { "prettierd", "prettier" } },
