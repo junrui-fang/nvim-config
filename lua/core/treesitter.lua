@@ -31,7 +31,12 @@ return {
 
           "java",
           "sql",
+
           "c",
+          "cpp",
+          "objc",
+          "cuda",
+          "proto",
 
           "javascript",
           "html",
