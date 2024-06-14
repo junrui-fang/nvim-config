@@ -10,6 +10,7 @@ return {
       events = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
       linters_by_ft = {
         sh = { "shellcheck" },
+        cmake = { "cmakelint" },
         markdown = { "markdownlint" },
         html = { "htmlhint" },
         sql = { "sqlfluff" },
