@@ -43,6 +43,14 @@ return {
         },
       },
     },
+    keys = {
+      {
+        "<leader>lw",
+        "<cmd>ClangdSwitchSourceHeader<cr>",
+        ft = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+        desc = "Switch Source/Header (C/C++)",
+      },
+    },
   },
   {
     "nvim-cmp",
