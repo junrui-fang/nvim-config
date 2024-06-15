@@ -14,18 +14,15 @@ return {
 
       "onsails/lspkind.nvim",
     },
-
     event = { "InsertEnter", "CmdlineEnter" },
 
-    config = function()
+    opts = function()
       local cmp = require("cmp")
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-      local cmp_mapping = require("cmp.config.mapping")
       local lspkind = require("lspkind")
+      local cmp_mapping = require("cmp.config.mapping")
 
-      cmp.setup({
+      return {
         snippet = {
-          -- Snippet engine to use
           expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
 
@@ -60,12 +57,19 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
-      })
+      }
+    end,
+
+    config = function(_, opts)
+      local cmp = require("cmp")
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+      cmp.setup(opts)
 
       -- Set configuration for specific filetype.
       cmp.setup.filetype("gitcommit", {
         sources = cmp.config.sources({
-          { name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+          { name = "git" },
         }, {
           { name = "buffer" },
         }),
