@@ -18,6 +18,7 @@ return {
 
     opts = function()
       local cmp = require("cmp")
+      local defaults = require("cmp.config.default")()
       local lspkind = require("lspkind")
       local cmp_mapping = require("cmp.config.mapping")
 
@@ -57,6 +58,8 @@ return {
           { name = "buffer" },
           { name = "path" },
         }),
+
+        sorting = defaults.sorting,
       }
     end,
 
