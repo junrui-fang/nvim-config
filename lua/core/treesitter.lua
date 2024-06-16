@@ -39,6 +39,11 @@ return {
           "cuda",
           "proto",
 
+          "go",
+          "gomod",
+          "gosum",
+          "gowork",
+
           "javascript",
           "html",
           "css",
