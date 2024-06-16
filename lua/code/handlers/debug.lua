@@ -16,7 +16,7 @@ return {
         config = function() require("persistent-breakpoints").setup({ load_breakpoints_event = { "BufReadPost" } }) end,
       },
       -- Debuggers
-      -- "leoluz/nvim-dap-go",
+      { "leoluz/nvim-dap-go", opts = {} },
     },
 
     config = function()
@@ -30,7 +30,7 @@ return {
           "python",
           "javadbg",
           "javatest",
-          -- "delve",
+          "delve",
         },
       })
 
