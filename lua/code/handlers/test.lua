@@ -11,7 +11,9 @@ return {
     },
 
     opts = {
-      adapters = {},
+      adapters = {
+        ["neotest-python"] = {},
+      },
       status = { virtual_text = true },
       output = { open_on_run = true },
     },
