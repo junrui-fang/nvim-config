@@ -8,11 +8,13 @@ return {
       "nvim-treesitter/nvim-treesitter",
       -- adapters
       "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-go",
     },
 
     opts = {
       adapters = {
         ["neotest-python"] = {},
+        ["neotest-go"] = { recursive_run = true },
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
