@@ -45,6 +45,9 @@ return {
           "gowork",
 
           "javascript",
+          "typescript",
+          "tsx",
+          "jsdoc",
           "html",
           "css",
           "json5",
