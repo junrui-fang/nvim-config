@@ -55,6 +55,8 @@ return {
           "markdown",
           "markdown_inline",
 
+          "ruby",
+
           "bash",
           "dockerfile",
 
