@@ -17,6 +17,7 @@ return {
       },
       -- Debuggers
       { "leoluz/nvim-dap-go", opts = {} },
+      { "suketa/nvim-dap-ruby", config = true },
     },
 
     config = function()
