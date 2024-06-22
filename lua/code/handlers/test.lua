@@ -9,11 +9,13 @@ return {
       -- adapters
       "nvim-neotest/neotest-python",
       "nvim-neotest/neotest-go",
+      "olimorris/neotest-rspec",
     },
 
     opts = {
       adapters = {
         ["neotest-python"] = {},
+        ["neotest-rspec"] = {}, -- ruby
         ["neotest-go"] = { recursive_run = true },
       },
       status = { virtual_text = true },
