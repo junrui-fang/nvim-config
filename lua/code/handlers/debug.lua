@@ -28,6 +28,7 @@ return {
         ensure_installed = {
           "bash",
           "codelldb",
+          "php",
           "python",
           "javadbg",
           "javatest",
