@@ -14,6 +14,7 @@ return {
       formatters_by_ft = {
         go = { "goimports", "gofumpt" },
         lua = { "stylua" },
+        ruby = { "standardrb" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
         sh = { "shfmt" },
 
