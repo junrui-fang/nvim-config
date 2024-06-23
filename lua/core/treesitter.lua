@@ -55,6 +55,9 @@ return {
           "markdown",
           "markdown_inline",
 
+          "php",
+          "phpdoc",
+
           "ruby",
 
           "bash",
