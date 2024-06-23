@@ -14,6 +14,7 @@ return {
         cmake = { "cmakelint" },
         markdown = { "markdownlint" },
         html = { "htmlhint" },
+        ansible = { "ansible_lint" },
         sql = { "sqlfluff" },
         mysql = { "sqlfluff" },
         plsql = { "sqlfluff" },
