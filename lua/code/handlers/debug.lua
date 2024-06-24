@@ -33,6 +33,7 @@ return {
           "javadbg",
           "javatest",
           "delve",
+          "haskell",
         },
       })
 
