@@ -19,6 +19,9 @@ return {
         sh = { "shfmt" },
 
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
+        javascriptreact = { { "prettierd", "prettier" } },
+        typescript = { { "prettierd", "prettier" } },
+        typescriptreact = { { "prettierd", "prettier" } },
         yaml = { { "prettierd", "prettier" } },
         html = { { "prettierd", "prettier" } },
         css = { { "prettierd", "prettier" } },
@@ -33,9 +36,6 @@ return {
         plsql = { "sqlfluff" },
 
         -- prettier
-        ["javascriptreact"] = { "prettier" },
-        ["typescript"] = { "prettier" },
-        ["typescriptreact"] = { "prettier" },
         ["vue"] = { "prettier" },
         ["graphql"] = { "prettier" },
         ["handlebars"] = { "prettier" },
