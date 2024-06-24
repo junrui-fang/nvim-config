@@ -3,9 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        tsserver = {
-          enabled = false,
-        },
         vtsls = {
           filetypes = {
             "javascript",
