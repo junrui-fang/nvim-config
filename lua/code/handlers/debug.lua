@@ -30,6 +30,7 @@ return {
           "codelldb",
           "php",
           "python",
+          "js",
           "javadbg",
           "javatest",
           "delve",
