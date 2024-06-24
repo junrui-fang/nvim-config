@@ -23,4 +23,16 @@ return {
       require("luasnip").add_snippets("haskell", haskell_snippets, { key = "haskell" })
     end,
   },
+
+  {
+    "luc-tielen/telescope_hoogle",
+    ft = haskell_ft,
+    dependencies = {
+      { "nvim-telescope/telescope.nvim" },
+    },
+    config = function()
+      local ok, telescope = pcall(require, "telescope")
+      if ok then telescope.load_extension("hoogle") end
+    end,
+  },
 }
