@@ -1,8 +1,10 @@
+local haskell_ft = { "haskell", "lhaskell", "cabal", "cabalproject" }
+
 return {
   {
     "mrcjkb/haskell-tools.nvim",
     version = "^3",
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+    ft = haskell_ft,
     dependencies = {
       { "nvim-telescope/telescope.nvim", optional = true },
     },
@@ -15,7 +17,7 @@ return {
   {
     "mrcjkb/haskell-snippets.nvim",
     dependencies = "L3MON4D3/LuaSnip",
-    ft = { "haskell", "lhaskell", "cabal", "cabalproject" },
+    ft = haskell_ft,
     config = function()
       local haskell_snippets = require("haskell-snippets").all
       require("luasnip").add_snippets("haskell", haskell_snippets, { key = "haskell" })
