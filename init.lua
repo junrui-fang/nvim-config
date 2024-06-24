@@ -42,7 +42,7 @@ require("lazy").setup({
   -- Setup behaviors of lazy.nvim
   defaults = { lazy = false },
   checker = { enabled = true }, -- automatically check for plugin updates
-  install = { missing = true, colorscheme = { "onedark_dark" } },
+  install = { missing = true, colorscheme = { "neofusion" } },
   ui = { border = "single" },
 
   -- disable some built-in Neovim plugins, for better performance
