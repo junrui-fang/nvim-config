@@ -12,21 +12,21 @@ return {
       end,
 
       formatters_by_ft = {
+        sh = { "shfmt" },
         go = { "goimports", "gofumpt" },
         lua = { "stylua" },
         php = { "php-cs-fixer" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
-        sh = { "shfmt" },
 
         javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
         javascriptreact = { { "prettierd", "prettier" } },
         typescript = { { "prettierd", "prettier" } },
         typescriptreact = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
         html = { { "prettierd", "prettier" } },
+        yaml = { { "prettierd", "prettier" } },
         css = { { "prettierd", "prettier" } },
-        scss = { { "prettierd", "prettier" } },
         less = { { "prettierd", "prettier" } },
+        scss = { { "prettierd", "prettier" } },
 
         markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
         ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
