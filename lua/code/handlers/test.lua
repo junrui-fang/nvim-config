@@ -10,6 +10,7 @@ return {
       "nvim-neotest/neotest-python",
       "nvim-neotest/neotest-go",
       "olimorris/neotest-rspec",
+      "mrcjkb/neotest-haskell",
     },
 
     opts = {
@@ -17,6 +18,7 @@ return {
         ["neotest-python"] = {},
         ["neotest-rspec"] = {}, -- ruby
         ["neotest-go"] = { recursive_run = true },
+        ["neotest-haskell"] = {},
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
