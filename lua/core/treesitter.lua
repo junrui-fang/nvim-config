@@ -69,6 +69,8 @@ return {
           "vim",
           "vimdoc",
 
+          "haskell",
+
           "query",
           "elixir",
           "heex",
