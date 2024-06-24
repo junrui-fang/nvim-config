@@ -15,6 +15,7 @@ return {
         markdown = { "markdownlint" },
         html = { "htmlhint" },
         ansible = { "ansible_lint" },
+        dockerfile = { "hadolint" },
         sql = { "sqlfluff" },
         mysql = { "sqlfluff" },
         plsql = { "sqlfluff" },
