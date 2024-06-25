@@ -37,6 +37,7 @@ require("lazy").setup({
   checker = { enabled = true }, -- automatically check for plugin updates
   install = { missing = true, colorscheme = { "neofusion" } },
   ui = { border = "single" },
+  rocks = { enabled = true },
 
   -- disable some built-in Neovim plugins, for better performance
   performance = {
