@@ -55,4 +55,10 @@ return {
     opts = {},
     -- TODO: Add keymaps
   },
+
+  {
+    "dmmulroy/tsc.nvim",
+    cmd = "TSC",
+    opts = {},
+  },
 }
