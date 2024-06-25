@@ -12,13 +12,12 @@ return {
       directories = { vim.fn.stdpath("config") .. "/skeletons" },
       autouse = true,
       patterns = {
-        "LICENSE",
-        "python",
         "lua",
+        "python",
+        "LICENSE",
 
         "html",
         -- "index.html",
-
         "markdown",
       },
       -- Advanced options
