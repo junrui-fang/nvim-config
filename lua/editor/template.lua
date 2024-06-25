@@ -13,6 +13,7 @@ return {
       autouse = true,
       patterns = {
         "lua",
+        "tex",
         "python",
         "LICENSE",
 
