@@ -15,6 +15,26 @@ return {
       vim.g.vimtex_view_method = "skim" -- skim for macos
       vim.g.vimtex_view_skim_sync = 1
       vim.g.vimtex_view_skim_reading_bar = 1
+
+      -- Compiler
+      vim.g.vimtex_compiler_latexmk = {
+        aux_dir = ".aux",
+        out_dir = ".out",
+
+        -- Defaults
+        callback = 1,
+        continuous = 1,
+        executable = "latexmk",
+        hooks = {},
+
+        options = {
+          -- Defaults
+          "-verbose",
+          "-file-line-error",
+          "-synctex=1",
+          "-interaction=nonstopmode",
+        },
+      }
     end,
     keys = {
       { "<localLeader>l", "", desc = "+vimtext" },
