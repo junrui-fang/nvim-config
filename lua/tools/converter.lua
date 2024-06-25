@@ -12,7 +12,7 @@ return {
   -- Code snippet to image
   { -- ISSUE: Neovim freeze when using this plugin
     "mistricky/codesnap.nvim",
-    build = "make build_generator",
+    build = "make",
     cmd = { "CodeSnap", "CodeSnapSave", "CodeSnapHighlight", "CodeSnapSaveHighlight" },
     opts = {
       save_path = vim.fn.getcwd() .. "/media",
