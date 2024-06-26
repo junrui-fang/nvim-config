@@ -48,5 +48,16 @@ return {
     end,
 
     keys = { { "<localLeader>l", "", desc = "Vimtex", mode = { "n", "x" } } },
+    -- NOTE: Useful keymaps
+    -- [dc]s[ecd$]: delete/change env, cmd, delimiters and math
+    -- ts[ecd$]: toggle-style env, cmd, delimiters, and math
+    -- tsD: reverse to tsd
+    -- tsf: toggle between inline & \frac{}
+    -- %: Navigate matching
+    -- ]], [[, ][, []: Navigate sections
+    -- ]m, [m, ]M, [M: Navigate environments
+    -- ]n, [n, ]n, [n: Navigate math zones
+    -- ]r and its variants: Navigate beamer frames
+    -- [ai][ecd$Pm]: text objects: env, cmd, delimiters, math, sections, and items in itemize & enumerate
   },
 }
