@@ -2,9 +2,9 @@ return {
   {
     "cvigilv/esqueleto.nvim",
     ft = {
-      "html",
       "py",
       "lua",
+      "html",
       "markdown",
     },
 
