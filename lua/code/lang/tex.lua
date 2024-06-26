@@ -46,8 +46,7 @@ return {
         end,
       })
     end,
-    keys = {
-      { "<localLeader>l", "", desc = "Vimtex", mode = { "n", "x" } },
-    },
+
+    keys = { { "<localLeader>l", "", desc = "Vimtex", mode = { "n", "x" } } },
   },
 }
