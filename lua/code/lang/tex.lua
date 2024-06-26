@@ -4,6 +4,7 @@ return {
     opts = { servers = { texlab = {} } },
   },
 
+  -- INFO: https://ejmastnak.com/tutorials/vim-latex/intro/
   {
     "lervag/vimtex",
     lazy = false,
