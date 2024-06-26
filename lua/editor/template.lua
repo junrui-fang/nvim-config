@@ -4,6 +4,7 @@ return {
     ft = {
       "py",
       "lua",
+			"tex",
       "html",
       "markdown",
     },
