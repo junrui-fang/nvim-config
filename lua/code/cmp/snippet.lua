@@ -16,7 +16,7 @@ return {
     keys = {
       {
         "<tab>",
-        function() return require("luasnip").jumpable(1) and "<Plug>luasnip-jump-next" or "<tab>" end,
+        function() return require("luasnip").expand_or_jumpable() and "<Plug>luasnip-expand-or-jump" or "<tab>" end,
         expr = true,
         silent = true,
         mode = "i",
@@ -43,5 +43,6 @@ return {
         update_events = "TextChanged,TextChangedI",
       })
     end,
+    require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/lua/snippets/" } }),
   },
 }
