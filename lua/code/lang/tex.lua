@@ -35,6 +35,16 @@ return {
           "-interaction=nonstopmode",
         },
       }
+
+      -- Returning focus to Neovim after inverse search on macOS
+      vim.api.nvim_create_autocmd("User", {
+        group = vim.api.nvim_create_augroup("vimtex_event_focus", { clear = true }),
+        pattern = "VimtexEventViewReverse",
+        callback = function()
+          vim.cmd("!open -a kitty")
+          vim.cmd("redraw!")
+        end,
+      })
     end,
     keys = {
       { "<localLeader>l", "", desc = "Vimtex", mode = { "n", "x" } },
