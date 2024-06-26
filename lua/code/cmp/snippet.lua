@@ -41,6 +41,6 @@ return {
         update_events = "TextChanged,TextChangedI",
       })
     end,
-    require("luasnip.loaders.from_lua").load({ lazy_paths = { "~/.config/nvim/lua/snippets/" } }),
+    require("luasnip.loaders.from_lua").load({ lazy_paths = { "~/.config/nvim/snippets/" } }),
   },
 }
