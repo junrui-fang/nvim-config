@@ -15,12 +15,12 @@ return {
     keys = {
       { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", desc = "Location List" },
       { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List" },
-      { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
       {
-        "<leader>xX",
+        "<leader>xx",
         "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
         desc = "Buffer Diagnostics",
       },
+      { "<leader>xX", "<cmd>Trouble diagnostics toggle<cr>", desc = "Workspace Diagnostics" },
     },
   },
 
