@@ -1,13 +1,6 @@
 return {
   {
     "cvigilv/esqueleto.nvim",
-    ft = {
-      "py",
-      "lua",
-			"tex",
-      "html",
-      "markdown",
-    },
 
     opts = {
       directories = { vim.fn.stdpath("config") .. "/skeletons" },
