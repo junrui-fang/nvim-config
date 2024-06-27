@@ -1,5 +1,3 @@
-require("config")
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -8,8 +6,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Settings that should come before loading lazy.nvim
+require("config.options")
+
+-- Setup lazy.nvim & load plugins
 require("lazy").setup({
-  -- Load plugins
   spec = {
     { import = "core" },
 
@@ -56,4 +57,6 @@ require("lazy").setup({
   },
 })
 
-require("config.keymaps.plugin-maps")
+require("config.system-maps")
+require("config.plugin-maps")
+require("config.autocmds")
