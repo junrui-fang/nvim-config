@@ -1,11 +1,7 @@
 return {
   {
     "folke/which-key.nvim",
-    lazy = true,
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
+    event = "VeryLazy",
 
     opts = {
       window = {
@@ -28,6 +24,14 @@ return {
 
         -- spelling
         "z=",
+      },
+    },
+
+    keys = {
+      {
+        "<leader>?",
+        function() require("which-key").show({ global = false }) end,
+        desc = "Buffer Local Keymaps",
       },
     },
   },
