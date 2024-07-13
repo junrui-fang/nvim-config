@@ -9,17 +9,16 @@ wk.add({
   { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
   { "<leader>sc", ":e ~/.config/nvim/init.lua <CR>", desc = "Config" },
   { "<leader>sR", ":!open https://github.com/junrui-fang/nvim-config<cr>", desc = "Repo" },
+
+  -- Project
+  { "<leader>p", group = "Project" },
+  { "<leader>ps", group = "Session" },
+  { "<leader>pt", group = "Todos" },
+  { "<leader>j", group = "Jump" },
 })
 
 wk.register({
   ["<leader>"] = {
-    -- Project
-    p = {
-      name = "Projects",
-      s = { name = "Session" },
-      t = { name = "Todos" },
-    },
-    j = { name = "Jump" },
 
     -- Buffer
     b = { name = "Buffers" },
