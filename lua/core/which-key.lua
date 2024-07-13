@@ -5,27 +5,8 @@ return {
     event = "VeryLazy",
 
     opts = {
-      window = {
-        border = "single",
-      },
-      layout = {
-        align = "center",
-      },
-
-      triggers_nowait = {
-        -- marks
-        -- "`",
-        -- "'",
-        "g`",
-        "g'",
-
-        -- registers
-        '"',
-        "<c-r>",
-
-        -- spelling
-        "z=",
-      },
+      preset = "modern",
+      layout = { align = "center" },
     },
 
     keys = {
