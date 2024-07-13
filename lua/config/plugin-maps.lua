@@ -1,19 +1,18 @@
 local wk = require("which-key")
 
+wk.add({
+  -- System
+  { "<leader>s", group = "System" },
+  { "<leader>st", group = "Toggle" },
+  { "<leader>sn", group = "Notification" },
+  { "<leader>sp", "<cmd>Lazy<cr>", desc = "Plugins" },
+  { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps" },
+  { "<leader>sc", ":e ~/.config/nvim/init.lua <CR>", desc = "Config" },
+  { "<leader>sR", ":!open https://github.com/junrui-fang/nvim-config<cr>", desc = "Repo" },
+})
+
 wk.register({
   ["<leader>"] = {
-    -- System
-    s = {
-      name = "System",
-      c = { ":e ~/.config/nvim/init.lua <CR>", "Config" },
-      k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-      n = { name = "Notification" },
-      p = { "<cmd>Lazy<cr>", "Plugins" },
-      t = { name = "Toggle" },
-
-      R = { ":!open https://github.com/junrui-fang/nvim-config<cr>", "Repo" },
-    },
-
     -- Project
     p = {
       name = "Projects",
