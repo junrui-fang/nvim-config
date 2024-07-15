@@ -23,6 +23,15 @@ wk.add({
     { "<leader>gh", group = "GitHub" },
     { "<leader>gw", group = "Worktree" },
   },
+
+  -- Edit
+  {
+    mode = { "n", "v" },
+    { "<leader>;", group = "Edit" },
+    { "<leader>;c", group = "Comment" },
+    { "<leader>;r", group = "Replace" },
+    { "<leader>;n", "<cmd> ene <BAR> startinsert <cr>", desc = "New file", mode = "n" },
+  },
 })
 
 wk.register({
@@ -33,8 +42,6 @@ wk.register({
 
     -- Find
     f = { name = "Find" },
-    -- Search & Replace
-    R = { name = "Replace", mode = { "n", "x" } },
 
     -- LSP
     l = { name = "Lang" }, -- LSP & language specific
@@ -53,15 +60,6 @@ wk.register({
 
     -- UI
     U = { name = "UI" },
-  },
-
-  -- Edit
-  ["<leader>;"] = {
-    name = "Edit",
-    mode = { "n", "x" },
-    c = { name = "Comment" },
-    r = { name = "Replace" },
-    n = { "<cmd> ene <BAR> startinsert <cr>", "New file", mode = "n" },
   },
 
   -- Tab
