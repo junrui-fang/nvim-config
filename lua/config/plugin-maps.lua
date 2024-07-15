@@ -58,13 +58,13 @@ wk.add({
   -- Buffer & Tab
   { "<leader>b", group = "Buffer" },
   { "<leader><tab>", group = "Tab" },
+
+  -- Finding
+  { "<leader>f", group = "Find" },
 })
 
 wk.register({
   ["<leader>"] = {
-
-    -- Find
-    f = { name = "Find" },
 
     -- Tools
     u = { name = "Utils", mode = { "n", "x" } },
