@@ -32,6 +32,15 @@ wk.add({
     { "<leader>;r", group = "Replace" },
     { "<leader>;n", "<cmd> ene <BAR> startinsert <cr>", desc = "New file", mode = "n" },
   },
+
+  -- LSP
+  { "<leader>l", group = "Lang" },
+  { "<leader>x", group = "Diagnostic" },
+  -- Code Actions
+  { "<leader>a", group = "Actions", mode = { "n", "v" } },
+  { "<leader>r", group = "Refactor", mode = { "n", "v" } },
+  -- Document
+  { "<leader>d", group = "Doc" },
 })
 
 wk.register({
@@ -42,18 +51,6 @@ wk.register({
 
     -- Find
     f = { name = "Find" },
-
-    -- LSP
-    l = { name = "Lang" }, -- LSP & language specific
-    x = { name = "Diagnostic" },
-    -- Code
-    a = {
-      name = "Actions",
-      mode = { "n", "x" },
-      -- r = { vim.lsp.buf.rename, "Rename" },
-    },
-    d = { name = "Doc" },
-    r = { name = "Refactor", mode = { "n", "x" } },
 
     -- Tools
     u = { name = "Utils", mode = { "n", "x" } },
