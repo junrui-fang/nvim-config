@@ -61,15 +61,8 @@ wk.add({
 
   -- Finding
   { "<leader>f", group = "Find" },
-})
-
-wk.register({
-  ["<leader>"] = {
-
-    -- Tools
-    u = { name = "Utils", mode = { "n", "x" } },
-
-    -- UI
-    U = { name = "UI" },
-  },
+  -- Utility
+  { "<leader>u", group = "Utils", mode = { "n", "v" } },
+  -- UI
+  { "<leader>U", group = "UI" },
 })
