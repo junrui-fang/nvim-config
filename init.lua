@@ -57,6 +57,5 @@ require("lazy").setup({
   },
 })
 
-require("config.system-maps")
-require("config.plugin-maps")
+require("config.keymap")
 require("config.autocmds")
