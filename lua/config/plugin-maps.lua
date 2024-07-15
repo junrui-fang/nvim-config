@@ -54,13 +54,14 @@ wk.add({
   { "<leader>,s", desc = "Debug Selection", mode = "v" },
   -- Task
   { "<leader>>", group = "Task" },
+
+  -- Buffer & Tab
+  { "<leader>b", group = "Buffer" },
+  { "<leader><tab>", group = "Tab" },
 })
 
 wk.register({
   ["<leader>"] = {
-
-    -- Buffer
-    b = { name = "Buffers" },
 
     -- Find
     f = { name = "Find" },
@@ -71,7 +72,4 @@ wk.register({
     -- UI
     U = { name = "UI" },
   },
-
-  -- Tab
-  ["<leader><tab>"] = { name = "Tabs" },
 })
