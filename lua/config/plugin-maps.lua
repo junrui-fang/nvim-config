@@ -15,6 +15,14 @@ wk.add({
   { "<leader>ps", group = "Session" },
   { "<leader>pt", group = "Todos" },
   { "<leader>j", group = "Jump" },
+  -- Git
+  {
+    mode = { "n", "v" },
+    { "<leader>g", group = "Git" },
+    { "<leader>gb", group = "Blame" },
+    { "<leader>gh", group = "GitHub" },
+    { "<leader>gw", group = "Worktree" },
+  },
 })
 
 wk.register({
@@ -27,15 +35,6 @@ wk.register({
     f = { name = "Find" },
     -- Search & Replace
     R = { name = "Replace", mode = { "n", "x" } },
-
-    -- Git
-    g = {
-      name = "Git",
-      mode = { "n", "x" },
-      b = { name = "Blame" },
-      h = { name = "GitHub" },
-      w = { name = "Worktree" },
-    },
 
     -- LSP
     l = { name = "Lang" }, -- LSP & language specific
