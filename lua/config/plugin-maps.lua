@@ -41,6 +41,19 @@ wk.add({
   { "<leader>r", group = "Refactor", mode = { "n", "v" } },
   -- Document
   { "<leader>d", group = "Doc" },
+
+  -- Compile
+  { "<leader>-", group = "Compile" },
+  -- Run
+  { "<leader>.", group = "Run" },
+  -- Test
+  { "<leader>'", group = "Test" },
+  -- Debug
+  { "<leader>,", group = "Debug", mode = { "n", "v" } },
+  { "<leader>,f", group = "Find" },
+  { "<leader>,s", desc = "Debug Selection", mode = "v" },
+  -- Task
+  { "<leader>>", group = "Task" },
 })
 
 wk.register({
@@ -61,20 +74,4 @@ wk.register({
 
   -- Tab
   ["<leader><tab>"] = { name = "Tabs" },
-
-  -- Code Runner
-  ["<leader>."] = { name = "Code Runner", mode = "n" },
-  -- Compiler
-  ["<leader>-"] = { name = "Compiler", mode = "n" },
-  -- Test Runner
-  ["<leader>'"] = { name = "Test", mode = "n" },
-  -- Task Runner
-  ["<leader>>"] = { name = "Task Runner", mode = "n" },
-  -- Debugger
-  ["<leader>,"] = {
-    name = "Debugger",
-    mode = { "n", "x" },
-    s = { desc = "Debug Selection", mode = "x" },
-    f = { name = "Find" },
-  },
 })
