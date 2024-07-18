@@ -6,7 +6,6 @@ return {
 
     opts = {
       preset = "modern",
-      layout = { align = "center" },
     },
 
     keys = {
