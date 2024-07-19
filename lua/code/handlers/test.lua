@@ -10,7 +10,7 @@ return {
       "nvim-neotest/neotest-python",
       "nvim-neotest/neotest-go",
       "olimorris/neotest-rspec",
-      "mrcjkb/neotest-haskell",
+      -- "mrcjkb/neotest-haskell",
     },
 
     opts = {
