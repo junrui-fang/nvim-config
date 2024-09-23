@@ -12,7 +12,7 @@ return {
         sh = { "shellcheck" },
         php = { "phpcs" },
         cmake = { "cmakelint" },
-        markdown = { "markdownlint" },
+        -- markdown = { "markdownlint" },
         html = { "htmlhint" },
         ansible = { "ansible_lint" },
         dockerfile = { "hadolint" },
