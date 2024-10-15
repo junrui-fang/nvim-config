@@ -18,18 +18,18 @@ return {
         php = { "php-cs-fixer" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
 
-        javascript = { { "prettierd", "prettier" } }, -- run *until* a formatter is found.
-        javascriptreact = { { "prettierd", "prettier" } },
-        typescript = { { "prettierd", "prettier" } },
-        typescriptreact = { { "prettierd", "prettier" } },
-        html = { { "prettierd", "prettier" } },
-        yaml = { { "prettierd", "prettier" } },
-        css = { { "prettierd", "prettier" } },
-        less = { { "prettierd", "prettier" } },
-        scss = { { "prettierd", "prettier" } },
+        javascript = { "prettierd", "prettier", stop_after_first = true }, -- run *until* a formatter is found.
+        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettierd", "prettier", stop_after_first = true },
+        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+        html = { "prettierd", "prettier", stop_after_first = true },
+        yaml = { "prettierd", "prettier", stop_after_first = true },
+        css = { "prettierd", "prettier", stop_after_first = true },
+        less = { "prettierd", "prettier", stop_after_first = true },
+        scss = { "prettierd", "prettier", stop_after_first = true },
 
-        markdown = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
-        ["markdown.mdx"] = { { "prettierd", "prettier" }, "markdownlint", "markdown-toc" },
+        markdown = { "prettierd", "prettier", stop_after_first = true, "markdownlint", "markdown-toc" },
+        ["markdown.mdx"] = { "prettierd", "prettier", stop_after_first = true, "markdownlint", "markdown-toc" },
 
         sql = { "sqlfluff" },
         mysql = { "sqlfluff" },
