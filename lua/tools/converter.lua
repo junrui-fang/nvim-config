@@ -15,14 +15,12 @@ return {
     build = "make",
     cmd = { "CodeSnap", "CodeSnapSave", "CodeSnapHighlight", "CodeSnapSaveHighlight" },
     opts = {
-      save_path = vim.fn.getcwd() .. "/media",
-      bg_theme = "default",
-      watermark = "watermark here",
+      save_path = "~/codesnaps",
       mac_window_bar = false,
     },
     keys = {
-      { "<leader>uc", ":'<,'>CodeSnap<cr>", mode = "x", desc = "Copy code snapshot" },
-      { "<leader>us", ":'<,'>CodeSnapSave<cr>", mode = "x", desc = "Save code snapshot" },
+      { "<leader>uc", "<cmd>CodeSnap<cr>", mode = "x", desc = "Save selected code snapshot into clipboard" },
+      { "<leader>us", "<cmd>CodeSnapSave<cr>", mode = "x", desc = "Save selected code snapshot in ~/Pictures" },
     },
   },
 }
