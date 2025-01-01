@@ -10,6 +10,7 @@ return {
       "nvim-neotest/neotest-python",
       "nvim-neotest/neotest-go",
       "olimorris/neotest-rspec",
+      { "nvim-neotest/neotest-jest", config = function() end },
       -- "mrcjkb/neotest-haskell",
     },
 
@@ -19,13 +20,14 @@ return {
         ["neotest-rspec"] = {}, -- ruby
         ["neotest-go"] = { recursive_run = true },
         ["neotest-haskell"] = {},
+				["neotest-jest"] = {},
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
     },
 
     config = function(_, opts)
-      table.insert(opts.adapters, require("neotest-python"))
+      -- table.insert(opts.adapters, require("neotest-python"))
       require("neotest").setup(opts)
     end,
 
