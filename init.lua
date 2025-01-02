@@ -32,6 +32,7 @@ require("lazy").setup({
     { import = "project" },
 
     { import = "miscellaneous" },
+    { import = "integration" },
   },
 
   -- Setup behaviors of lazy.nvim
