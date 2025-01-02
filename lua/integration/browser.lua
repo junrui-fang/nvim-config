@@ -19,7 +19,7 @@ return {
     },
     opts = {
       lang = "javascript",
-      image_support = true,
+      -- image_support = true,
       plugins = { non_standalone = true },
     },
     keys = {
