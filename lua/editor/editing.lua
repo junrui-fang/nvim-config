@@ -39,14 +39,10 @@ return {
   -- Auto-saving
   {
     "okuuva/auto-save.nvim",
+    version = "^1.0.0",
     cmd = "ASToggle",
     event = { "InsertLeave", "TextChanged" },
-    opts = {
-      execution_message = {
-        enabled = false,
-      },
-      debounce_delay = 0,
-    },
+    opts = {},
     keys = { { "<leader>sta", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
   },
 }
