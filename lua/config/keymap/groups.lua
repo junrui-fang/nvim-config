@@ -65,4 +65,7 @@ wk.add({
   { "<leader>u", group = "Utils", mode = { "n", "v" } },
   -- UI
   { "<leader>U", group = "UI" },
+
+  -- LeetCode
+  { "<leader>k", group = "LeetCode" },
 })
