@@ -19,6 +19,7 @@ local buttons = {
   { icon = "  ", desc = "Config", key = "c", action = "e ~/.config/nvim/init.lua" },
   { icon = "  ", desc = "Plugins", key = "p", action = "Lazy" },
   { icon = "  ", desc = "Github", key = "g", action = "!open https://github.com/junrui-fang/nvim-config" },
+  { icon = "  ", desc = "LeetCode", key = "l", action = "Leet" },
   { icon = "  ", desc = "Quit", key = "q", action = "qa" },
 }
 for _, button in ipairs(buttons) do
