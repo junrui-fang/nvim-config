@@ -20,8 +20,8 @@ return {
 
         javascript = { "prettier", stop_after_first = true }, -- run *until* a formatter is found.
         javascriptreact = { "prettier", stop_after_first = true },
-        typescript = { "prettierd", "prettier", stop_after_first = true },
-        typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettier", stop_after_first = true },
+        typescriptreact = { "prettier", stop_after_first = true },
         html = { "prettierd", "prettier", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
         css = { "prettierd", "prettier", stop_after_first = true },
