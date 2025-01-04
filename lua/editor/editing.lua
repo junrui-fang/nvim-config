@@ -42,7 +42,9 @@ return {
     version = "^1.0.0",
     cmd = "ASToggle",
     event = { "InsertLeave", "TextChanged" },
-    opts = {},
+    opts = {
+      debounce_delay = 100,
+    },
     keys = { { "<leader>sta", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
   },
 }
