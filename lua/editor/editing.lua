@@ -43,7 +43,7 @@ return {
     cmd = "ASToggle",
     event = { "InsertLeave", "TextChanged" },
     opts = {
-      debounce_delay = 200,
+      debounce_delay = 400,
     },
     keys = { { "<leader>sta", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
   },
