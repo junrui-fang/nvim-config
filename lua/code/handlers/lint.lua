@@ -4,10 +4,10 @@
 return {
   {
     "mfussenegger/nvim-lint",
-    event = "LspAttach",
+    event = { "BufReadPre", "BufNewFile" },
 
     opts = {
-      events = { "BufWritePost", "BufReadPost", "InsertLeave", "TextChanged" },
+      events = { "BufEnter", "BufWritePost", "InsertLeave" },
       linters_by_ft = {
         sh = { "shellcheck" },
         php = { "phpcs" },
@@ -26,12 +26,9 @@ return {
       local lint = require("lint")
       lint.linters_by_ft = opts.linters_by_ft
 
-      -- start linter immediately
-      lint.try_lint()
-      -- then lint on the specified events.
       vim.api.nvim_create_autocmd(opts.events, {
         group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
-        callback = function() require("lint").try_lint() end,
+        callback = function() lint.try_lint() end,
       })
     end,
   },
