@@ -42,7 +42,7 @@ return {
       },
 
       formatters = {
-        sqlfluff = { args = { "format", "--dialect=ansi", "-" } },
+        sqlfluff = { args = { "fix", "--dialect", "sqlite", "-" } },
         prettier = {
           args = function()
             return {
