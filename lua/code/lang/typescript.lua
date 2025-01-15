@@ -32,10 +32,6 @@ return {
               },
             },
             javascript = {
-              format = {
-                indentSize = 4,
-                tabSize = 4,
-              },
               updateImportsOnFileMove = { enabled = "always" },
               inlayHints = {
                 parameterNames = { enabled = "literals" },
