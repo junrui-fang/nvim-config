@@ -5,16 +5,8 @@ return {
     opts = {
       directories = { vim.fn.stdpath("config") .. "/skeletons" },
       autouse = true,
-      patterns = {
-        "lua",
-        "tex",
-        "python",
-        "LICENSE",
+      patterns = function(dir) return vim.fn.readdir(dir) end,
 
-        "html",
-        -- "index.html",
-        "markdown",
-      },
       -- Advanced options
       advanced = {
         ignored = {}, -- List of glob patterns or function that determines if a file is ignored
