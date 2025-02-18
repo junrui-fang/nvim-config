@@ -8,10 +8,6 @@ return {
       vim.cmd([[
 				highlight! link BufferTabpageFill Normalize
 				highlight! link BufferInactive Normalize
-				highlight! BufferCurrentSign ctermbg=black guifg=#fd5e3a
-				highlight! BufferAlternateSign ctermbg=black guifg=#fd5e3a
-				highlight! BufferInactiveSign ctermbg=black guifg=#fd5e3a
-				highlight! BufferVisibleSign ctermbg=black guifg=#fd5e3a
 			]])
     end,
     opts = {
@@ -24,6 +20,10 @@ return {
         DashboardKey = { fg = "#35b5ff" },
         BufferCurrent = { fg = "#fd5e3a" },
         BufferAlternate = { fg = "#35b5ff" },
+        BufferCurrentSign = { ctermbg = "black", fg = "#fd5e3a" },
+        BufferAlternateSign = { ctermbg = "black", fg = "#fd5e3a" },
+        BufferInactiveSign = { ctermbg = "black", fg = "#fd5e3a" },
+        BufferVisibleSign = { ctermbg = "black", fg = "#fd5e3a" },
         NeoTreeDirectoryIcon = { fg = "#fd5e3a" },
         NeoTreeRootName = { fg = "#35b5ff", bold = true },
         -- "#66def9",
