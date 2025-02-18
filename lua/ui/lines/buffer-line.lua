@@ -15,6 +15,7 @@ return {
       button = "",
       modified = { button = "●" },
       pinned = { button = " ", filename = true },
+      separator_at_end = false,
     },
     semantic_letters = true,
     sidebar_filetypes = {
