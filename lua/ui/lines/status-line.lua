@@ -7,6 +7,14 @@ return {
     event = "VeryLazy",
     opts = function()
       local custom_theme = require("neofusion.lualine")
+
+      -- transparent background
+      for _, mode in pairs(custom_theme) do
+        for section_name, section in pairs(mode) do
+          if section_name ~= "a" and section_name ~= "z" then section.bg = "NONE" end
+        end
+      end
+
       local opts = {
         options = {
           theme = custom_theme,
