@@ -5,6 +5,7 @@ return {
     init = function()
       vim.o.background = "dark"
       vim.cmd([[ colorscheme neofusion ]])
+      vim.cmd([[ highlight! link BufferTabpageFill Normal ]])
     end,
     opts = {
       transparent_mode = true,
