@@ -20,7 +20,12 @@ return {
         ["neotest-rspec"] = {}, -- ruby
         ["neotest-go"] = { recursive_run = true },
         ["neotest-haskell"] = {},
-				["neotest-jest"] = {},
+        ["neotest-jest"] = {
+          jestCommand = "npm test --",
+          jestConfigFile = "custom.jest.config.ts",
+          env = { CI = true },
+          cwd = function(path) return vim.fn.getcwd() end,
+        },
       },
       status = { virtual_text = true },
       output = { open_on_run = true },
