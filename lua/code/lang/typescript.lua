@@ -55,18 +55,15 @@ return {
     opts = function()
       local dap = require("dap")
 
-      -- Setup js-debug-adapter
+      -- Setup js-debug-adapter using executable path
       if not dap.adapters["pwa-node"] then
         dap.adapters["pwa-node"] = {
           type = "server",
           host = "localhost",
           port = "${port}",
           executable = {
-            command = "node",
-            args = {
-              vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
-              "${port}",
-            },
+            command = vim.fn.exepath("js-debug-adapter") or vim.fn.stdpath("data") .. "/mason/bin/js-debug-adapter",
+            args = { "${port}" },
           },
         }
       end
@@ -91,11 +88,8 @@ return {
           host = "localhost",
           port = "${port}",
           executable = {
-            command = "node",
-            args = {
-              vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
-              "${port}",
-            },
+            command = vim.fn.exepath("js-debug-adapter") or vim.fn.stdpath("data") .. "/mason/bin/js-debug-adapter",
+            args = { "${port}" },
           },
         }
       end
@@ -124,6 +118,15 @@ return {
       -- Configure debuggers for each JavaScript and TypeScript related filetype
       for _, lang in ipairs({ "javascript", "javascriptreact", "typescript", "typescriptreact" }) do
         dap.configurations[lang] = {
+          -- Basic Node.js debugging
+          {
+            type = "pwa-node",
+            request = "launch",
+            name = "Launch file (Node.js)",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+            sourceMaps = true,
+          },
           -- Node.js debugging (compiled JavaScript)
           {
             type = "pwa-node",
