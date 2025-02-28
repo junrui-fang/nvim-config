@@ -26,6 +26,7 @@ return {
         BufferVisibleSign = { ctermbg = "black", fg = "#fd5e3a" },
         NeoTreeDirectoryIcon = { fg = "#fd5e3a" },
         NeoTreeRootName = { fg = "#35b5ff", bold = true },
+        NoiceLspProgressTitle = { fg = "#e2d9c5" },
         -- "#66def9",
         -- "#fa7a61",
         -- "#fc9487",
