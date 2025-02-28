@@ -48,6 +48,21 @@ return {
     },
   },
 
+  -- Add nvim-vtsls for additional TypeScript capabilities
+  {
+    "yioneko/nvim-vtsls",
+    lazy = true,
+    dependencies = { "neovim/nvim-lspconfig" },
+    config = function()
+      vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          if client and client.name == "vtsls" then require("vtsls")._on_attach(args.data.client_id, args.buf) end
+        end,
+      })
+    end,
+  },
+
   -- ESLint integration via none-ls with none-ls-extras
   {
     "nvimtools/none-ls.nvim",
