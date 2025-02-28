@@ -15,6 +15,8 @@ wk.add({
   { "<leader>ps", group = "Session" },
   { "<leader>pt", group = "Todos" },
   { "<leader>j", group = "Jump" },
+  -- Package
+  { "<leader>P", group = "Package" },
   -- Git
   {
     mode = { "n", "v" },

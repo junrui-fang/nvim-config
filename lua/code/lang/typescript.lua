@@ -308,7 +308,32 @@ return {
     dependencies = { "MunifTanjim/nui.nvim" },
     event = "BufRead package.json",
     opts = {},
-    -- TODO: Add keymaps
+    keys = {
+      {
+        "<leader>Ps",
+        function() require("package-info").show() end,
+        desc = "Show package info",
+        ft = "json",
+      },
+      {
+        "<leader>Pc",
+        function() require("package-info").change_version() end,
+        desc = "Change package version",
+        ft = "json",
+      },
+      {
+        "<leader>Pd",
+        function() require("package-info").delete() end,
+        desc = "Delete package",
+        ft = "json",
+      },
+      {
+        "<leader>Pi",
+        function() require("package-info").install() end,
+        desc = "Install package",
+        ft = "json",
+      },
+    },
   },
 
   {
