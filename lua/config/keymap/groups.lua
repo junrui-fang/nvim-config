@@ -37,6 +37,7 @@ wk.add({
 
   -- LSP
   { "<leader>l", group = "Lang" },
+  { "<leader>lt", group = "Type Checking" },
   { "<leader>x", group = "Diagnostic" },
   -- Code Actions
   { "<leader>a", group = "Actions", mode = { "n", "v" } },

@@ -340,5 +340,11 @@ return {
     "dmmulroy/tsc.nvim",
     cmd = "TSC",
     opts = {},
+    keys = {
+      { "<leader>ltt", ":TSC<CR>", desc = "Check Types", ft = "typescript" },
+      { "<leader>lts", ":TSCStop<CR>", desc = "Stop", ft = "typescript" },
+      { "<leader>lto", ":TSCOpen<CR>", desc = "Open Quickfix", ft = "typescript" },
+      { "<leader>ltc", ":TSCClose<CR>", desc = "Close Quickfix", ft = "typescript" },
+    },
   },
 }
