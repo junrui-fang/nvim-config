@@ -17,7 +17,10 @@ return {
             vtsls = {
               enableMoveToFileCodeAction = true,
               autoUseWorkspaceTsdk = true,
-              experimental = { completion = { enableServerSideFuzzyMatch = true } },
+              experimental = {
+                maxInlayHintLength = 30,
+                completion = { enableServerSideFuzzyMatch = true },
+              },
             },
             typescript = {
               updateImportsOnFileMove = { enabled = "always" },
