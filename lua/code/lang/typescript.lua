@@ -47,6 +47,12 @@ return {
             },
           },
         },
+        eslint = {
+          settings = {
+            workingDirectories = { mode = "auto" },
+            format = false,
+          },
+        },
       },
     },
   },
@@ -63,50 +69,6 @@ return {
           if client and client.name == "vtsls" then require("vtsls")._on_attach(args.data.client_id, args.buf) end
         end,
       })
-    end,
-  },
-
-  -- ESLint integration via none-ls with none-ls-extras
-  {
-    "nvimtools/none-ls.nvim",
-    dependencies = {
-      "nvimtools/none-ls-extras.nvim",
-    },
-    opts = function()
-      -- Function to check if ESLint is configured for the project
-      local function has_eslint_config(utils)
-        return utils.root_has_file({
-          ".eslintrc",
-          ".eslintrc.js",
-          ".eslintrc.cjs",
-          ".eslintrc.json",
-          ".eslintrc.yml",
-          ".eslintrc.yaml",
-          "eslint.config.js",
-        })
-      end
-
-      -- Get eslint_d from none-ls-extras
-      local eslint_d_diagnostics = require("none-ls.diagnostics.eslint_d")
-      local eslint_d_code_actions = require("none-ls.code_actions.eslint_d")
-
-      -- Set condition for both sources
-      eslint_d_diagnostics = eslint_d_diagnostics.with({
-        condition = has_eslint_config,
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-      })
-
-      eslint_d_code_actions = eslint_d_code_actions.with({
-        condition = has_eslint_config,
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-      })
-
-      return {
-        sources = {
-          eslint_d_diagnostics,
-          eslint_d_code_actions,
-        },
-      }
     end,
   },
 
