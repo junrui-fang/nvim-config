@@ -79,17 +79,35 @@ return {
     opts = function()
       local dap = require("dap")
 
-      -- Setup js-debug-adapter using executable path
+      -- Setup js-debug-adapter using either executable directly or via Node
       if not dap.adapters["pwa-node"] then
-        dap.adapters["pwa-node"] = {
-          type = "server",
-          host = "localhost",
-          port = "${port}",
-          executable = {
-            command = vim.fn.exepath("js-debug-adapter") or vim.fn.stdpath("data") .. "/mason/bin/js-debug-adapter",
-            args = { "${port}" },
-          },
-        }
+        local js_debug_path = vim.fn.exepath("js-debug-adapter")
+        if js_debug_path and js_debug_path ~= "" then
+          -- If executable is available, use it directly
+          dap.adapters["pwa-node"] = {
+            type = "server",
+            host = "localhost",
+            port = "${port}",
+            executable = {
+              command = js_debug_path,
+              args = { "${port}" },
+            },
+          }
+        else
+          -- Fallback to Node approach for better compatibility
+          dap.adapters["pwa-node"] = {
+            type = "server",
+            host = "localhost",
+            port = "${port}",
+            executable = {
+              command = "node",
+              args = {
+                vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+                "${port}",
+              },
+            },
+          }
+        end
       end
 
       -- Add compatibility for regular node debugging
@@ -112,8 +130,11 @@ return {
           host = "localhost",
           port = "${port}",
           executable = {
-            command = vim.fn.exepath("js-debug-adapter") or vim.fn.stdpath("data") .. "/mason/bin/js-debug-adapter",
-            args = { "${port}" },
+            command = "node",
+            args = {
+              vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+              "${port}",
+            },
           },
         }
       end
@@ -131,16 +152,18 @@ return {
         end
       end
 
+      -- Define JS/TS filetypes
+      local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
+
       -- Setup VSCode launch config to filetypes mapping
       local vscode_ext = require("dap.ext.vscode")
-      local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
       vscode_ext.type_to_filetypes["node"] = js_filetypes
       vscode_ext.type_to_filetypes["pwa-node"] = js_filetypes
       vscode_ext.type_to_filetypes["chrome"] = js_filetypes
       vscode_ext.type_to_filetypes["pwa-chrome"] = js_filetypes
 
       -- Configure debuggers for each JavaScript and TypeScript related filetype
-      for _, lang in ipairs({ "javascript", "javascriptreact", "typescript", "typescriptreact" }) do
+      for _, lang in ipairs(js_filetypes) do
         dap.configurations[lang] = {
           -- Basic Node.js debugging
           {
@@ -183,8 +206,6 @@ return {
             processId = require("dap.utils").pick_process,
             cwd = "${workspaceFolder}",
             sourceMaps = true,
-            outFiles = { "${workspaceFolder}/dist/**/*.js" },
-            resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js", "${workspaceFolder}/**/*.ts" },
           },
           -- Chrome browser debugging
           {
@@ -195,7 +216,6 @@ return {
             webRoot = "${workspaceFolder}",
             sourceMaps = true,
             sourceMapPathOverrides = {
-              -- Add source map path overrides for frameworks as needed
               -- React
               ["webpack:///src/*"] = "${webRoot}/src/*",
               -- Next.js
@@ -232,36 +252,6 @@ return {
             console = "integratedTerminal",
             internalConsoleOptions = "neverOpen",
             sourceMaps = true,
-            outFiles = { "${workspaceFolder}/dist/**/*.js" },
-            resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js", "${workspaceFolder}/**/*.ts" },
-          },
-          -- npm script debugging
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Debug npm script",
-            runtimeExecutable = "npm",
-            runtimeArgs = { "run-script", "debug" },
-            cwd = "${workspaceFolder}",
-            sourceMaps = true,
-            outFiles = { "${workspaceFolder}/dist/**/*.js" },
-            resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js", "${workspaceFolder}/**/*.ts" },
-            console = "integratedTerminal",
-            internalConsoleOptions = "neverOpen",
-          },
-          -- Debug using current file path (flexible)
-          {
-            type = "pwa-node",
-            request = "launch",
-            name = "Debug Current File",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            sourceMaps = true,
-            smartStep = true,
-            outFiles = { "${workspaceFolder}/dist/**/*.js" },
-            resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js", "${workspaceFolder}/**/*.ts" },
-            protocol = "inspector",
-            console = "integratedTerminal",
           },
         }
       end
