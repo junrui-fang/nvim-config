@@ -18,10 +18,10 @@ return {
         php = { "php-cs-fixer" },
         python = { "isort", "black" }, -- can also run multiple formatters sequentially
 
-        javascript = { "prettier", stop_after_first = true }, -- run *until* a formatter is found.
-        javascriptreact = { "prettier", stop_after_first = true },
-        typescript = { "prettier", stop_after_first = true },
-        typescriptreact = { "prettier", stop_after_first = true },
+        -- javascript = { "prettier", stop_after_first = true }, -- run *until* a formatter is found.
+        -- javascriptreact = { "prettier", stop_after_first = true },
+        -- typescript = { "prettier", stop_after_first = true },
+        -- typescriptreact = { "prettier", stop_after_first = true },
         html = { "prettierd", "prettier", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
         css = { "prettierd", "prettier", stop_after_first = true },
@@ -43,16 +43,16 @@ return {
 
       formatters = {
         sqlfluff = { args = { "fix", "--dialect", "sqlite", "-" } },
-        prettier = {
-          args = function()
-            return {
-              "--tab-width",
-              "4",
-              "--stdin-filepath",
-              "$FILENAME",
-            }
-          end,
-        },
+        -- prettier = {
+        --   args = function()
+        --     return {
+        --       "--tab-width",
+        --       "4",
+        --       "--stdin-filepath",
+        --       "$FILENAME",
+        --     }
+        --   end,
+        -- },
       },
     },
 

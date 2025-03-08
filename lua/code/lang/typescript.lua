@@ -72,6 +72,111 @@ return {
     end,
   },
 
+  -- Prettier configuration
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = function(_, opts)
+      -- Initialize formatter tables if they don't exist
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      opts.formatters = opts.formatters or {}
+
+      -- Define the filetypes we want to configure
+      local js_ts_filetypes = {
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "vue",
+        "json",
+        "jsonc",
+      }
+
+      -- Helper function to check for Prettier config files
+      local function has_prettier_config(ctx)
+        return vim.fs.find({
+          ".prettierrc",
+          ".prettierrc.json",
+          ".prettierrc.yml",
+          ".prettierrc.yaml",
+          ".prettierrc.json5",
+          ".prettierrc.js",
+          ".prettierrc.cjs",
+          "prettier.config.js",
+          "prettier.config.cjs",
+          ".prettierrc.toml",
+          ".prettierrc.mjs",
+          "prettier.config.mjs",
+        }, { path = ctx.filename, upward = true })[1] ~= nil
+      end
+
+      -- Helper function to check for Prettier in dependencies
+      local function has_prettier_dep(ctx)
+        local package_json = vim.fs.find("package.json", { path = ctx.filename, upward = true })[1]
+        if not package_json then return false end
+
+        local ok, json = pcall(function()
+          local content = vim.fn.readfile(package_json)
+          return vim.fn.json_decode(table.concat(content, "\n"))
+        end)
+
+        if not ok or type(json) ~= "table" then return false end
+
+        local deps = json.dependencies or {}
+        local dev_deps = json.devDependencies or {}
+
+        return deps.prettier ~= nil or dev_deps.prettier ~= nil
+      end
+
+      -- Configure Prettier formatter
+      opts.formatters.prettier = {
+        -- Only use prettier if we have a config or dependency
+        condition = function(self, ctx)
+          -- Cache the result to avoid rechecking frequently
+          if self._prettier_checked and self._prettier_checked[ctx.filename] then
+            return self._prettier_checked[ctx.filename]
+          end
+
+          self._prettier_checked = self._prettier_checked or {}
+          local should_use = has_prettier_config(ctx) or has_prettier_dep(ctx)
+          self._prettier_checked[ctx.filename] = should_use
+
+          return should_use
+        end,
+
+        -- Configure arguments based on whether we found a config file
+        args = function(self, ctx)
+          -- If we have a config file, use it
+          if has_prettier_config(ctx) then
+            return {
+              "--stdin-filepath",
+              "$FILENAME",
+            }
+          else
+            -- Otherwise, use default settings with 4 spaces
+            return {
+              "--tab-width",
+              "4",
+              "--stdin-filepath",
+              "$FILENAME",
+            }
+          end
+        end,
+      }
+
+      -- Apply prettier to all relevant filetypes
+      for _, ft in ipairs(js_ts_filetypes) do
+        opts.formatters_by_ft[ft] = opts.formatters_by_ft[ft] or {}
+        if
+          type(opts.formatters_by_ft[ft]) == "table"
+          and not vim.tbl_contains(opts.formatters_by_ft[ft], "prettier")
+        then
+          table.insert(opts.formatters_by_ft[ft], "prettier")
+        end
+      end
+    end,
+  },
+
   -- NOTE: thanks to Claude 3.7 Sonnet & LazyVim
   -- TODO: verify paths, build outputs, source maps
   {
