@@ -24,11 +24,10 @@ return {
   -- Preview definition, implementation, etc.
   {
     "rmagatti/goto-preview",
+    dependencies = { "rmagatti/logger.nvim" },
     keys = "gp",
-    config = function()
-      require("goto-preview").setup({
-        default_mappings = true,
-      })
-    end,
+    opts = {
+      default_mappings = true,
+    },
   },
 }
