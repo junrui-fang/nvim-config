@@ -44,6 +44,12 @@ return {
     event = { "InsertLeave", "TextChanged" },
     opts = {
       debounce_delay = 400,
+      condition = function(buf)
+        local filetype = vim.fn.getbufvar(buf, "&filetype")
+        -- resolve conflict with harpoon
+        if vim.list_contains({ "harpoon" }, filetype) then return false end
+        return true
+      end,
     },
     keys = { { "<leader>sta", "<cmd>ASToggle<cr>", desc = "Auto-save" } },
   },
