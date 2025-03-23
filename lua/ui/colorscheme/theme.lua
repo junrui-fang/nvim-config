@@ -13,6 +13,7 @@ return {
     opts = {
       transparent_mode = true,
       overrides = {
+        CursorLineNr = { bg = "NONE" },
         DashboardHeader = { fg = "#fd5e3a" },
         DashboardFooter = { fg = "#fd5e3a" },
         DashboardIcon = { fg = "#35b5ff" },
