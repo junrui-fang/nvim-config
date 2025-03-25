@@ -50,6 +50,7 @@ return {
           "jsdoc",
           "html",
           "css",
+          "scss",
           "json5",
           "yaml",
           "markdown",
