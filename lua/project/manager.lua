@@ -1,13 +1,9 @@
 return {
   {
-    "ahmedkhalf/project.nvim",
-    event = "VeryLazy",
-    opts = {
-      manual_mode = false, -- Auto switch cwd
-      silent_chdir = true,
-      ignore_lsp = { "lua_ls" },
+    "nvim-telescope/telescope-project.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
     },
-    config = function(_, opts) require("project_nvim").setup(opts) end,
-    keys = { { "<leader>pf", "<cmd>Telescope projects<cr>", desc = "Find Projects" } },
+    keys = { { "<leader>pp", ":lua require'telescope'.extensions.project.project{}<CR>", desc = "Projects" } },
   },
 }

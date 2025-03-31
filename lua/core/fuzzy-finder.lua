@@ -56,8 +56,8 @@ return {
       pcall(require("telescope").load_extension("dap"))
       pcall(require("telescope").load_extension("scope"))
       pcall(require("telescope").load_extension, "undo")
+      pcall(require("telescope").load_extension("project"))
       -- pcall(require("telescope").load_extension, "ui-select")
-      -- require("telescope").load_extension("projects")
     end,
 
     keys = {
