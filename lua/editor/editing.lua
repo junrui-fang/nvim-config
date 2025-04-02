@@ -1,4 +1,7 @@
 return {
+  -- Detect tabstop and shiftwidth automatically
+  "tpope/vim-sleuth",
+
   -- Powerful surround manipulation
   {
     "kylechui/nvim-surround",
