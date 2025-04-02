@@ -26,6 +26,9 @@ wk.add({
     { "<leader>gw", group = "Worktree" },
   },
 
+  -- Grep
+  { "<leader>/", group = "Grep" },
+
   -- Edit
   {
     mode = { "n", "v" },
