@@ -3,15 +3,9 @@ return {
   {
     "folke/lazydev.nvim",
     ft = "lua",
-    opts = {
-      library = {
-        "lazy.nvim",
-        { path = "luvit-meta/library", words = { "vim%.uv" } },
-      },
-    },
+    opts = { library = { { path = "${3rd}/luv/library", words = { "vim%.uv" } } } },
   },
-  { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-  { -- optional completion source for require statements and module annotations
+  { -- optional cmp completion source for require statements and module annotations
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       opts.sources = opts.sources or {}
