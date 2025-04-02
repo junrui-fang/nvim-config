@@ -3,8 +3,8 @@ local keymap = vim.keymap.set
 -- <space> does nothing in normal & visual mode
 keymap({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
--- Clear search with <esc>
-keymap("n", "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+-- Clear highlights on search when pressing <Esc> in normal mode
+keymap("n", "<esc>", "<cmd>nohlsearch<cr>")
 
 -- Easier closing & quitting
 keymap("n", "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
@@ -13,9 +13,9 @@ keymap("n", "<leader>c", "<cmd>bd!<cr>", { desc = "Close" })
 
 -- Windows
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 keymap("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 keymap("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
-keymap("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 -- Tabs
 keymap("n", "<leader><tab>j", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 keymap("n", "<leader><tab>k", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
@@ -45,9 +45,10 @@ keymap("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
 keymap("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
 
 local diagnostic_goto = function(next, severity)
-  local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
-  severity = severity and vim.diagnostic.severity[severity] or nil
-  return function() go({ severity = severity }) end
+  local count = next and 1 or -1
+  local opts = { count = count, float = true }
+  if severity then opts.severity = vim.diagnostic.severity[severity] end
+  return function() vim.diagnostic.jump(opts) end
 end
 keymap("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 keymap("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
