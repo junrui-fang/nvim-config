@@ -14,7 +14,7 @@ return {
 
     -- Keymaps
     on_attach = function(bufnr)
-      local gs = package.loaded.gitsigns
+      local gs = require("gitsigns")
       local function map(mode, l, r, opts)
         opts = opts or {}
         opts.buffer = bufnr
@@ -23,16 +23,20 @@ return {
 
       -- Navigation
       map("n", "<leader>gj", function()
-        if vim.wo.diff then return "<leader>gj" end
-        vim.schedule(function() gs.next_hunk() end)
-        return "<Ignore>"
-      end, { expr = true, desc = "Next Hunk" })
+        if vim.wo.diff then
+          vim.cmd.normal({ "<leader>gj", bang = true })
+        else
+          gs.nav_hunk("next")
+        end
+      end, { desc = "Next Hunk" })
 
       map("n", "<leader>gk", function()
-        if vim.wo.diff then return "<leader>gk" end
-        vim.schedule(function() gs.prev_hunk() end)
-        return "<Ignore>"
-      end, { expr = true, desc = "Prev Hunk" })
+        if vim.wo.diff then
+          vim.cmd.normal({ "<leader>gk", bang = true })
+        else
+          gs.nav_hunk("prev")
+        end
+      end, { desc = "Prev Hunk" })
 
       -- Actions
       map("n", "<leader>gr", gs.reset_hunk, { desc = "Reset Hunk" })
@@ -52,16 +56,16 @@ return {
         function() gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") }) end,
         { desc = "Stage Hunk" }
       )
-      map("n", "<leader>gu", gs.undo_stage_hunk, { desc = "Unstage Hunk" })
+      map("n", "<leader>gu", gs.stage_hunk, { desc = "Unstage Hunk" })
 
       map("n", "<leader>gp", gs.preview_hunk, { desc = "Preview Hunk" })
-      map("n", "<leader>gl", function() gs.blame_line({ full = true }) end, { desc = "Blame" })
+      map("n", "<leader>gl", function() gs.blame_line({ full = true }) end, { desc = "Blame line" })
       map("n", "<leader>gbt", gs.toggle_current_line_blame, { desc = "Toggle Blame" })
 
       map("n", "<leader>gd", gs.diffthis, { desc = "diff against index" })
-      map("n", "<leader>gD", function() gs.diffthis("~") end, { desc = "diff against last commit" })
+      map("n", "<leader>gD", function() gs.diffthis("@") end, { desc = "diff against last commit" })
 
-      map("n", "<leader>gx", gs.toggle_deleted, { desc = "Show Deleted" })
+      map("n", "<leader>gx", gs.preview_hunk_inline, { desc = "Show Deleted" })
 
       -- Text object
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Hunk" })
