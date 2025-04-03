@@ -14,7 +14,6 @@ return {
       "saadparwaiz1/cmp_luasnip",
 
       "onsails/lspkind.nvim",
-      "windwp/nvim-autopairs",
     },
 
     opts = function()
@@ -67,7 +66,6 @@ return {
 
     config = function(_, opts)
       local cmp = require("cmp")
-      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
       cmp.setup(opts)
 
@@ -98,9 +96,6 @@ return {
         },
         matching = { disallow_symbol_nonprefix_matching = false },
       })
-
-      -- Insert `(` after select function or method item
-      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
 }
