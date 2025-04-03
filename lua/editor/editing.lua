@@ -39,6 +39,13 @@ return {
     config = true,
   },
 
+  -- Automatically add closing tags for HTML and JSX
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" }, -- same as LazyFile
+    opts = {},
+  },
+
   -- Auto-saving
   {
     "okuuva/auto-save.nvim",

@@ -4,7 +4,6 @@ return {
     build = ":TSUpdate",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "windwp/nvim-ts-autotag",
       {
         "LiadOz/nvim-dap-repl-highlights",
         dependencies = { "mfussenegger/nvim-dap" },
@@ -76,7 +75,6 @@ return {
       sync_install = false,
       highlight = { enable = true, disable = { "latex" } },
       indent = { enable = true },
-      autotag = { enable = true },
 
       incremental_selection = {
         enable = true,
