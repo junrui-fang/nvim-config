@@ -18,7 +18,6 @@ vim.opt.updatetime = 250 -- Decrease update time
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 vim.schedule(function() vim.opt.clipboard = "unnamedplus" end)
-vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.inccommand = "split" -- preview incremental substitute
 
 -- Opening options
