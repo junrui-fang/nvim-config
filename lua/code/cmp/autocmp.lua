@@ -1,12 +1,13 @@
 return {
   {
     "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-      "neovim/nvim-lspconfig",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
       "petertriho/cmp-git",
 
       "L3MON4D3/LuaSnip",
@@ -15,7 +16,6 @@ return {
       "onsails/lspkind.nvim",
       "windwp/nvim-autopairs",
     },
-    event = { "InsertEnter", "CmdlineEnter" },
 
     opts = function()
       local cmp = require("cmp")
@@ -27,6 +27,7 @@ return {
         snippet = {
           expand = function(args) require("luasnip").lsp_expand(args.body) end,
         },
+        completion = { completeopt = "menu,menuone,noinsert" },
 
         -- Pretty symbols
         formatting = {
@@ -52,13 +53,13 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
 
-        sources = cmp.config.sources({
+        sources = {
           { name = "nvim_lsp" },
           { name = "luasnip" },
-        }, {
           { name = "buffer" },
           { name = "path" },
-        }),
+          { name = "nvim_lsp_signature_help" },
+        },
 
         sorting = defaults.sorting,
       }
@@ -91,11 +92,10 @@ return {
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources({
+        sources = {
           { name = "path" },
-        }, {
           { name = "cmdline" },
-        }),
+        },
         matching = { disallow_symbol_nonprefix_matching = false },
       })
 
