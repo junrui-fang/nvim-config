@@ -111,7 +111,7 @@ return {
       -- general on_attach
       local on_attach = function(client, bufnr)
         -- code context
-        if client.server_capabilities.documentSymbolProvider then require("nvim-navic").attach(client, bufnr) end
+        -- if client.server_capabilities.documentSymbolProvider then require("nvim-navic").attach(client, bufnr) end
         -- Disable hover of Ruff in favor of Pyright
         if client.name == "ruff" then client.server_capabilities.hoverProvider = false end
       end
