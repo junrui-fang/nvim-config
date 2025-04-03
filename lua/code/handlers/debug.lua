@@ -55,14 +55,35 @@ return {
           },
         },
       })
-      -- Open and close UI automatically
-      dap.listeners.before.attach.dapui_config = function() dapui.open() end
-      dap.listeners.before.launch.dapui_config = function() dapui.open() end
-      -- dap.listeners.before.event_exited.dapui_config = function() dapui.close() end
-      -- dap.listeners.before.event_terminated.dapui_config = function() dapui.close() end
 
-      -- Install golang specific config
-      -- require("dap-go").setup()
+      -- Change breakpoint icons
+      vim.api.nvim_set_hl(0, "DapBreak", { fg = "#e51400" })
+      vim.api.nvim_set_hl(0, "DapStop", { fg = "#ffcc00" })
+      local breakpoint_icons = vim.g.have_nerd_font
+          and {
+            Breakpoint = "",
+            BreakpointCondition = "",
+            BreakpointRejected = "",
+            LogPoint = "",
+            Stopped = "",
+          }
+        or {
+          Breakpoint = "●",
+          BreakpointCondition = "⊜",
+          BreakpointRejected = "⊘",
+          LogPoint = "◆",
+          Stopped = "⭔",
+        }
+      for type, icon in pairs(breakpoint_icons) do
+        local tp = "Dap" .. type
+        local hl = (type == "Stopped") and "DapStop" or "DapBreak"
+        vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
+      end
+
+      -- Open and close UI automatically
+      dap.listeners.after.event_initialized["dapui_config"] = dapui.open
+      dap.listeners.before.event_terminated["dapui_config"] = dapui.close
+      dap.listeners.before.event_exited["dapui_config"] = dapui.close
     end,
 
     keys = function()
