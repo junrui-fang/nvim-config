@@ -4,6 +4,7 @@ return {
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 
@@ -47,23 +48,31 @@ return {
         group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
         callback = function(event)
           -- keymaps
-          local map = function(keys, func, desc) vim.keymap.set("n", keys, func, { buffer = event.buf, desc = desc }) end
-
+          local map = function(keys, func, desc, mode)
+            mode = mode or "n"
+            vim.keymap.set(mode, keys, func, {
+              buffer = event.buf,
+              desc = desc,
+            })
+          end
           map("K", vim.lsp.buf.hover, "Hover Documentation")
           map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
           map("gD", vim.lsp.buf.declaration, "Goto Declaration")
           map("gr", require("telescope.builtin").lsp_references, "Goto References")
           map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
           map("gy", require("telescope.builtin").lsp_type_definitions, "Type Definition")
-
           map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "Buffer Symbols")
           map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Workspace Symbols")
+          map("<leader>aa", vim.lsp.buf.code_action, "Code Action", { "n", "x" })
 
-          map("<leader>aa", vim.lsp.buf.code_action, "Code Action")
+          local function client_supports_method(client, method, bufnr) return client:supports_method(method, bufnr) end
 
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           -- highlight references of the word under cursor
-          if client and client.server_capabilities.documentHighlightProvider then
+          if
+            client
+            and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf)
+          then
             local highlight_augroup = vim.api.nvim_create_augroup("lsp-highlight", { clear = false })
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
@@ -71,7 +80,6 @@ return {
               callback = vim.lsp.buf.document_highlight,
             })
 
-            -- When cursor moves, the highlights will be cleared
             vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -88,10 +96,10 @@ return {
           end
 
           -- enable inlay hints if the ls supports them
-          if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map(
               "<leader>lh",
-              function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end,
+              function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf })) end,
               "Toggle Inlay Hints"
             )
           end
@@ -101,7 +109,44 @@ return {
             map("<leader>lc", function() vim.lsp.codelens.refresh() end, "Codelens Refresh")
             map("<leader>lC", function() vim.lsp.codelens.clear() end, "Codelens Off")
           end
+
+          -- EslintFixAll on save
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
+            callback = function(args)
+              local clients = vim.lsp.get_clients({ bufnr = args.buf, name = "eslint" })
+              if #clients > 0 then vim.cmd("EslintFixAll") end
+            end,
+          })
         end,
+      })
+
+      -- Diagnostic Config
+      vim.diagnostic.config({
+        severity_sort = true,
+        float = { border = "rounded", source = "if_many" },
+        underline = { severity = vim.diagnostic.severity.ERROR },
+        signs = vim.g.have_nerd_font and {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.INFO] = "󰋽 ",
+            [vim.diagnostic.severity.HINT] = "󰌶 ",
+          },
+        } or {},
+        virtual_text = {
+          source = "if_many",
+          spacing = 2,
+          format = function(diagnostic)
+            local diagnostic_message = {
+              [vim.diagnostic.severity.ERROR] = diagnostic.message,
+              [vim.diagnostic.severity.WARN] = diagnostic.message,
+              [vim.diagnostic.severity.INFO] = diagnostic.message,
+              [vim.diagnostic.severity.HINT] = diagnostic.message,
+            }
+            return diagnostic_message[diagnostic.severity]
+          end,
+        },
       })
 
       -- create new capabilities with nvim cmp, then broadcast that to the servers.
@@ -110,20 +155,20 @@ return {
 
       -- general on_attach
       local on_attach = function(client, bufnr)
-        -- code context
-        -- if client.server_capabilities.documentSymbolProvider then require("nvim-navic").attach(client, bufnr) end
-        -- Disable hover of Ruff in favor of Pyright
         if client.name == "ruff" then client.server_capabilities.hoverProvider = false end
       end
 
       local servers = opts.servers
       local ensure_installed = vim.tbl_keys(servers or {})
+      require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
       require("mason-lspconfig").setup({
-        ensure_installed = ensure_installed,
+        ensure_installed = {},
+        automatic_installation = false,
         handlers = {
           function(server_name)
             if server_name == "jdtls" then return end -- skip jdtls
+
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
             server.on_attach = on_attach
@@ -140,15 +185,6 @@ return {
             })
           end,
         },
-      })
-
-      -- EslintFixAll on save
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx" },
-        callback = function(args)
-          local clients = vim.lsp.get_clients({ bufnr = args.buf, name = "eslint" })
-          if #clients > 0 then vim.cmd("EslintFixAll") end
-        end,
       })
     end,
 
