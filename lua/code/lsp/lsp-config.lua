@@ -5,6 +5,7 @@ return {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "WhoIsSethDaniel/mason-tool-installer.nvim",
+      "saghen/blink.cmp",
     },
     event = { "BufReadPost", "BufNewFile", "BufWritePre" },
 
@@ -149,9 +150,8 @@ return {
         },
       })
 
-      -- create new capabilities with nvim cmp, then broadcast that to the servers.
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+      -- create new capabilities with blink.cmp, and then broadcast that to the servers.
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
 
       -- general on_attach
       local on_attach = function(client, bufnr)
