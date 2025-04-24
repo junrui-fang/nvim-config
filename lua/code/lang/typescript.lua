@@ -49,7 +49,7 @@ return {
         },
         eslint = {
           settings = {
-            workingDirectories = { mode = "auto" },
+            workingDirectories = { mode = "location" },
             format = false,
           },
         },
