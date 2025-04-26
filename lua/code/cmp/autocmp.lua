@@ -49,7 +49,7 @@ return {
 
       completion = {
         accept = { auto_brackets = { enabled = true } },
-        list = { selection = { preselect = true, auto_insert = true } },
+        list = { selection = { preselect = false, auto_insert = true } },
         menu = { draw = { treesitter = { "lsp" } } },
         ghost_text = { enabled = true, show_with_menu = false },
         documentation = {
