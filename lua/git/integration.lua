@@ -59,7 +59,7 @@ return {
       map("n", "<leader>gu", gs.stage_hunk, { desc = "Unstage Hunk" })
 
       map("n", "<leader>gp", gs.preview_hunk, { desc = "Preview Hunk" })
-      map("n", "<leader>gl", function() gs.blame_line({ full = true }) end, { desc = "Blame line" })
+      map("n", "<leader>gbl", function() gs.blame_line({ full = true }) end, { desc = "Blame line" })
       map("n", "<leader>gbt", gs.toggle_current_line_blame, { desc = "Toggle Blame" })
 
       map("n", "<leader>gd", gs.diffthis, { desc = "diff against index" })
