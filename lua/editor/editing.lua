@@ -1,6 +1,9 @@
 return {
   -- Detect tabstop and shiftwidth automatically
-  "tpope/vim-sleuth",
+  {
+    "tpope/vim-sleuth",
+    event = { "BufReadPost", "BufNewFile", "BufWritePre" }, -- same as LazyFile
+  },
 
   -- Powerful surround manipulation
   {
