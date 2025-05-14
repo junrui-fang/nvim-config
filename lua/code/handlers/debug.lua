@@ -8,7 +8,7 @@ return {
       "theHamsta/nvim-dap-virtual-text",
       "nvim-telescope/telescope-dap.nvim",
       -- Mason
-      "williamboman/mason.nvim",
+      "mason-org/mason.nvim",
       "jay-babu/mason-nvim-dap.nvim",
       -- Helper
       {
