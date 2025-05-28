@@ -46,6 +46,7 @@ return {
         "html",
         "css",
         "scss",
+        "styled",
         "json5",
         "yaml",
         "markdown",
