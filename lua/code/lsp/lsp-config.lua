@@ -7,7 +7,12 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       "saghen/blink.cmp",
     },
-    event = { "BufReadPost", "BufNewFile", "BufWritePre" },
+    event = {
+      -- "BufReadPost",
+      "BufReadPre",
+      "BufNewFile",
+      "BufWritePre",
+    },
 
     opts = {
       servers = {
