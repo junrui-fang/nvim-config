@@ -9,7 +9,7 @@ keymap("n", "<esc>", "<cmd>nohlsearch<cr>")
 -- Easier closing & quitting
 keymap("n", "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
 keymap("n", "<leader>Q", "<cmd>confirm qa<cr>", { desc = "Quit All" })
-keymap("n", "<leader>c", "<cmd>bd!<cr>", { desc = "Close" })
+-- keymap("n", "<leader>c", "<cmd>bd!<cr>", { desc = "Close" })
 
 -- Windows
 keymap("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
