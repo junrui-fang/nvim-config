@@ -2,3 +2,6 @@
 lazy-lock.json
 lua/.luarc.json
 hi.lua
+
+# Claude Code settings
+.claude/settings.local.json
